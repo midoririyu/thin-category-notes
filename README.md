@@ -14,8 +14,11 @@
 - 括射関手（packed arrows functor）
 - 薄い圏をターゲットとしたKan拡張、コエンド、エンド
 - 上限・下限を通じた普遍的対象の扱い
+- 一般の圏における普遍性問題を、薄圏における最適化問題へ帰着させる試み
 
 本考察の特徴は、薄い圏特有の **「射の存在」だけで自然変換や普遍性を扱える**点に注目したことにあります。
+
+特に「一般の圏でＫＡＮ拡張可能ならば、それを括射関手で薄い圏に写したものもＫＡＮ拡張可能になる」という命題（記事13）は、簡易なＫＡＮ拡張可能性チェック法として数学・システム関係者にも有益ではないかと考えます。
 
 ## 記事一覧
 
@@ -47,4 +50,46 @@
 
 ---
 
-**English Version**（必要に応じてここに英訳を入れる）
+**English Version**
+Thin Category Notes 
+
+A collection of the "Thin Category Notes" series by Midoriryu.
+
+This repository archives an original study developed by the author. It re-interprets thin categories (categories with at most one morphism between any two objects) as binary operations between objects and systematically investigates their properties.
+
+Overview
+Treating thin categories as a "generalization of preordered sets" within the framework of category theory, these notes explore the following themes:
+
+-New definitions and properties of thin categories.
+-The thinning functor from locally small categories to thin categories.
+-The packed arrows functor.
+-Kan extensions, coends, and ends targeting thin categories.
+-Handling universal objects through suprema (sup) and infima (inf).
+-Attempts to reduce universality problems in general categories to optimization problems in thin categories.
+
+The hallmark of this study is its focus on the unique property of thin categories where natural transformations and universality can be handled solely by the "existence of morphisms."
+In particular, the proposition that "if a Kan extension is possible in a general category, its image under the packed arrows functor in a thin category is also Kan-extendable" (Article 13) is presented as a potentially beneficial tool for mathematicians and system architects as a simplified Kan extensibility check.
+
+Article List
+(1) Rephrasing thin categories and illustrative examples.
+(2) Subcategories of thin categories.
+(3) Properties of the thinning functor.
+(4) The packed arrows functor and strongly connected thin categories.
+(5) Standard construction methods for thin categories.
+(6) New thin categories formed by collections of morphisms.
+(7) Thinning of functors.
+(9) Construction of skeletal thin categories.
+(10) Connected components of categories.
+(13) Left Kan extensions targeting thin categories.
+(14) Coends in thin categories and their properties.
+(Based on articles originally published on Mathlog.)
+
+Notes
+This study is based on the author's unique perspective. Some definitions and terminology (most notably the "packed arrows functor") include original insights not found in standard category theory textbooks.
+
+Initial Publication: 2025–2026 (Published sequentially on Mathlog).
+
+License
+The contents of this repository are licensed under CC BY-NC-SA 4.0 (Attribution-NonCommercial-ShareAlike 4.0 International).
+
+Usage and citations for research or educational purposes are highly welcome.
