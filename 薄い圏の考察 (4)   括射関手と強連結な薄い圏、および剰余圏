@@ -1,0 +1,128 @@
+# 薄い圏の考察 (4)  
+括射関手と強連結な薄い圏、および剰余圏
+
+## 括射関手の定義
+
+**定義**  
+局所小圏 $\mathcal{C}$ と「薄い圏の考察(1)」の例4で見た強連結な薄い圏 $\mathcal{C}(\operatorname{Ob}(\mathcal{C}), h)$ のあいだには、写像 $P(i) := i$ と写像 $P(f : i \to j) := h_{ij} = \operatorname{hom}(i,j)$（$i,j \in \operatorname{Ob}(\mathcal{C})$）で定まる関手 $P$ が存在する。$P$ が関手となることは「薄い圏の考察(3)」の命題3-1よりわかる。また $P$ は対象について恒等写像（全射）なので**本質的に全射**な関手である。
+
+以後、この論考の中で**括射関手**（packed arrows functor）と呼び、$\mathcal{C}(\operatorname{Ob}(\mathcal{C}), h)$ を $\mathcal{C}$ の**括射圏**（packed arrows category）と書いて $P(\mathcal{C})$ と表す。
+
+## 命題 4-1
+
+**命題 4-1**  
+括射関手 $P$ について以下のことが成り立つ。
+
+1. $P$ が充満関手である必要十分条件は、局所小圏 $\mathcal{C}$ が強連結な圏であること。
+2. $P$ が忠実関手である必要十分条件は、局所小圏 $\mathcal{C}$ が薄い圏であること。
+
+**証明**  
+1. $P$ が充満 $\iff$ 任意の $\operatorname{hom}(i,j)$ に対して $f:i\to j$ が存在 $\iff$ 任意の $i,j\in\mathcal{C}$ に対して射が存在 $\iff$ $\mathcal{C}$ が強連結。  
+2. $P$ が忠実 $\iff$ 任意の $i,j$ に対して $\operatorname{hom}(i,j)$ が高々一点集合 $\iff$ $\mathcal{C}$ が薄い圏。
+
+（証明終）
+
+## 命題 4-2
+
+**命題 4-2**  
+局所小圏 $\mathcal{C}$ について、$\mathcal{C}$ と $P(\mathcal{C})$ が圏同型である必要十分条件は、$\mathcal{C}$ が強連結な薄い圏であること。
+
+**証明**  
+一般に関手が圏同値を与える必要十分条件は「忠実充満かつ本質的に全射」である。$P$ は本質的に全射なので、命題4-1より $\mathcal{C}$ が強連結な薄い圏のとき $P$ は忠実充満となる。さらに $P$ が対象に関する恒等写像（全単射）であるため、圏同値は圏同型に強められる。（証明終）
+
+## 命題 4-3
+
+**命題 4-3**  
+局所小圏 $\mathcal{C}$ と局所小圏 $\mathcal{D}$ が圏同値ならば、それらの括射圏 $P(\mathcal{C})$ と $P(\mathcal{D})$ も圏同値となる。
+
+**証明**  
+$\mathcal{C}$ から $\mathcal{D}$ への関手を $F$ とすると、$P(\mathcal{C})$ と $P(\mathcal{D})$ の間に $P(F)(i) := F(i)$、$P(F)(h_{ij}) := \operatorname{hom}(F(i),F(j))$ で定まる関手 $P(F)$ が存在する（「薄い圏の考察(3)」命題3-1より）。$F$ が圏同値ならば $P(\mathcal{C})$ は強連結な薄い圏であり、$P(F)$ は本質的に全射であるため、補題3-1より $P(F)$ は圏同値を与える。（証明終）
+
+## 命題 4-4
+
+**命題 4-4**  
+局所小圏 $\mathcal{C}$ における普遍的対象 $i$ を括射関手 $P$ によって移した $P(i) = i$ は、$P(\mathcal{C})$ においても普遍的対象になる。
+
+**証明**  
+$P$ が薄い圏への本質的に全射な関手であることを「薄い圏の考察(3)」の普遍的対象に関する命題に適用して得られる。（証明終）
+
+## 命題 4-5（括射関手の普遍性）
+
+**命題 4-5**  
+$\mathcal{C}$ を局所小圏、$\mathcal{D}$ を薄い圏とする。このとき、任意の薄化関手 $F: \mathcal{C} \to \mathcal{D}$ に対して、以下を満たす一意な関手 $\tilde{F}: P(\mathcal{C}) \to \mathcal{D}$ が存在する：
+$$
+F = \tilde{F} \circ P.
+$$
+特に $F$ が本質的に全射ならば、$\tilde{F}$ は圏同値となる。
+
+**証明**  
+1. 対象の対応：$\operatorname{Ob}(P(\mathcal{C})) = \operatorname{Ob}(\mathcal{C})$ なので $\tilde{F}(i) := F(i)$ と定義する。  
+2. 射の対応：$P(\mathcal{C})$ の射 $h_{ij} = \operatorname{hom}_{\mathcal{C}}(i,j)$ に対して $\tilde{F}(h_{ij}) := g_{F(i)F(j)}$ と定義する（$\mathcal{D}$ が薄い圏なので一意）。$\tilde{F}$ が関手であることは命題3-1よりわかる。  
+3. 分解と一意性：$(\tilde{F} \circ P)(f) = \tilde{F}(h_{ij}) = g_{F(i)F(j)} = F(f)$ が成り立つ。一意性は $g_{F(i)F(j)}$ の一意性による。
+
+さらに $F$ が本質的に全射ならば $\tilde{F}$ も本質的に全射であり、$P(\mathcal{C})$ が強連結な薄い圏なので補題3-1より $\tilde{F}$ は圏同値となる。（証明終）
+
+## 剰余圏の考察
+
+すべての局所小圏の集まりを $\mathbf{CAT}$ とし、$\mathcal{C} \sim \mathcal{D}$ で圏同値を表すと、$\sim$ は同値関係となる。これにより剰余類 $\mathbf{CAT}/\sim$ が得られる。
+
+同様に、括射関手 $P$ による関係 $\mathcal{C} \ P\ \mathcal{D}$（$P(\mathcal{C}) \sim P(\mathcal{D})$）で定まる剰余類 $\mathbf{CAT}/P$ も定義できる。
+
+**命題 4-6**  
+$\mathbf{CAT}/\sim$ は $\mathbf{CAT}/P$ の部分類（より細かい細分）となる。
+
+**証明**  
+命題4-3より、$\mathbf{CAT}/\sim$ の構造は $\mathbf{CAT}/P$ の中に自然に埋め込まれる。（証明終）
+
+---
+
+### 小圏の剰余圏
+
+すべての小圏を集めたものを $\mathbf{Cat}$ とし、その剰余圏 $\mathbf{Cat}/\sim$ を考える。  
+対象は小圏そのものであり、対象 $\mathcal{C}$ から対象 $\mathcal{D}$ への射は、関手 $F: \mathcal{C} \to \mathcal{D}$ を代表元とする自然同型類
+$$
+[F]_{CD} := \{F' : \mathcal{C} \to \mathcal{D} \mid F' \text{ と } F \text{ は自然同型}\}
+$$
+で定義される。
+
+**注**  
+この定義が射の合成として適切であることは、以下の事実による：
+
+- 合成について：$\mathcal{C}\to\mathcal{D}$ なる $F,F'$ と $\mathcal{D}\to\mathcal{E}$ なる $G,G'$ がそれぞれ自然同型ならば、$G\circ F$ と $G'\circ F'$ も自然同型となる。
+- 恒等射について：$[F]_{CC}$ は任意の $[F]_{CD}$ に対して $[F]_{DD} \circ [F]_{CD} = [F]_{CD}$ および $[F]_{CD} \circ [F]_{CC} = [F]_{CD}$ を満たす。
+
+同様に、括射関手 $P$ による剰余圏 $\mathbf{Cat}/P$ も定義できる。対象は小圏そのものであり、$\mathcal{C}$ から $\mathcal{D}$ への射を
+$$
+[F]^P_{CD} := \{F' : \mathcal{C} \to \mathcal{D} \mid P(F') \text{ と } P(F) \text{ は自然同型}\}
+$$
+で定義する。
+
+**注** 
+任意のF,F' : ${\mathcal C}$→${\mathcal D}$:関手に対して、$\alpha_i=hom(F(i),F'(i))$($i\in{\mathcal C}$)と置くと任意の射$f:i \to j$に対して$ \alpha_i$とその逆射$hom(F'(i),F(i))$は存在し、かつ
+$\alpha_j \circ P(F)(f)=P(F')(f)\circ \alpha_i $が成り立つので、P(F)とP(F')はつねに自然同型となる。
+つまり[F]$^P{_C}$${_D}$は${\mathcal C}$から${\mathcal D}$へのすべての関手を集めた集合Fct(${\mathcal C},{\mathcal D}$)に他なりません。よって$\mathbf {Cat}$ / Pは$\mathbf {Cat}$の括射圏P($\mathbf {Cat}$)=C($\mathbf {Cat}$,{Fct(${\mathcal C},{\mathcal D}$)}${_\mathcal C},{_\mathcal D}_\in$$_{\mathbf {Cat}}$)と同一となる。
+
+
+**命題 4-7**  
+$\mathbf{Cat}/\sim$ は $\mathbf{Cat}/P$ の部分圏となる。
+
+**証明**  
+$\mathbf{Cat}/\sim$ の射の集まりが $\mathbf{Cat}/P$ の射の集まりに包含されるため、$\mathbf{Cat}/\sim$ は $\mathbf{Cat}/P$ の部分圏であると言える。（証明終）
+
+## 命題 4-8
+
+**命題 4-8**  
+強連結な薄い小圏を集めたものを $\mathbf{Sct}$ と書き、その剰余圏 $\mathbf{Sct}/\sim$ を考える。このとき、$\mathbf{Sct}/\sim$ は $\mathbf{Cat}/P$ と圏同値であり、かつ $\mathbf{Cat}/P$ の部分圏とみなせる。
+
+**証明**  
+まず、$\mathbf{Cat}/P$ と $\mathbf{Sct}/\sim$ はそれぞれの射の定義から強連結な薄い圏となる。
+
+関手 $t : \mathbf{Cat}/P \to \mathbf{Sct}/\sim$ を
+- $t(\mathcal{C}) = P(\mathcal{C})$
+- $t([F]^P_{CD}) := [F]_{P(C)P(D)}$
+    
+によって定義する。任意の強連結な薄い圏 $\mathcal{C}$ に対して $t(\mathcal{C}) = P(\mathcal{C}) = \mathcal{C}$ であるので、$t$ は対象の写像として全射、すなわち本質的に全射な関手である。
+
+「薄い圏の考察(3)」の補題 3-1 により、$t$ は圏同値となる。
+
+また$\mathbf{Sct}$ は $\mathbf{Cat}$ の部分類なので $\mathbf{Sct}/\sim$ は $\mathbf{Cat}/\sim$ の部分圏となり、命題 4-7 と合わせると $\mathbf{Sct}/\sim$ は $\mathbf{Cat}/P$ の部分圏とみなせる。（証明終）
