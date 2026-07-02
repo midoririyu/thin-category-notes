@@ -1,0 +1,222 @@
+# 薄い圏の考察 (3)  
+局所的小圏から薄い圏への関手（薄化関手）の性質、およびその自然変換、関手圏
+
+局所小圏 $\mathcal{C}$ から薄い圏 $\mathcal{C}(B,g)$ への関手（いわば**薄化関手** thinning functor）について考えます。
+
+## 命題 3-1
+
+**命題 3-1**  
+局所小圏 $\mathcal{C}$ から薄い圏 $\mathcal{C}(B,g)$ に、関手 $T$ が定義される必要十分条件は、写像 $T: \operatorname{Ob}(\mathcal{C}) \to B$ が定義され、かつ任意の $i,j \in \operatorname{Ob}(\mathcal{C})$ に対して圏 $\mathcal{C}_B$ での射 $g_{T(i)T(j)}$ が存在すること。
+
+**証明**  
+必要性は明らかなので、十分性を示す。
+
+仮定より、任意の $i \in \operatorname{Ob}(\mathcal{C})$ に対してただひとつの $T(i) \in B$ がとれ、かつ任意の $i,j \in \operatorname{Ob}(\mathcal{C})$ に対して $g_{T(i)T(j)}$ がとれる。
+
+そこで圏 $\mathcal{C}$ での射を集めた類を $\operatorname{hom}(\mathcal{C})$ としたとき、対応  
+$$
+T : \operatorname{hom}(\mathcal{C}) \to \operatorname{hom}(\mathcal{C}_B), \quad T(f : i \to j) := g_{T(i)T(j)}
+$$  
+を定義すると、$T$ は写像となっている。
+
+（写像性の証明）  
+$\operatorname{hom}(\mathcal{C})$ において、射 $f_1 : i \to j$ と射 $f_2 : k \to l$ が同じとすると $i=k$ かつ $j=l$ なので、$T(i)=T(k)$ かつ $T(j)=T(l)$。薄い圏での射の一意性より $g_{T(i)T(j)} = g_{T(k)T(l)}$ が成り立つので $T(f_1) = T(f_2)$。
+
+またこのとき $T : \operatorname{hom}(\mathcal{C}) \to \operatorname{hom}(\mathcal{C}_B)$ は演算 $\circ$ を保ち、かつ恒等射を恒等射に移す。
+
+（証明）  
+$$
+T(f_2 : j \to m) \circ T(f_1 : i \to j) = g_{T(j)T(m)} \circ g_{T(i)T(j)} = g_{T(i)T(m)} = T(f_2 \circ f_1 : i \to m)
+$$  
+また  
+$$
+T(f : i \to i) = g_{T(i)T(i)}
+$$  
+（以上より命題 3-1 の証明終）
+
+## 命題 3-2
+
+**命題 3-2**  
+薄い小圏 $\mathcal{C}_A$ から薄い小圏 $\mathcal{C}_B$ への関手 $T$ が定義されている必要十分条件は、前順序集合 $A$ と前順序集合 $B$ のあいだに、単調写像 $T$ が定義されていること。
+
+**注**  
+ここで前順序集合 $A$ と前順序集合 $B$ のあいだに単調写像 $T : A \to B$ が定義されているとは、「$i \leq j$ なる $A$ の要素 $i$ と $j$ に対して $T(i) \leq T(j)$」が成り立つことである。
+
+**証明**  
+「薄い圏の考察(1)」の例5に命題 3-1 を適用すると得られる。（証明終）
+
+## 命題 3-3
+
+**命題 3-3-1**  
+$T$ が忠実関手である必要十分条件は、$\mathcal{C}$ が薄い圏であること。
+
+**命題 3-3-2**  
+$\mathcal{C}$ が強連結ならば $T$ が充満関手。
+
+**（命題 3-3-1 の証明）**  
+（必要性）  
+$T$ が忠実関手であるとは、任意の $i \in \operatorname{Ob}(\mathcal{C})$、任意の $j \in \operatorname{Ob}(\mathcal{C})$ に対して $T(f_1)=T(f_2)$ なる射 $f_1 : i \to j$ と射 $f_2 : i \to j$ がとれたならば $f_1 = f_2$ が成り立つことである。このとき $\mathcal{C}(B,g)$ の薄さより、$T(f_1) = g_{T(i)T(j)} = T(f_2)$ は常に成り立つ。よって $\operatorname{hom}(i,j)$ は常に高々一点集合であり、$\mathcal{C}$ は薄い圏である。
+
+（十分性）背理法で示す。$T$ が忠実関手でないとすると、ある $i \in \operatorname{Ob}(\mathcal{C})$ とある $j \in \operatorname{Ob}(\mathcal{C})$ に対して $T(f_1)=T(f_2)$ だが $f_1 \neq f_2$ なる射 $f_1 : i \to j$ と射 $f_2 : i \to j$ が存在する。このとき $\mathcal{C}$ が薄くない圏となり矛盾する。
+
+（命題 3-3-1 の証明終）
+
+**（命題 3-3-2 の証明）**  
+圏 $\mathcal{C}$ から圏 $\mathcal{C}(B,g)$ への関手 $T$ が充満関手であるとは、任意の $g_{T(i)T(j)}$ に対して、$T(f)=g_{T(i)T(j)}$ となる $f : i \to j$ が存在することである。また、圏 $\mathcal{C}$ が強連結であるとは、任意の $i,j \in \operatorname{Ob}(\mathcal{C})$ に対して $f : i \to j$ なる射 $f$ が存在することである。$\mathcal{C}$ が強連結ならば $T$ が充満関手となることは定義より直接いえる。
+
+（命題 3-3-2 の証明終）
+
+## 補題 3-1
+
+**補題 3-1**  
+局所小圏 $\mathcal{C}$ から薄い圏 $\mathcal{C}(B,g)$ への関手 $T$ は、$\mathcal{C}$ が強連結な薄い圏かつ $T$ が本質的に全射なとき、圏同値となる。
+
+**証明**  
+一般に、圏 $\mathcal{C}$ から圏 $\mathcal{D}$ への関手 $T$ が圏同値である必要十分条件は「$T$ が忠実充満関手かつ本質的に全射であること」として知られている。それに命題 3-3 をあてはめると得られる。（証明終）
+
+## 命題 3-4
+
+**命題 3-4**  
+薄い小圏 $\mathcal{C}_A$ と薄い小圏 $\mathcal{C}_B$ が圏同値である必要十分条件は、前順序集合 $A$ と $B$ のあいだに単調写像 $T:A\to B$ が定義され、以下を満たすこと：
+
+「$T(i) \leq T(j)$ が成り立つ任意の $i \in A$、任意の $j \in A$ に対して $i \leq j$ が成り立つ」かつ「任意の $k \in B$ に対して $k \leq T(i)$ かつ $T(i) \leq k$ なる $i \in A$ が存在する」。
+
+**証明**  
+$T$ が圏同値である必要十分条件が「$T$ が忠実充満関手かつ本質的に全射であること」と命題 3-2、命題 3-3-1 を組み合わせると得られる。（証明終）
+
+**系 3-1**  
+薄い骨格的小圏 $\mathcal{C}_A$ と薄い骨格的小圏 $\mathcal{C}_B$ が圏同値である必要十分条件は、半順序集合 $A$ と半順序集合 $B$ のあいだに全単射な単調写像 $T:A\to B$ が定義されていること。
+
+**証明**  
+命題 3-4 に半順序の条件「$i\leq j$ かつ $j\leq i$ ならば $i=j$」をあてはめると得られる。（証明終）
+
+## 普遍的対象の保存
+
+**命題 3-5**（左普遍的対象）  
+局所小圏 $\mathcal{C}$ から薄い圏 $\mathcal{C}(B,g)$ へと関手 $T$ が定義されているとする。このとき、$\mathcal{C}$ における（左）普遍的対象 $i$ を $T$ によって移した $T(i)$ は、$T(\mathcal{C})$ において（左）普遍的対象になる。特に $T$ が本質的に全射な関手のとき、$T(i)$ は $\mathcal{C}(B,g)$ において（左）普遍的対象になる。
+（証明）
+まず、圏 $\mathcal{C}$ における（左）普遍的対象 $i$ の定義を、「$i$ による $\mathrm{Hom}$ 関手 $h^i = \mathrm{Hom}(i, -)$ と自然同型な関手 $G: \mathcal{C} \to \mathbf{Set}$ が存在し、各対象 $x$ と任意の$v\in G(x)$に対して 射 $f \in \mathrm{Hom}(i, x)$ が一意に存在して$G(f)(u) = v$ となること」とする。（ここで $u$ は $h^i$ の恒等射 $\mathrm{id}_i$ に対応する $G(i)$ の普遍元である）
+この定義に基づいて命題を示す。
+$\mathrm{Hom}(i, x) \neq \emptyset$ なる任意の$x \in \mathrm{Ob}(\mathcal{C})$ をとると、 関手の性質より像 $\mathrm{Hom}(T(i), T(x))$ も空ではない。ここで $T(\mathcal{C})$ の薄さより、この射集合は唯一つの元からなる一点集合となる。そこで
+この一点集合を $G'(T(x))$ と置くことで、関手 $G': T(\mathcal{C}) \to \mathbf{Set}$ を定義する。このとき $G'$ は $T(i)$ による $\mathrm{Hom}$ 関手 $h^{T(i)} = \mathrm{Hom}(T(i), -)$と自然同型となる。
+（証明）仮定より $\mathrm{Hom}$ 関手 $h^i = \mathrm{Hom}(i, -)$ と自然同型な関手 $G: \mathcal{C} \to \mathbf{Set}$ が存在する。すなわち任意の$x \in \mathrm{Ob}(\mathcal{C})$に対して$\mathbf{Set}$での射
+$\alpha_x:Hom(i,x) \to G(x)$が定義され、
+任意の$\mathcal{C}$での射$f:x \to y$に対して
+$\alpha_y \circ h^i(f)=G(f) \circ \alpha_x$が成り立つ。ここで$h^i(f):Hom(i,x) \to Hom(i,y)$の存在が保証されているのでTの関手性より$h^{T(i)}(T(f)):Hom(T(i),T(x)) \to Hom(T(i),T(y))$が存在することに注意する。
+$\alpha'_{T(x)}:Hom(T(i),T(x)) \to G'(T(x))$ とすると
+（実際は、G'の定義より$\alpha'_{T(x)}$は恒等射である）
+$G'(T(f)):G'(T(x)) \to G'(T(y))$は$h^{T(i)}(T(f)):Hom(T(i),T(x)) \to Hom(T(i),T(y))$と同じ射であり
+任意の$\mathcal{C}$での射$f:x \to y$に対して
+$\alpha'_{T(y)} \circ h^{T(i)}(T(f))=G'(T(f)) \circ \alpha'_T(x)$が成り立っている。
+また任意の$x \in \mathrm{Ob}(\mathcal{C})$に対して$\alpha'_{T(x)}$の逆射$G'(T(x)) \to Hom(T(i),T(x))$ も（恒等射として）存在する。よって$G'$は$h^{T(i)}$と自然同型。（証明終）
+　$h^{T(i)}$ の恒等射 $\mathrm{id}_{T(i)}$ に対応する $G'(T(i))$ の普遍元をu'とする。すなわちu'は$\mathrm{id}_{T(i)}$自身。このとき
+$G'(T(f)):Hom(T(i),T(x)) \to Hom(T(i),T(y))$　において
+$G'(f')(u') =f'\circ \mathrm{id}_{T(i)}=f'$ なので
+任意の射 $v'=g_{T(i)T(x)} \in G'(T(x))$ に対して$G'(f')(u') = v'$ を満たす射 $f'$は$v'=g_{T(i)T(x)}$自身であり、
+$T(\mathcal{C})$の薄さより、これは一意である。
+以上より、$T(i)$ は $T(\mathcal{C})$ における（左）普遍的対象である。
+ここで、さらに $T$ が本質的に全射であるとすると、任意の $b \in B$ はある $T(x)$ と同型対象なので$g_{T(x)b}$が存在。Tの関手性より$g_{T(i)T(x)}$が取れて$g_{T(i)b}=g_{T(x)b}\circ g_{T(i)T(x)}$が存在するので、$T(i)$ は $C(B, g)$ 全体においても（左）普遍的対象となる。（命題 3-5の証明終）
+
+注。左普遍的対象の例: 始対象、余直積、余等化子など。
+
+**命題 3-6**（右普遍的対象）  
+局所小圏 $\mathcal{C}$ から薄い圏 $\mathcal{C}(B,g)$ へと関手 $T$ が定義されているとする。ただし、$T$ は本質的に全射な関手であるとする。このとき、$\mathcal{C}$ における（右）普遍的対象 $i$ を $T$ によって移した $T(i)$ は、$\mathcal{C}(B,g)$ において（右）普遍的対象になる。
+（証明）
+圏 $\mathcal{C}$ における（右）普遍的対象 $i$ の定義を、「$i$ による $\mathrm{Hom}$ 関手 $h^i = \mathrm{Hom}(-,i )$ と自然同型な関手 $G: \mathcal{C} \to \mathbf{Set}$ が存在し、各対象 $x$と任意の$v\in G(x)$ に対して $G(f)(u) = v$ となる射 $f \in \mathrm{Hom}(x, i)$ が一意に存在すること」とする。（ここで $u$ は $h^i$ の恒等射 $\mathrm{id}_i$ に対応する $G(i)$ の普遍元である）
+この定義に基づいて命題を示す。
+まずTが本質的に全射な関手とする。このとき、$C(B, g)$ の中の任意の対象 $b$ は $\mathcal{C}$ のある対象 $x$をとってT(x)とbを同型対象とできる。すなわち$g_{bT(x)}$が存在。Tの関手性より$g_{T(x)T(i)}$が存在するので$g_{bT(i)}=g_{T(x)T(i)}\circ g_{bT(x)}$が存在する。
+すなわち$\mathrm{Hom}(b, T(i))$ は空ではない。ここで $T(\mathcal{C})$ の薄さより、この射集合は唯一つの元からなる一点集合となる。そこで
+この一点集合を $G'(b)$ と置くことで、関手 $G': $C(B, g)$ \to \mathbf{Set}$ を定義する。このとき $G'$ は $T(i)$ による $\mathrm{Hom}$ 関手 $h^{T(i)} = \mathrm{Hom}(-, T(i))$と自然同型となる。
+（証明）$\alpha'_b:Hom(b,T(i)) \to G'(b)$ とすると
+（実際は、G'の定義より$\alpha'_{b}$は恒等射である）
+任意の$b_1,b_2\in B$に対して
+$G'(g_{b_1b_2}):G'(b_1) \to G'(b_2)$は$h^{T(i)}(g_{b_1b_2}):Hom(b_1,T(i)) \to Hom(b_2,T(i))$と同じ射であり
+$\alpha'_{b_2} \circ h^{T(i)}(g_{b_1b_2})=G'(g_{b_1b_2}) \circ \alpha'_{b_1}$が成り立っている。
+また任意の$\alpha'_{b}$に対して逆射$G'(b) \to Hom(b,T(i))$ も（恒等射として）存在する。よって$G'$は$h^{T(i)}$と自然同型。（証明終）
+　$h^{T(i)}$ の恒等射 $\mathrm{id}_{T(i)}$ に対応する $G'(T(i))$ の普遍元をu'とする。すなわちu'は$\mathrm{id}_{T(i)}$自身。このとき
+$G'(g_{b_1b_2}):Hom(b_1,T(i)) \to Hom(b_2,T(i))$　において$G'(f')(u') =f'\circ \mathrm{id}_{T(i)}=f'$ なので
+任意の射 $v'=g_{bT(i)} \in G'(g_{bT(i)})$ に対して $G'(f')(u') = v'$ を満たす射 $f'$は$v'=g_{bT(i)}$自身であり、
+$C(B,g)$の薄さより、これは一意である。
+以上より、$T(i)$ は $C(B,g)$における（右）普遍的対象である。(証明終)
+
+注。右普遍的対象の例: 終対象、直積、等化子など。
+
+**命題 3-7**  
+局所小圏 $\mathcal{C}$ から薄い圏 $\mathcal{C}(B,g)$ へと関手 $T$ が定義されているとする。ただし、$T$ は本質的に全射な関手であるとする。このとき、$\mathcal{C}$ における普遍的対象 $i$ を $T$ によって移した $T(i)$ は、$\mathcal{C}(B,g)$ において普遍的対象になる。
+
+## 随伴関手
+
+**命題 3-8**  
+薄い圏 $\mathcal{C}_A = \mathcal{C}(A, f)$ と $\mathcal{C}_B = \mathcal{C}(B, g)$ の間に、関手 $T: \mathcal{C}_A \to \mathcal{C}_B$ が定義されているとする。ただし対象間の写像 $T: A \to B$ は単射であるとする。
+
+このとき、像 $T(\mathcal{C}_A)$ から $\mathcal{C}_A$ への対応を  
+対象については $T'(T(i)) = i,$ 射については $T'(g_{T(i)T(j)}) = f_{ij}$  
+で定めると、これは関手となり、$T$ は $T'$ の左随伴関手（$T \dashv T'$）となる。
+
+(証明)
+まず、関手 $T: \mathcal{C} \to \mathcal{D}$ が $T': \mathcal{D} \to \mathcal{C}$ の左随伴関手であることの定義を、随伴の単位（普遍射）を用いて以下のように与える。
+「任意の対象 $i \in \mathrm{Ob}(\mathcal{C})$ に対して、次の2条件を満たすペア $(T(i), \eta_i)$ が存在すること。
+1.$\eta_i: i \to T'(T(i))$ は $\mathcal{C}$ における射である。
+2.任意の対象 $k \in \mathrm{Ob}(\mathcal{D})$ と、任意の射 $f: i \to T'(k)$ に対して、$\mathcal{D}$ における射 $g: T(i) \to k$ がただ一つ存在して、$f = T'(g) \circ \eta_i$ を満たす。」
+本命題において、$\mathcal{C} = C_A, \mathcal{D} = T(C_A)$ とし、上記定義に基づき証明を行う。
+1. 随伴の単位 $\eta$ の存在
+任意の $i \in A$ に対して、$T$ の対象に関する単射性より $T'(T(i)) = i$ は一意に定まる。
+このとき、$\eta_i: i \to T'(T(i))$ は恒等射 $\mathrm{id}_i: i \to i$ として与えられる。$C_A$ は圏であるため恒等射は必ず存在し、これは $C_A$ の射である。
+2. 普遍性（一意分解性）の確認
+任意の $k \in \mathrm{Ob}(T(C_A))$ と、$C_A$ の射 $f_{i T'(k)}$ を考える。
+像の定義より、$k = T(j)$ となる $j \in A$ が存在し、$T'$ の定義から $T'(k) = j$ である。したがって $f_{i T'(k)}=f_{ij}$ である。
+このとき、射 $g_{T(i)T(j)}$ が $T(C_A)$ に存在すれば、関手 $T'$ の射に関する定義 $T'(g_{T(i)T(j)}) = f_{ij}$ より、
+$$T'(g) \circ \eta_i = f_{ij} \circ \mathrm{id}_i = f_{ij}$$
+が成り立つ。
+3. 一意性の確認
+射 $g_{T(i)k}$ の一意性は、 $T(C_A)$ が薄い圏であることから成立する。
+以上より、恒等射を単位とする随伴関係 $T \dashv T'$ が示された。
+（証明終）
+
+**注**  
+上命題において、$\mathcal{C}_A$ と $\mathcal{C}_B$ が骨格的な小圏（$A$ と $B$ が半順序集合）のとき、$T$ と $T'$ はガロア接続になっている。
+
+## 自然変換と関手圏
+
+このとき、任意の $i \in \operatorname{Ob}(\mathcal{C})$ に対して
+$$
+\tau_{T,T'} := \{\tau_i := g_{T(i)T'(i)}\}_{i \in \operatorname{Ob}(\mathcal{C})}
+$$
+は関手 $T$ から関手 $T'$ への**自然変換**であり、各 $\tau_i$ はその成分（component）となっている。また、逆に関手 $T$ から関手 $T'$ への自然変換は（存在するなら）これのみである。
+
+**証明**  
+任意の $i \in \operatorname{Ob}(\mathcal{C})$、任意の $j \in \operatorname{Ob}(\mathcal{C})$ に対して、
+$$
+T'(f_{ij}) \circ g_{kl} = g_{mn} \circ T(f_{ij})
+$$
+が成り立つことと
+$$
+g_{T'(i)T'(j)} \circ g_{kl} = g_{mn} \circ g_{T(i)T(j)}
+$$
+が成り立つことは同値であり、さらに
+$$
+k = T(i),\ l = T'(i),\ m = T(j),\ n = T'(j)
+$$
+とも同値である。よって
+$$
+g_{kl} = \tau_i \quad \text{かつ} \quad g_{mn} = \tau_j
+$$
+が成り立つことと同値である。（証明終）
+
+$T$ から $T'$ への自然変換全体を $\operatorname{Nat}(T, T')$ で表すと、
+$$
+\operatorname{Nat}(T, T') = \{\tau_{T,T'}\}
+$$
+となる。
+
+また各 $\tau_i = g_{T(i)T'(i)}$ が逆射 $g_{T'(i)T(i)}$ を持つとき、$\tau_{T,T'}$ は**自然同型**となり、$T$ と $T'$ は関手として同型となる。
+
+$\tau_{T,T'}$ は関手 $T$ と $T'$ の二項演算とみなせるので、局所小圏 $\mathcal{C}$ から薄い圏 $\mathcal{C}(B,g)$ への関手をすべて集めたものを $\Phi$ と置くと、薄い圏
+$$
+\mathcal{C}(\Phi, \{\tau_{T,T'}\}_{T,T' \in \Phi})
+$$
+が考えられる。射の合成は
+$$
+\tau_{T',T''} \circ \tau_{T,T'} = \tau_{T,T''}
+$$
+で定義される。これは、局所小圏 $\mathcal{C}$ から薄い圏 $\mathcal{C}(B,g)$ への**関手圏** $[\mathcal{C}, \mathcal{C}(B,g)]$ そのものである。
