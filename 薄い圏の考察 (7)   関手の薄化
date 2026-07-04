@@ -1,0 +1,127 @@
+# 薄い圏の考察 (7)  
+関手の薄化
+
+以下の圏と関手が定義されているとする。
+
+- 局所小圏 $\mathcal{C}$ および $\mathcal{D}$
+- 薄い圏 $C_A = \mathcal{C}(A, f)$ および $C_B = \mathcal{C}(B, g)$
+- 関手 $F: \mathcal{C} \to \mathcal{D}$
+- 薄い圏への関手 $T_1: \mathcal{C} \to C_A$ および $T_2: \mathcal{D} \to C_B$
+
+このとき $T = (T_1, T_2)$ として、関手 $T(F): T_1(\mathcal{C}) \to T_2(\mathcal{D})$ を以下で定める。
+
+**対象の対応**  
+$\mathcal{C}$での任意の対象 $i$ に対して
+$$
+T(F)(T_1(i)) := T_2(F(i)).
+$$
+
+**射の対応**  
+$\mathcal{C}$での任意の射 $p : i \to j$ に対して
+$$
+T(F)(f_{T_1(i)T_1(j)}) := g_{T_2(F(i))T_2(F(j))}.
+$$
+
+$T(F)$ が関手となることは「薄い圏の考察(3)」の命題 3-1 により保証される。また $T(F)$ は対象の写像として全射なので**本質的に全射**な関手となり、
+$$
+T(F) \circ T_1 = T_2 \circ F
+$$
+を満たす。
+
+```tikzcd
+\mathcal{C} \ar[r, "F"] \ar[d, "T_1"] & \mathcal{D} \ar[d, "T_2"] \\
+T_1(\mathcal{C}) \ar[r, "T(F)"] & T_2(\mathcal{D})
+
+## 例：括射関手による薄化
+
+局所小圏 $\mathcal{C}$ と $\mathcal{D}$ の間に定まる関手 $F: \mathcal{C} \to \mathcal{D}$ に対して、「薄い圏の考察(4)」で定義した括射関手
+$$
+P_\mathcal{C} : \mathcal{C} \to P(\mathcal{C}), \quad P_\mathcal{D} : \mathcal{D} \to P(\mathcal{D})
+$$
+によって $P = (P_\mathcal{C}, P_\mathcal{D})$ と置くと、$P$ によって $F$ を薄くした関手
+$$
+P(F) : P(\mathcal{C}) \to P(\mathcal{D})
+$$
+は
+$$
+P(F)(i) = F(i),\quad P(F)(\operatorname{hom}_\mathcal{C}(i,j)) = \operatorname{hom}_\mathcal{D}(F(i), F(j))
+$$
+（$i,j \in \operatorname{Ob}(\mathcal{C})$）を満たす。
+
+$P(\mathcal{C})$ は強連結な圏なので「薄い圏の考察(3)」の補題 3-1 より、$P(F)$ は（$F$ の取り方に関わらず常に）圏同値となる。
+
+特に $\mathcal{D}$ が薄い圏のとき、「薄い圏の考察(4)」の命題（括射関手 $P$ の普遍性）より、薄化関手 $F: \mathcal{C} \to \mathcal{D}$ に対し、以下を満たす一意な関手 $\tilde{F} : P(\mathcal{C}) \to \mathcal{D}$ が存在する。
+$$
+F = \tilde{F} \circ P_\mathcal{C}.
+$$
+このとき各関手の定義域と余域を見ると
+$$
+P(F) = \tilde{F} \circ P_\mathcal{D}
+$$
+が成立する。
+
+\mathcal{C} \ar[r, "F"] \ar[d, "P_\mathcal{C}"] & \mathcal{D} \ar[d, "P_\mathcal{D}"] \\
+P(\mathcal{C}) \ar[r, "P(F)"] \ar[ur, "\tilde{F}"] & P(\mathcal{D})
+
+## $T(F)$ の一般的な性質
+
+**命題 7-1**  
+$F$ が圏同値ならば、$T(F)$ は圏同値である。
+
+**証明**  
+仮定より $F$ は充満関手である。よって任意の $i,j \in \operatorname{Ob}(\mathcal{C})$ に対して $\mathcal{C}$ での射 $p : i \to j$ が存在して $\mathcal{D}$ での射 $F(i) \to F(j)$ を $F(p)$ と表せる。
+
+このとき任意の $i,j \in \operatorname{Ob}(\mathcal{C})$ に対して
+$$
+g_{T_2(F(i))T_2(F(j))} = T_2(F(p)) = (T_2 \circ F)(p) = (T(F) \circ T_1)(p) = T(F)(T_1(p))
+$$
+と表せるので、$T(F)$ は充満関手である。よって圏同値となる。（証明終）
+
+**命題 7-2**  
+$F$ が（左）随伴関手ならば、$T(F)$ も（左）随伴関手である。
+
+**証明**  
+関手 $F: \mathcal{C} \to \mathcal{D}$ が $G: \mathcal{D} \to \mathcal{C}$ の左随伴関手であるとすると、任意の対象 $i \in \operatorname{Ob}(\mathcal{C})$ に対して、次の2条件を満たすペア $(F(i), \eta_i)$ が存在する。
+
+1. $\eta_i : i \to G(F(i))$ は $\mathcal{C}$ における射である。
+2. 任意の対象 $k \in \operatorname{Ob}(\mathcal{D})$ と、任意の射 $p : i \to G(k)$ に対して、$\mathcal{D}$ における射 $q : F(i) \to k$ がただ一つ存在して、$p = G(q) \circ \eta_i$ を満たす。
+
+以下、$T' = (T_2, T_1)$ と置いたとき $T(F) : T_1(\mathcal{C}) \to T_2(\mathcal{D})$ が $T'(G) : T_2(\mathcal{D}) \to T_1(\mathcal{C})$ の左随伴となることを示す。
+
+1. $T_1(\mathcal{C})$ での任意の対象 $T_1(i)$ に対し
+   $$
+   \bar{\eta}_{T_1(i)} := T_1(\eta_i) : T_1(i) \to T_1(G(F(i)))
+   $$
+   によって $\bar{\eta}_{T_1(i)}$ を定める。ここで $T_1(G(F(i))) = T'(G)(T_2(F(i))) = T'(G)(T(F)(T_1(i)))$ より $\bar{\eta}_{T_1(i)}$ は $T_1(\mathcal{C})$ における射 $T_1(i) \to T'(G)(T(F)(T_1(i)))$ となる。
+
+2. $T_2(\mathcal{D})$ における任意の対象 $T_2(k)$ と、任意の射 $\bar{p} : T_1(i) \to T'(G)(T_2(k))$ を考える。$T_2(\mathcal{D})$ において、射 $\bar{q} : T(F)(T_1(i)) \to T_2(k)$ が一意に存在することを以下に示す。
+
+   **存在性**：仮定より $\mathcal{D}$ において $q : F(i) \to k$ が存在する。これを $T_2$ で送った $T_2(\mathcal{D})$ での射 $g_{T_2(F(i)), T_2(k)}$ を $\bar{q}$ とする。
+
+   **可換性**：$T_1(\mathcal{C})$ において、射の合成 $\bar{p}$ と $T'(G)(\bar{q}) \circ \bar{\eta}_{T_1(i)}$ を比較する。薄い圏における射の一意性より、始点（定義域）と終点（余域）が一致する射は等しい。両者の始点は $T_1(i)$、終点は $T'(G)(T_2(k))$ で一致するため、
+   $$
+   \bar{p} = T'(G)(\bar{q}) \circ \bar{\eta}_{T_1(i)}
+   $$
+   が成立する。
+
+3. **一意性**：$\bar{q}$ の一意性は、$T_2(\mathcal{D})$ が薄い圏であることから直ちに従う。
+
+以上より、誘導関手のペア $(T(F), T'(G))$ は随伴関係 $T(F) \dashv T'(G)$ を満たす。（証明終）
+
+## 命題 7-3
+
+**命題 7-3**  
+$F$ と $F'$ が（自然）同型な関手ならば、$T(F)$ と $T(F')$ も（自然）同型な関手となる。
+
+**証明**  
+$F$ と $F'$ が（自然）同型な関手だとすると、$\mathcal{C}$ での任意の対象 $i$ に対して $\alpha_i : F(i) \to F'(i)$ とその逆射 $\alpha'_i : F'(i) \to F(i)$ がとれて、$\mathcal{C}$ での任意の射 $f : i \to j$ に対して
+$$
+\alpha_j \circ F(f) = F'(f) \circ \alpha_i
+$$
+が成立する。
+
+ここで $T(\alpha_i) : T_2(F(i)) \to T_2(F'(i))$ とすると $T(\alpha'_i) : T_2(F'(i)) \to T_2(F(i))$ はその逆射であり、$T_2$ の関手性より共に存在する。また
+$$
+T(\alpha_j) \circ T(F(f)) = T(F'(f)) \circ T(\alpha_i)
+$$
+が成立する。これは、$T(F)$ と $T(F')$ が（自然）同型な関手であることを示している。（証明終）
