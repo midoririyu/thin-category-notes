@@ -1,0 +1,116 @@
+# Thin Categories (4)  
+Packed Arrows Functors, Strongly Connected Thin Categories, and Quotient Categories
+
+## Definition of the Packed Arrows Functor
+
+**Definition**  
+Let $\mathcal{C}$ be a locally small category. There exists a functor $P$ between $\mathcal{C}$ and the strongly connected thin category $\mathcal{C}(\operatorname{Ob}(\mathcal{C}), h)$ from Example 4 in "Thin Categories (1)", defined by $P(i) := i$ and $P(f : i \to j) := h_{ij} = \operatorname{hom}(i,j)$ for $i,j \in \operatorname{Ob}(\mathcal{C})$. That $P$ is a functor follows from Proposition 3-1 in "Thin Categories (3)". Moreover, $P$ is the identity on objects (hence surjective), so it is an **essentially surjective** functor.
+
+Henceforth, we call this the **packed arrows functor** (in this paper only), and denote the category $\mathcal{C}(\operatorname{Ob}(\mathcal{C}), h)$ by $P(\mathcal{C})$, calling it the **packed arrows category** of $\mathcal{C}$.
+
+## Proposition 4-1
+
+**Proposition 4-1**  
+The packed arrows functor $P$ satisfies the following:
+
+1. $P$ is full if and only if the locally small category $\mathcal{C}$ is strongly connected.
+2. $P$ is faithful if and only if the locally small category $\mathcal{C}$ is thin.
+
+**Proof**  
+1. $P$ is full $\iff$ for every $\operatorname{hom}(i,j)$ there exists $f : i \to j$ $\iff$ there is a morphism between any pair of objects $\iff$ $\mathcal{C}$ is strongly connected.  
+2. $P$ is faithful $\iff$ every $\operatorname{hom}(i,j)$ is at most a singleton $\iff$ $\mathcal{C}$ is thin.
+
+(Proof complete)
+
+## Proposition 4-2
+
+**Proposition 4-2**  
+For a locally small category $\mathcal{C}$, $\mathcal{C}$ is equivalent to $P(\mathcal{C})$ if and only if $\mathcal{C}$ is a strongly connected thin category.
+
+**Proof**  
+In general, a functor is an equivalence if and only if it is fully faithful and essentially surjective. Since $P$ is essentially surjective, by Proposition 4-1 it is fully faithful precisely when $\mathcal{C}$ is strongly connected and thin. Moreover, since $P$ is the identity on objects (a bijection), the equivalence strengthens to an isomorphism of categories. (Proof complete)
+
+## Proposition 4-3
+
+**Proposition 4-3**  
+If locally small categories $\mathcal{C}$ and $\mathcal{D}$ are equivalent, then their packed arrows categories $P(\mathcal{C})$ and $P(\mathcal{D})$ are also equivalent.
+
+**Proof**  
+Let $F : \mathcal{C} \to \mathcal{D}$ be a functor. Then there is an induced functor $P(F) : P(\mathcal{C}) \to P(\mathcal{D})$ defined by $P(F)(i) := F(i)$ and $P(F)(h_{ij}) := \operatorname{hom}(F(i), F(j))$ (by Proposition 3-1 in "Thin Categories (3)"). If $F$ is an equivalence, then $P(\mathcal{C})$ is strongly connected and thin, and $P(F)$ is essentially surjective, so by Lemma 3-1, $P(F)$ is an equivalence. (Proof complete)
+
+## Proposition 4-4
+
+**Proposition 4-4**  
+If $i$ is a universal object in the locally small category $\mathcal{C}$, then $P(i) = i$ is also a universal object in $P(\mathcal{C})$.
+
+**Proof**  
+This follows by applying the propositions on universal objects in "Thin Categories (3)" to the fact that $P$ is an essentially surjective functor to a thin category. (Proof complete)
+
+## Proposition 4-5 (Universal Property of the Packed Arrows Functor)
+
+**Proposition 4-5**  
+Let $\mathcal{C}$ be a locally small category and $\mathcal{D}$ a thin category. For any thinning functor $F : \mathcal{C} \to \mathcal{D}$, there exists a unique functor $\tilde{F} : P(\mathcal{C}) \to \mathcal{D}$ such that
+$$
+F = \tilde{F} \circ P.
+$$
+In particular, if $F$ is essentially surjective, then $\tilde{F}$ is an equivalence.
+
+**Proof**  
+1. **On objects**: Since $\operatorname{Ob}(P(\mathcal{C})) = \operatorname{Ob}(\mathcal{C})$, define $\tilde{F}(i) := F(i)$.  
+2. **On morphisms**: For a morphism $h_{ij} = \operatorname{hom}_{\mathcal{C}}(i,j)$ in $P(\mathcal{C})$, define $\tilde{F}(h_{ij}) := g_{F(i)F(j)}$ (unique because $\mathcal{D}$ is thin). That $\tilde{F}$ is a functor follows from Proposition 3-1.  
+3. **Factorization and uniqueness**: $(\tilde{F} \circ P)(f) = \tilde{F}(h_{ij}) = g_{F(i)F(j)} = F(f)$. Uniqueness follows from the uniqueness of morphisms in $\mathcal{D}$.
+
+If $F$ is essentially surjective, then so is $\tilde{F}$. Since $P(\mathcal{C})$ is strongly connected and thin, $\tilde{F}$ is an equivalence by Lemma 3-1. (Proof complete)
+
+## Quotient Categories
+
+Let $\mathbf{CAT}$ be the collection of all locally small categories, and write $\mathcal{C} \sim \mathcal{D}$ for equivalence. This is an equivalence relation, yielding the quotient $\mathbf{CAT}/\sim$.
+
+Similarly, using the packed arrows functor $P$, we define the relation $\mathcal{C} \ P\ \mathcal{D}$ by $P(\mathcal{C}) \sim P(\mathcal{D})$, yielding the quotient $\mathbf{CAT}/P$.
+
+**Proposition 4-6**  
+$\mathbf{CAT}/\sim$ is a subclass (finer partition) of $\mathbf{CAT}/P$.
+
+**Proof**  
+By Proposition 4-3, the structure of $\mathbf{CAT}/\sim$ naturally embeds into the coarser quotient $\mathbf{CAT}/P$. (Proof complete)
+
+---
+
+### Quotient Categories of Small Categories
+
+Let $\mathbf{Cat}$ be the collection of all small categories, and consider its quotient $\mathbf{Cat}/\sim$. Objects are small categories themselves, and a morphism from $\mathcal{C}$ to $\mathcal{D}$ is an equivalence class of functors
+$$
+[F]_{CD} := \{F' : \mathcal{C} \to \mathcal{D} \mid F' \text{ is naturally isomorphic to } F\}.
+$$
+
+**Note**  
+This is well-defined as a category because:
+- Composition preserves natural isomorphism.
+- Identity classes act as identities.
+
+Similarly, we can define the packed arrows quotient $\mathbf{Cat}/P$, where morphisms are classes
+$$
+[F]^P_{CD} := \{F' : \mathcal{C} \to \mathcal{D} \mid P(F') \text{ is naturally isomorphic to } P(F)\}.
+$$
+
+In this case, for any two functors $F, F' : \mathcal{C} \to \mathcal{D}$, the family $\alpha_i = \operatorname{hom}(F(i), F'(i))$ shows that $P(F)$ and $P(F')$ are always naturally isomorphic. Thus $[F]^P_{CD}$ is simply the set of **all** functors from $\mathcal{C}$ to $\mathcal{D}$. Therefore, $\mathbf{Cat}/P$ coincides with the packed arrows category $P(\mathbf{Cat})$.
+
+**Proposition 4-7**  
+$\mathbf{Cat}/\sim$ is a subcategory of $\mathbf{Cat}/P$.
+
+**Proof**  
+The morphisms of $\mathbf{Cat}/\sim$ form a subclass of those of $\mathbf{Cat}/P$. (Proof complete)
+
+## Proposition 4-8
+
+**Proposition 4-8**  
+Let $\mathbf{Sct}$ be the collection of all strongly connected thin small categories, and let $\mathbf{Sct}/\sim$ be its quotient. Then $\mathbf{Sct}/\sim$ is equivalent to $\mathbf{Cat}/P$, and can be viewed as a subcategory of it.
+
+**Proof**  
+Both $\mathbf{Cat}/P$ and $\mathbf{Sct}/\sim$ are strongly connected thin categories by construction.
+
+Define a functor $t : \mathbf{Cat}/P \to \mathbf{Sct}/\sim$ by $t(\mathcal{C}) = P(\mathcal{C})$ and $t([F]^P_{CD}) = [F]_{P(C)P(D)}$. For any strongly connected thin category $\mathcal{C}$, we have $t(\mathcal{C}) = P(\mathcal{C}) = \mathcal{C}$, so $t$ is essentially surjective on objects.
+
+By Lemma 3-1 in "Thin Categories (3)", $t$ is an equivalence.
+
+Since $\mathbf{Sct}$ is a subclass of $\mathbf{Cat}$, $\mathbf{Sct}/\sim$ is a subcategory of $\mathbf{Cat}/\sim$, and combined with Proposition 4-7, it is a subcategory of $\mathbf{Cat}/P$. (Proof complete)
