@@ -1,0 +1,52 @@
+# 薄い圏の考察 (12)  
+一般の圏における普遍的対象を求める問題を（豊穣化されたモノイダル）薄圏における最適化問題に置き換える
+
+「薄い圏の考察(1)」の例5にならって、非負実数および無限大 $\infty$ を対象とし、通常の大小関係 $\geq$（ただし任意の非負実数 $r$ に対して $\infty \geq r$ かつ $\infty \geq \infty$ とする）を射とする薄い圏 $\mathcal{C}([0,\infty], \geq)$ を考える。
+
+## 距離による薄化関手
+
+ここで、局所的小圏 $\mathcal{C}$ から薄い圏 $\mathcal{C}([0,\infty], \geq)$ への関手 $T$ を考える。各対象 $i,j \in \operatorname{Ob}(\mathcal{C})$ に対し、射 $T(i) \geq T(j)$ の評価値（距離）$d_{T(i)T(j)} \in [0,\infty]$ が一意に定まり、以下の条件を満たすものとする。
+
+1. $d_{T(i)T(j)} < \infty$ （$\operatorname{hom}_{\mathcal{C}}(i,j) \neq \emptyset$ のとき）
+2. $d_{T(i)T(j)} = \infty$ （$\operatorname{hom}_{\mathcal{C}}(i,j) = \emptyset$ のとき）
+3. $d_{T(i)T(i)} = 0$
+4. $\mathcal{C}$ における射の合成に対し、$d_{T(i)T(j)} + d_{T(j)T(k)} \geq d_{T(i)T(k)}$ が成り立つ。
+
+特に $\mathcal{C}$ が小圏（$\operatorname{Ob}(\mathcal{C})$ が集合）のとき、この関手 $T$ によって構成される薄い圏 $\mathcal{C}(\operatorname{Ob}(\mathcal{C}), \{\geq_{T(i)T(j)}\}_{i,j \in \operatorname{Ob}(\mathcal{C})})$ は、Lawvereの一般距離空間（Generalized Metric Space）の構造を持つ。
+
+ここでさらに、$\mathcal{C}$ の対象を恒等写像で写し、射を上記の（距離をもつ）関係に写す関手
+$$
+T' : \mathcal{C} \to \mathcal{C}(\operatorname{Ob}(\mathcal{C}), \{\geq_{T(i)T(j)}\}_{i,j \in \operatorname{Ob}(\mathcal{C})})
+$$
+を定義する。$T'$ が関手となることは「薄い圏の考察(3)」の命題 3-1 よりわかる。$T'$ は対象について全射な写像なので、関手として本質的に全射となり、「薄い圏の考察(3)」の普遍的対象に関する命題により、$\mathcal{C}$ における普遍的対象（始対象・終対象など）は $T'$ によって移された先でも普遍的対象となる。
+
+（$T'$ は $\mathcal{C}$ における射の有無を、距離が有限か無限かという形で判断できることに注意。）
+
+薄い圏における普遍的対象を求めることは、順序関係における上限・下限、すなわち「最大距離・最小距離を与える対象」を求める問題に帰着されるので、圏 $\mathcal{C}$ における抽象的な普遍性問題を、距離空間における最適化問題へと遷移させることが可能となる。
+
+---
+
+この議論は $\mathcal{C}([0,\infty], \leq)$ に対しても同様に展開できる。ただし条件4が
+$$
+4'. \quad d_{T(i)T(j)} \wedge d_{T(j)T(k)} \leq d_{T(i)T(k)}
+$$
+（$\wedge$ は最小値）となる。いずれにせよ最短経路や最大流・最大容量を求める問題になる。
+
+## 確率版
+
+上議論の亜種として、局所的小圏 $\mathcal{C}$ から薄い圏 $\mathcal{C}([0,1], \geq)$ への関手 $T$ を考える。各対象 $i,j \in \operatorname{Ob}(\mathcal{C})$ に対し、射 $T(i) \geq T(j)$ の評価値（確率）を $p_{T(i)T(j)} \in [0,1]$ と表すとき、これは以下の条件を満たすものとする。
+
+1. $p_{T(i)T(j)} > 0$ （$\operatorname{hom}_{\mathcal{C}}(i,j) \neq \emptyset$ のとき）
+2. $p_{T(i)T(j)} = 0$ （$\operatorname{hom}_{\mathcal{C}}(i,j) = \emptyset$ のとき）
+3. $p_{T(i)T(i)} = 1$
+4. $\mathcal{C}$ における射の合成に対し、$p_{T(i)T(j)} \cdot p_{T(j)T(k)} \leq p_{T(i)T(k)}$ が成り立つ（$\cdot$ は通常の積）。
+
+この設定で薄い圏 $\mathcal{C}(\operatorname{Ob}(\mathcal{C}), \{\geq_{T(i)T(j)}\}_{i,j \in \operatorname{Ob}(\mathcal{C})})$ を定義して、そこでの上限・下限を考えることもできる。これは確率の圏における極値問題（通信やシステムの信頼性・維持可能性の最大最小化など）になる。
+
+---
+
+上記の方法は、$T'(i)$ が $T'(\mathcal{C})$ における普遍的対象であっても $i$ が $\mathcal{C}$ において普遍的対象になるとは限らないので、あくまで普遍的対象の**候補**を挙げられるだけだが、うまく $T'$ をとることが出来たら実用に耐える。
+
+ラグランジェの未定係数法にしろ、ホモロジーの計算にしろ、この $T'$ をうまくとろうとする人間の工夫の歴史的成果といえる。
+
+人間そしてAIも、ぶ厚い圏をそのまま扱うことは一般にできないので、最終的には扱いやすい薄い圏に写してから演算を行うしかない。
