@@ -18,7 +18,7 @@ The hallmark of this study is its focus on the unique property of thin categorie
 In particular, the proposition that "if a Kan extension is possible in a general category, its image under the packed arrows functor in a thin category is also Kan-extendable" (Article 13) is presented as a potentially beneficial tool for mathematicians and system architects as a simplified Kan extensibility check.
 
 Article List
-(1) Rephrasing thin categories and illustrative examples.(./Thin Categories(1).md)
+(1) Rephrasing thin categories and illustrative examples.(./Thin_Categories(1).md)
 (2) Subcategories of thin categories.(./Thin Categories(2).md)
 (3) Properties of the thinning functor.(./Thin Categories(3).md)
 (4) The packed arrows functor and strongly connected thin categories.(./Thin Categories(4).md)
