@@ -18,20 +18,22 @@ The hallmark of this study is its focus on the unique property of thin categorie
 In particular, the proposition that "if a Kan extension is possible in a general category, its image under the packed arrows functor in a thin category is also Kan-extendable" (Article 13) is presented as a potentially beneficial tool for mathematicians and system architects as a simplified Kan extensibility check.
 
 Article List
-(1) Rephrasing thin categories and illustrative examples.(../Thin Categories(1).md)
-(2) Subcategories of thin categories.(./Thin Categories(2).md)
-(3) Properties of the thinning functor.(./Thin Categories(3).md)
-(4) The packed arrows functor and strongly connected thin categories.(./Thin Categories(4).md)
-(5) Standard construction methods for thin categories.(./Thin Categories(5).md)
-(6) New thin categories formed by collections of morphisms.(./Thin Categories(6).md)
-(7) Thinning of functors.(./Thin Categories(7).md)
-(9) Construction of skeletal thin categories.(./Thin Categories(9).md)
-(10) Connected components of categories.(./Thin Categories(10).md)
-(11) Quotient Categories via Thinning Functors(./Thin Category(11).md)
-(12) Reducing the Problem of Finding Universal Objects in General Categories to Optimization Problems in (Enriched Monoidal) Thin Categories(./Thin Category(12).md)
-(13) Left Kan extensions targeting thin categories.(./Thin Category(13).md)
-(14) Coends in thin categories and their properties.(./Thin Category(14).md)
 
+- [ (1) Reformulation and Examples ](./Thin%20Categories%20(1).md)
+- [ (2) Subcategories ](./Thin%20Categories%20(2).md)
+- [ (3) Thinning Functors ](./Thin%20Categories%20(3).md)
+- [ (4) Packed Arrows Functor and Quotients ](./Thin%20Categories%20(4).md)
+- [ (5) Standard Thinning Construction ](./Thin%20Categories%20(5).md)
+- [ (6) Relations on Morphism Collections ](./Thin%20Categories%20(6).md)
+- [ (7) Thinning of Functors ](./Thin%20Categories%20(7).md)
+- [ (9) Construction of Skeletal Thin Categories ](./Thin%20Categories%20(9).md)
+- [ (10) Connected Components ](./Thin%20Categories%20(10).md)
+- [ (11) Quotient Categories via Thinning Functors ](./Thin%20Categories%20(11).md)
+- [ (12) Universal Objects as Optimization ](./Thin%20Categories%20(12).md)
+- [ (13) Kan Extensions Targeting Thin Categories ](./Thin%20Categories%20(13).md)
+- [ (14) Coends and Ends in Thin Categories ](./Thin%20Categories%20(14).md)
+
+---
 (Based on articles originally published on Mathlog. )
 
 Notes
