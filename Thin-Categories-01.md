@@ -22,21 +22,14 @@ Let $A$ be a class. For any $i \in A$ and any $j \in A$, there is at most one th
 
 1. If $A$ is non-empty, then for every $i \in A$, $f_{ii}$ exists.
 2. For any $i,j,k \in A$, if $f_{ij}$ and $f_{jk}$ exist, then $f_{ik}$ necessarily exists, and the operation $\circ$ is defined by
-$$
-   f_{jk} \circ f_{ij} := f_{ik}
-$$
+$f_{jk} \circ f_{ij} := f_{ik}.$
    
 In this definition, it can be shown that the operation $\circ$ is associative.
 
 **Proof**  
 
-\begin{aligned}
-(f_{kl} \circ f_{jk}) \circ f_{ij} 
-= f_{jl} \circ f_{ij} 
-= f_{il} 
-= f_{kl} \circ f_{ik} 
-= f_{kl} \circ (f_{jk} \circ f_{ij})
-\end{aligned}
+$(f_{kl} \circ f_{jk}) \circ f_{ij} = f_{jl} \circ f_{ij} = f_{il} = f_{kl} \circ f_{ik} 
+= f_{kl} \circ (f_{jk} \circ f_{ij})$.
 (Proof complete)
 
 Furthermore, for any $i,j \in A$,
@@ -45,36 +38,32 @@ $f_{ij} \circ f_{ii} = f_{ij} = f_{jj} \circ f_{ij}$ holds, so $f_{ii}$ can be r
 Thus, $f_{ij}$ satisfies the definition of a morphism, and we can define a thin category with objects $i \in A$ and morphisms $f_{ij}$.
 
 **Converse**  
-Conversely, in any thin category $\mathcal{C}$, there is at most one morphism $f : i \to j$ for each pair of objects $i,j$. Therefore, such a morphism (when it exists) can be understood as the binary operation $f_{ij}$. This operation satisfies the two conditions in Definition 1.
+Conversely, in any thin category $\mathcal{C}$, there is at most one morphism $f : i \to j$ for each pair of objects $i,j$. Therefore, such a morphism (when it exists) can be understood as the binary operation $f_{ij}$. This operation satisfies the two conditions in the definition above.
 
 That is, the structure defined above is a **reformulation of thin categories**.
 
 ---
 
-Henceforth, any thin category will be denoted by $\mathcal{C}(A,f)$ or $\mathcal{C}$_A using the notation from Definition 1 (where $f = \{f_{ij}\}_{i \in A, j \in A}$).
+Henceforth, any thin category will be denoted by $\mathcal{C}(A,f)$ or $C_A$ using the notation from the definition above where $f$ is denoted as the collection of $f_{ij}(i \in A, j \in A)$.
 
-## Basic Properties of Thin Category $\mathcal{C}_A$
+## Basic Properties of Thin Category $C_A$
 
-- $\mathcal{C}_A$ is a **locally small category**, since for any $i,j \in A$, the hom-set $\mathrm{hom}(i,j) := \{f_{ij}\}$ is either empty or a singleton.
+- $C_A$ is a **locally small category**, since for any $i,j \in A$, the hom-set $\mathrm{hom}(i,j) := \{f_{ij}\}$ is either empty or a singleton.
 - If $f_{ji}$ exists for $f_{ij}$, then
-  $
-  f_{ji} \circ f_{ij} = f_{ii} \quad \text{and} \quad f_{ij} \circ f_{ji} = f_{jj},
-  $
+  $f_{ji} \circ f_{ij} = f_{ii} \quad \text{and} \quad f_{ij} \circ f_{ji} = f_{jj},$
   so $f_{ji}$ is the inverse of $f_{ij}$, and $i$ and $j$ are **isomorphic objects** (essentially the same).
-- When $A$ is the empty class, $\mathcal{C}_A$ is the **empty category**.
+- When $A$ is the empty class, $C_A$ is the **empty category**.
 
 ## Examples
 
 ### Example 1: The Trivial Category
 
-When $A$ is a set of cardinality 1, $A \simeq \{1\}$. Defining the operation by $f_{11} \circ f_{11} = f_{11}$ gives $\mathrm{hom}(\mathcal{C}_A) \simeq \{f_{11}\}$. Thus, $\mathcal{C}_A$ is isomorphic to the category $\mathbf{1}$ with one object and one morphism.
+When $A$ is a set of cardinality 1, $A \simeq ${1}. Defining the operation by $f_{11} \circ f_{11} = f_{11}$ gives $\mathrm{hom}(C_A) \simeq ${f_{11}}. Thus, $C_A$ is isomorphic to the category $\mathbf{1}$ with one object and one morphism.
 
 ### Example 2: From Magmas and Semigroups to Thin Categories
 
 Let $A$ and $B$ be sets, and let $f : A \times A \to B$ be a map with $(i,j) \mapsto f_{ij}$. Defining the operation by
-$
-f_{jk} \circ f_{ij} := f_{ik}
-$
+$f_{jk} \circ f_{ij} := f_{ik}$
 yields a thin category $\mathcal{C}(A,f)$.
 
 In particular, when $A = B$, i.e., for a magma $(A, *)$, defining the operation by
@@ -113,7 +102,7 @@ For every pair $i,j \in \mathrm{Ob}(\mathcal{C})$, the set $h_{ij}$ exists. Ther
 
 ### Example 5: Another Reformulation via Relations
 
-In the thin category $\mathcal{C}_A$, the statement “morphism $f_{ij}$ exists” can be reinterpreted as the existence of a (generalized) relation $i \mathrel{f} j$ (unique when it exists). This relation satisfies:
+In the thin category $C_A$, the statement “morphism $f_{ij}$ exists” can be reinterpreted as the existence of a (generalized) relation $i \mathrel{f} j$ (unique when it exists). This relation satisfies:
 
 1. If $A$ is non-empty, then $i \mathrel{f} i$ holds for all $i \in A$.
 2. If $i \mathrel{f} j$ and $j \mathrel{f} k$, then $i \mathrel{f} k$.
@@ -122,7 +111,7 @@ Conversely, such a relation defines a thin category $\mathcal{C}(A,f)$.
 
 ---
 
-Thus, a thin category $\mathcal{C}_A$ can be described as a class equipped with a relation satisfying the above two conditions.
+Thus, a thin category $C_A$ can be described as a class equipped with a relation satisfying the above two conditions.
 
 In particular, when $A$ is a **set**, the relation $i \mathrel{f} j$ satisfies the axioms of a preorder, so having a thin category $\mathcal{C}(A,f)$ is equivalent to $A$ being a preordered set.
 
