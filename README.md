@@ -19,19 +19,19 @@ In particular, the proposition that "if a Kan extension is possible in a general
 
 ##Article List
 
-- [(1) Reformulation and Examples ](./Thin%20Categories%20(1).md)
-- [(2) Subcategories ](./Thin%20Categories%20(2).md)
-- [(3) Thinning Functors ](./Thin%20Categories%20(3).md)
-- [(4) Packed Arrows Functor and Quotients ](./Thin%20Categories%20(4).md)
-- [(5) Standard Thinning Construction ](./Thin%20Categories%20(5).md)
-- [(6) Relations on Morphism Collections ](./Thin%20Categories%20(6).md)
-- [(7) Thinning of Functors ](./Thin%20Categories%20(7).md)
-- [(9) Construction of Skeletal Thin Categories ](./Thin%20Categories%20(9).md)
-- [(10) Connected Components ](./Thin%20Categories%20(10).md)
-- [(11) Quotient Categories via Thinning Functors ](./Thin%20Categories%20(11).md)
-- [(12) Universal Objects as Optimization ](./Thin%20Categories%20(12).md)
-- [(13) Kan Extensions Targeting Thin Categories ](./Thin%20Categories%20(13).md)
-- [(14) Coends and Ends in Thin Categories ](./Thin%20Categories%20(14).md)
+- [(1) Reformulation and Examples ](./Thin-Categories-01.md)
+- [(2) Subcategories ](./Thin-Categories-02.md)
+- [(3) Thinning Functors ](./Thin-Categories-03.md)
+- [(4) Packed Arrows Functor and Quotients ](./Thin-Categories-04.md)
+- [(5) Standard Thinning Construction ](./Thin-Categories-05.md)
+- [(6) Relations on Morphism Collections ](./Thin-Categories-06.md)
+- [(7) Thinning of Functors ](./Thin-Categories-07.md)
+- [(9) Construction of Skeletal Thin Categories ](./Thin-Categories-09.md)
+- [(10) Connected Components ](./Thin-Categories-10.md)
+- [(11) Quotient Categories via Thinning Functors ](./Thin-Categories-11.md)
+- [(12) Universal Objects as Optimization ](./Thin-Categories-12.md)
+- [(13) Kan Extensions Targeting Thin Categories ](./Thin-Categories-13.md)
+- [(14) Coends and Ends in Thin Categories ](./Thin-Categories-14.md)
 
 ---
 (Based on articles originally published on Mathlog in Japanese. Article (8) is not included on this page as it is for reference only. It is published on Mathlog.
