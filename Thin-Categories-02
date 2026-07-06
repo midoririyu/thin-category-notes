@@ -59,7 +59,9 @@ Let $A = \{1, 2\}$ and $\operatorname{hom}(\mathcal{C}_A) = \{f_{11}, f_{12}, f_
 6. $B = \{1,2\}$, $L = \{f_{11}, f_{22}, f_{21}\}$: With an arrow $2 \to 1$
 7. $B = \{1,2\}$, $L = \{f_{11}, f_{22}, f_{12}, f_{21}\}$: With arrows in both directions (isomorphic objects)
 
-![Diagram of relations ① to ⑦](./FigureCategory.png)
+![Diagram of relations ① to ⑦]![Figure](FigureCategory.png) 
+
+
 
 Indeed, the number of elements in $\mathcal{C}(\mathfrak{C}_A, \subset)$ is
 
