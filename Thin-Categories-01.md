@@ -99,22 +99,17 @@ Viewing the non-negative reals $\mathbb{R}_{\geq 0}$ as a monoidal category $\ma
 
 ### Example 4: Construction from Any Locally Small Category
 
-For any locally small category $\mathcal{C}$, let ${
-m{Ob}(\mathcal{C})$ be the class of objects, and let $h_{ij} = {
-m{hom}(i,j)$. Defining the operation by
+For any locally small category $\mathcal{C}$, let $\mathrm{Ob}(\mathcal{C})$ be the class of objects, and let $h_{ij} = \mathrm{hom}(i,j)$. Defining the operation by
 $$
 h_{jk} \circ h_{ij} := h_{ik}
 $$
-yields a thin category $\mathcal{C}({
-m{Ob}(\mathcal{C}), h)$.
+yields a thin category $\mathcal{C}(\mathrm{Ob}(\mathcal{C}), h)$.
 
 **Note**  
 The composition of morphisms in $h_{ij}$ and $h_{jk}$ lands in $h_{ik}$, but not every morphism in $h_{ik}$ can necessarily be expressed as such a composition.
 
 **Note**  
-For every pair $i,j \in {
-m{Ob}(\mathcal{C})$, the set $h_{ij}$ exists. Therefore, $\mathcal{C}({
-m{Ob}(\mathcal{C}), h)$ is a **strongly connected category** in which there is a morphism between any pair of objects, and thus every pair of objects is isomorphic.
+For every pair $i,j \in \mathrm{Ob}(\mathcal{C})$, the set $h_{ij}$ exists. Therefore, $\mathcal{C}(\mathrm{Ob}(\mathcal{C}), h)$ is a **strongly connected category** in which there is a morphism between any pair of objects, and thus every pair of objects is isomorphic.
 
 ### Example 5: Another Reformulation via Relations
 
