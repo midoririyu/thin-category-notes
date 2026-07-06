@@ -22,26 +22,26 @@ Let $A$ be a class. For any $i \in A$ and any $j \in A$, there is at most one th
 
 1. If $A$ is non-empty, then for every $i \in A$, $f_{ii}$ exists.
 2. For any $i,j,k \in A$, if $f_{ij}$ and $f_{jk}$ exist, then $f_{ik}$ necessarily exists, and the operation $\circ$ is defined by
-   $$
+   $
    f_{jk} \circ f_{ij} := f_{ik}
-   $$
+   $
 
 In this definition, it can be shown that the operation $\circ$ is associative.
 
 **Proof**  
-$$
+$
 (f_{kl} \circ f_{jk}) \circ f_{ij} 
 = f_{jl} \circ f_{ij} 
 = f_{il} 
 = f_{kl} \circ f_{ik} 
 = f_{kl} \circ (f_{jk} \circ f_{ij})
-$$
+$
 (Proof complete)
 
 Furthermore, for any $i,j \in A$,
-$$
+$
 f_{ij} \circ f_{ii} = f_{ij} = f_{jj} \circ f_{ij}
-$$
+$
 holds, so $f_{ii}$ can be regarded as the identity morphism at $i$.
 
 Thus, $f_{ij}$ satisfies the definition of a morphism, and we can define a thin category with objects $i \in A$ and morphisms $f_{ij}$.
@@ -59,9 +59,9 @@ Henceforth, any thin category will be denoted by $\mathcal{C}(A,f)$ or $\mathcal
 
 - $\mathcal{C}_A$ is a **locally small category**, since for any $i,j \in A$, the hom-set $\mathrm{hom}(i,j) := \{f_{ij}\}$ is either empty or a singleton.
 - If $f_{ji}$ exists for $f_{ij}$, then
-  $$
+  $
   f_{ji} \circ f_{ij} = f_{ii} \quad \text{and} \quad f_{ij} \circ f_{ji} = f_{jj},
-  $$
+  $
   so $f_{ji}$ is the inverse of $f_{ij}$, and $i$ and $j$ are **isomorphic objects** (essentially the same).
 - When $A$ is the empty class, $\mathcal{C}_A$ is the **empty category**.
 
@@ -74,15 +74,15 @@ When $A$ is a set of cardinality 1, $A \simeq \{1\}$. Defining the operation by 
 ### Example 2: From Magmas and Semigroups to Thin Categories
 
 Let $A$ and $B$ be sets, and let $f : A \times A \to B$ be a map with $(i,j) \mapsto f_{ij}$. Defining the operation by
-$$
+$
 f_{jk} \circ f_{ij} := f_{ik}
-$$
+$
 yields a thin category $\mathcal{C}(A,f)$.
 
 In particular, when $A = B$, i.e., for a magma $(A, *)$, defining the operation by
-$$
+$
 (j * k) \circ (i * j) := i * k
-$$
+$
 gives a thin category $\mathcal{C}(A,*)$.
 
 Furthermore, if $(A,*)$ is a semigroup with unit $e$, then $\mathcal{C}(A,*)$ becomes a (thin) **monoidal category** with unit object $e$ and monoidal operation $*$.
@@ -93,18 +93,18 @@ Let $f : A \times A \to B$ be a map from a set $A$ to a semigroup $(B,*)$ with u
 
 **Metric Space Example**  
 Let $A$ be a metric space with distance $d_{ij}$. Then $\mathcal{C}(A,d)$ is a thin category satisfying
-$$
+$
 d_{jk} \circ d_{ij} = d_{ik} \leq d_{jk} + d_{ij}.
-$$
+$
 
 Viewing the non-negative reals $\mathbb{R}_{\geq 0}$ as a monoidal category $\mathcal{C}(\mathbb{R}_{\geq 0}, +)$ with addition as the monoidal operation and $0$ as the unit, $\mathcal{C}(A,d)$ becomes a (thin) **enriched category** over it.
 
 ### Example 4: Construction from Any Locally Small Category
 
 For any locally small category $\mathcal{C}$, let $\mathrm{Ob}(\mathcal{C})$ be the class of objects, and let $h_{ij} = \mathrm{hom}(i,j)$. Defining the operation by
-$$
+$
 h_{jk} \circ h_{ij} := h_{ik}
-$$
+$
 yields a thin category $\mathcal{C}(\mathrm{Ob}(\mathcal{C}), h)$.
 
 **Note**  
