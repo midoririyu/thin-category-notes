@@ -53,7 +53,8 @@ Henceforth, any thin category will be denoted by $\mathcal{C}(A,f)$ or $\mathcal
 
 ## Basic Properties of Thin Category $\mathcal{C}_A$
 
-- $\mathcal{C}_A$ is a **locally small category**, since for any $i,j \in A$, the hom-set $\operatorname{hom}(i,j) := \{f_{ij}\}$ is either empty or a singleton.
+- $\mathcal{C}_A$ is a **locally small category**, since for any $i,j \in A$, the hom-set ${
+m{hom}(i,j) := \{f_{ij}\}$ is either empty or a singleton.
 - If $f_{ji}$ exists for $f_{ij}$, then
   $$
   f_{ji} \circ f_{ij} = f_{ii} \quad \text{and} \quad f_{ij} \circ f_{ji} = f_{jj},
@@ -65,7 +66,8 @@ Henceforth, any thin category will be denoted by $\mathcal{C}(A,f)$ or $\mathcal
 
 ### Example 1: The Trivial Category
 
-When $A$ is a set of cardinality 1, $A \simeq \{1\}$. Defining the operation by $f_{11} \circ f_{11} = f_{11}$ gives $\operatorname{hom}(\mathcal{C}_A) \simeq \{f_{11}\}$. Thus, $\mathcal{C}_A$ is isomorphic to the category $\mathbf{1}$ with one object and one morphism.
+When $A$ is a set of cardinality 1, $A \simeq \{1\}$. Defining the operation by $f_{11} \circ f_{11} = f_{11}$ gives ${
+m{hom}(\mathcal{C}_A) \simeq \{f_{11}\}$. Thus, $\mathcal{C}_A$ is isomorphic to the category $\mathbf{1}$ with one object and one morphism.
 
 ### Example 2: From Magmas and Semigroups to Thin Categories
 
@@ -97,17 +99,22 @@ Viewing the non-negative reals $\mathbb{R}_{\geq 0}$ as a monoidal category $\ma
 
 ### Example 4: Construction from Any Locally Small Category
 
-For any locally small category $\mathcal{C}$, let $\operatorname{Ob}(\mathcal{C})$ be the class of objects, and let $h_{ij} = \operatorname{hom}(i,j)$. Defining the operation by
+For any locally small category $\mathcal{C}$, let ${
+m{Ob}(\mathcal{C})$ be the class of objects, and let $h_{ij} = {
+m{hom}(i,j)$. Defining the operation by
 $$
 h_{jk} \circ h_{ij} := h_{ik}
 $$
-yields a thin category $\mathcal{C}(\operatorname{Ob}(\mathcal{C}), h)$.
+yields a thin category $\mathcal{C}({
+m{Ob}(\mathcal{C}), h)$.
 
 **Note**  
 The composition of morphisms in $h_{ij}$ and $h_{jk}$ lands in $h_{ik}$, but not every morphism in $h_{ik}$ can necessarily be expressed as such a composition.
 
 **Note**  
-For every pair $i,j \in \operatorname{Ob}(\mathcal{C})$, the set $h_{ij}$ exists. Therefore, $\mathcal{C}(\operatorname{Ob}(\mathcal{C}), h)$ is a **strongly connected category** in which there is a morphism between any pair of objects, and thus every pair of objects is isomorphic.
+For every pair $i,j \in {
+m{Ob}(\mathcal{C})$, the set $h_{ij}$ exists. Therefore, $\mathcal{C}({
+m{Ob}(\mathcal{C}), h)$ is a **strongly connected category** in which there is a morphism between any pair of objects, and thus every pair of objects is isomorphic.
 
 ### Example 5: Another Reformulation via Relations
 
