@@ -1,10 +1,10 @@
-#Thin Category Notes 
+# Thin Category Notes 
 
 A collection of the "Thin Category Notes" series by Midoriryu.
 
 This repository archives an original study developed by the author. It re-interprets thin categories (categories with at most one morphism between any two objects) as binary operations between objects and systematically investigates their properties.
 
-##Overview
+## Overview
 Treating thin categories as a "generalization of preordered sets" within the framework of category theory, these notes explore the following themes:
 
 -New definitions and properties of thin categories.
@@ -37,10 +37,10 @@ In particular, the proposition that "if a Kan extension is possible in a general
 (Based on articles originally published on Mathlog in Japanese. Article (8) is not included on this page as it is for reference only. It is published on Mathlog.
 )
 
-##Notes
+## Notes
 This study is based on the author's unique perspective. Some definitions and terminology (most notably the "packed arrows functor") include original insights not found in standard category theory textbooks.
 
-Initial Publication: 2025–2026 (Published sequentially on Mathlog(https://mathlog.info/users/WGpaUxcFHYPRc9o0pFVaniEFhOZ2)　 ).
+Initial Publication: 2025–2026 (Published sequentially on Mathlog. https://mathlog.info/users/WGpaUxcFHYPRc9o0pFVaniEFhOZ2)
 
 **License**
 The contents of this repository are licensed under CC BY-NC-SA 4.0 (Attribution-NonCommercial-ShareAlike 4.0 International).
