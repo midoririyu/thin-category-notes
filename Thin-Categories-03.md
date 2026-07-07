@@ -192,6 +192,18 @@ Given functors $T, T' : \mathcal{C} \to C(B,g)$, the family
 $\tau_{T,T'} := ｛\tau_i := g_{T(i)T'(i)}｝_{i \in \rm{Ob}(\mathcal{C})}$
 is the unique natural transformation from $T$ to $T'$, with each $\tau_i$ as its component.
 
+
+**Proof**  
+For any $i \in {Ob}(\mathcal{C})$ and any $j \in {Ob}(\mathcal{C})$, the condition that
+$T'(f_{ij}) \circ g_{kl} = g_{mn} \circ T(f_{ij})$
+holds is equivalent to the condition that
+$g_{T'(i)T'(j)} \circ g_{kl} = g_{mn} \circ g_{T(i)T(j)}$
+holds. Furthermore, this is also equivalent to
+$k = T(i),\ l = T'(i),\ m = T(j),\ n = T'(j).$
+Therefore, it is equivalent to the statement that
+$g_{kl} = \tau_i \quad \text{and} \quad g_{mn} = \tau_j$
+hold. (Proof  complete)
+
 If each $\tau_i$ has an inverse $g_{T'(i)T(i)}$, then $\tau_{T,T'}$ is a natural isomorphism ($T \cong T'$).
 
 Let $\Phi$ be the collection of all functors from $\mathcal{C}$ to $C(B,g)$. Then $\mathcal{C}(\Phi, ｛\tau_{T,T'}｝)$ is a thin category, and is precisely the **functor category** $[\mathcal{C}, C(B,g)]$.
