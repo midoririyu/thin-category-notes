@@ -22,25 +22,23 @@ For $\mathcal{C}_1, \mathcal{C}_2 \in ℭ_A$, we write $\mathcal{C}_1 \subset \m
 
 In this category:
 - The **initial object** is $\mathcal{C}(\text{empty class}, \text{empty class})$ (the empty category).
-- The **terminal object** is $\mathcal{C}(A, \{f_{ij}\}_{i \in A, j \in A})$ (the original category $\mathcal{C}_A$).
+- The **terminal object** is $\mathcal{C}(A, f_{ij})$ (the original category $\mathcal{C}_A$).
 
 When $A$ is a set, $\mathcal{C}(ℭ_A, \subset)$ is a skeletal thin small category (i.e., a partially ordered set).
 
 ## Number of Subcategories
 
-In particular, when $A$ is a set of cardinality $n$, the number of objects $\#ℭ_A$ is given by the formula:
+In particular, when $A$ is a set of cardinality $n$, the number of objects $＃ℭ_A$ is given by the formula:
 
-$$
-\#ℭ_A = \sum_{k=0}^{n} \binom{n}{k} P(k)
-$$
+$＃ℭ_A = \sum_{k=0}^{n} \binom{n}{k} P(k)$
+
+($\binom{n}{k}$ represents the combination of $k$ items from $n$.)
 
 where $P(k)$ is the number of preorders on a set with $k$ elements.
 
 **Note**  
 It is known that
-$$
-P(k) = \sum_{i=1}^{k} S(k, i) \cdot PO(i),
-$$
+$P(k) = \sum_{i=1}^{k} S(k, i) \cdot PO(i),$
 where $S(k,i)$ is the Stirling number of the second kind, and $PO(i)$ is the number of partial orders on a set with $i$ elements.
 
 $P(k)$ is registered as **A000798** in the On-Line Encyclopedia of Integer Sequences (OEIS).
@@ -49,17 +47,17 @@ Furthermore, when $A$ has cardinality $n$, for each non-empty subset of $A$ ther
 
 ## Concrete Example: Case of Cardinality 2
 
-Let $A = \{1, 2\}$ and $\operatorname{hom}(\mathcal{C}_A) = \{f_{11}, f_{12}, f_{21}, f_{22}\}$. In this case, there are exactly seven subcategories:
+Let $A = ｛1, 2｝$ and $\rm{hom}(C_A) = ｛f_{11}, f_{12}, f_{21}, f_{22}｝$. In this case, there are exactly seven subcategories:
 
-1. $B = \emptyset$: **Empty category**
-2. $B = \{1\}$, $L = \{f_{11}\}$: Trivial one-object category
-3. $B = \{2\}$, $L = \{f_{22}\}$: Trivial one-object category
-4. $B = \{1,2\}$, $L = \{f_{11}, f_{22}\}$: Two objects with only identity morphisms
-5. $B = \{1,2\}$, $L = \{f_{11}, f_{22}, f_{12}\}$: With an arrow $1 \to 2$
-6. $B = \{1,2\}$, $L = \{f_{11}, f_{22}, f_{21}\}$: With an arrow $2 \to 1$
-7. $B = \{1,2\}$, $L = \{f_{11}, f_{22}, f_{12}, f_{21}\}$: With arrows in both directions (isomorphic objects)
+1. $B =L = \emptyset$: Empty category
+2. $B = ｛1｝$, $L = ｛f_{11}｝$: Trivial one-object category
+3. $B = ｛2｝$, $L = ｛f_{22}｝$: Trivial one-object category
+4. $B = ｛1,2｝$, $L = ｛f_{11}, f_{22}｝$: Two objects with only identity morphisms
+5. $B = ｛1,2｝$, $L = ｛f_{11}, f_{22}, f_{12}｝$: With an arrow $｛1｝ \to ｛2｝$
+6. $B = ｛1,2｝$, $L = ｛f_{11}, f_{22}, f_{21}｝$: With an arrow $｛2｝ \to ｛1｝$
+7. $B = ｛1,2｝$, $L = ｛f_{11}, f_{22}, f_{12}, f_{21}｝$: With arrows in both directions (isomorphic objects)
 
-![Diagram of relations ① to ⑦]![Figure](FigureCategory.png) 
+![Diagram of relations 1 to 7]![Figure](FigureCategory.png) 
 
 
 
@@ -71,6 +69,6 @@ $$
 
 The strongly connected thin subcategories are the following three ($2^2 - 1 = 3$):
 
-- $\mathcal{C}(\{1\},\{f_{11}\})$
-- $\mathcal{C}(\{2\},\{f_{22}\})$
-- $\mathcal{C}(\{1,2\},\{f_{11}, f_{12}, f_{21}, f_{22}\})$
+- $\mathcal{C}(｛1｝,｛f_{11}｝)$
+- $\mathcal{C}(｛2｝,｛f_{22}｝)$
+- $\mathcal{C}(｛1,2｝,｛f_{11}, f_{12}, f_{21}, f_{22}｝)$
