@@ -51,10 +51,8 @@ This follows by applying the propositions on universal objects in "Thin Categori
 ## Proposition 4-5 (Universal Property of the Packed Arrows Functor)
 
 **Proposition 4-5**  
-Let $\mathcal{C}$ be a locally small category and $\mathcal{D}$ a thin category. For any thinning functor $F : \mathcal{C} \to \mathcal{D}$, there exists a unique functor $\tilde{F} : P(\mathcal{C}) \to \mathcal{D}$ such that
-$$
-F = \tilde{F} \circ P.
-$$
+Let $\mathcal{C}$ be a locally small category and $\mathcal{D}$ a thin category. For any thinning functor $F : \mathcal{C} \to \mathcal{D}$, there exists a unique functor $\tilde{F} : P(\mathcal{C}) \to \mathcal{D}$ such that $F = \tilde{F} \circ P.$
+
 In particular, if $F$ is essentially surjective, then $\tilde{F}$ is an equivalence.
 
 **Proof**  
@@ -65,10 +63,21 @@ In particular, if $F$ is essentially surjective, then $\tilde{F}$ is an equivale
 If $F$ is essentially surjective, then so is $\tilde{F}$. Since $P(\mathcal{C})$ is strongly connected and thin, $\tilde{F}$ is an equivalence by Lemma 3-1. (Proof complete)
 
 ## Quotient Categories
+Let $\mathbf{CAT}$ be the collection of all locally small categories. We denote the equivalence of locally small categories $\mathcal{C}$ and $\mathcal{D}$ as $\mathcal{C} \sim \mathcal{D}$. The relation $\sim$ satisfies the following properties:
 
-Let $\mathbf{CAT}$ be the collection of all locally small categories, and write $\mathcal{C} \sim \mathcal{D}$ for equivalence. This is an equivalence relation, yielding the quotient $\mathbf{CAT}/\sim$.
+* **Reflexivity**: $\mathcal{C} \sim \mathcal{C}$
+* **Symmetry**: If $\mathcal{C} \sim \mathcal{D}$, then $\mathcal{D} \sim \mathcal{C}$
+* **Transitivity**: If $\mathcal{C} \sim \mathcal{D}$ and $\mathcal{D} \sim \mathcal{E}$, then $\mathcal{C} \sim \mathcal{E}$
 
-Similarly, using the packed arrows functor $P$, we define the relation $\mathcal{C} \ P\ \mathcal{D}$ by $P(\mathcal{C}) \sim P(\mathcal{D})$, yielding the quotient $\mathbf{CAT}/P$.
+Under this relation, we can consider the quotient class $\mathbf{CAT} / \sim$, where each equivalence class is defined as $｛\mathcal{C}｝ = ｛\mathcal{D} \in \mathbf{CAT} \mid \mathcal{C} \sim \mathcal{D}｝$.
+
+Similarly, given a projection functor $P$, we can define a relation $\mathcal{C} \sim_P \mathcal{D}$ to mean that $P(\mathcal{C})$ and $P(\mathcal{D})$ are equivalent categories. This allows us to consider the quotient class $\mathbf{CAT} / \sim_P$. The fact that the relation $\sim_P$ satisfies reflexivity, symmetry, and transitivity follows directly from the properties of category equivalence:
+
+* $P(\mathcal{C}) \sim P(\mathcal{C})$
+* If $P(\mathcal{C}) \sim P(\mathcal{D})$, then $P(\mathcal{D}) \sim P(\mathcal{C})$
+* If $P(\mathcal{C}) \sim P(\mathcal{D})$ and $P(\mathcal{D}) \sim P(\mathcal{E})$, then $P(\mathcal{C}) \sim P(\mathcal{E})$
+
+Based on these setups, the following proposition holds:
 
 **Proposition 4-6**  
 $\mathbf{CAT}/\sim$ is a subclass (finer partition) of $\mathbf{CAT}/P$.
@@ -81,21 +90,33 @@ By Proposition 4-3, the structure of $\mathbf{CAT}/\sim$ naturally embeds into t
 ### Quotient Categories of Small Categories
 
 Let $\mathbf{Cat}$ be the collection of all small categories, and consider its quotient $\mathbf{Cat}/\sim$. Objects are small categories themselves, and a morphism from $\mathcal{C}$ to $\mathcal{D}$ is an equivalence class of functors
-$$
-[F]_{CD} := \{F' : \mathcal{C} \to \mathcal{D} \mid F' \text{ is naturally isomorphic to } F\}.
-$$
+$[F]_{CD} := ｛F' : \mathcal{C} \to \mathcal{D} \mid F' \text{ is naturally isomorphic to } F｝.$
 
-**Note**  
-This is well-defined as a category because:
-- Composition preserves natural isomorphism.
-- Identity classes act as identities.
+ **Proof of the Well-Definedness of $[F]_{CD}$ as a Morphism Under the Composition $[F]_{CD} \circ [F]_{CD} := [F]_{CE}$**
+
+#### 1. Composition of Morphisms
+Let $F, F': \mathcal{C} \to \mathcal{D}$ and $G, G': \mathcal{D} \to \mathcal{E}$ be pairs of naturally isomorphic functors. 
+
+For any object $i$ in $\mathcal{C}$, there exists an isomorphism $\alpha_i: F(i) \to F'(i)$ with its inverse $\alpha'_i: F'(i) \to F(i)$ such that for any morphism $f: i \to j$ in $\mathcal{C}$, the following diagram commutes:
+$\alpha_j \circ F(f) = F'(f) \circ \alpha_i$
+
+Similarly, for any object $k$ in $\mathcal{D}$, there exists an isomorphism $\beta_k: G(k) \to G'(k)$ with its inverse $\beta'_k: G'(k) \to G(k)$ such that for any morphism $g: k \to l$ in $\mathcal{D}$, the following diagram commutes:
+$\beta_l \circ G(g) = G'(g) \circ \beta_k.$
+
+Consequently, for any object $i$ in $\mathcal{C}$, the morphism $\beta_{F(i)}: G(F(i)) \to G'(F(i))$ has an inverse $\beta_{F(i)}': G'(F(i)) \to G(F(i))$, and the following relation holds:
+$\beta_{F(j)} \circ G(F(f)) = G'(F'(f)) \circ \beta_{F(i)}.$
+
+This demonstrates that the composite functors $G \circ F$ and $G' \circ F'$ from $\mathcal{C}$ to $\mathcal{E}$ are naturally isomorphic.
+
+#### 2. Existence of Identity Morphisms
+Let $[F]_{CC} := \{ F' : \mathcal{C} \to \mathcal{C} \mid F' \text{ is a functor naturally isomorphic to } F \}$. 
+
+For any morphism $[F]_{CD}$, this class satisfies both $[F]_{DD} \circ [F]_{CD} = [F]_{CD}$ and $[F]_{CD} \circ [F]_{CC} = [F]_{CD}$, thereby serving as the identity morphism. (Proof complete)
 
 Similarly, we can define the packed arrows quotient $\mathbf{Cat}/P$, where morphisms are classes
-$$
-[F]^P_{CD} := \{F' : \mathcal{C} \to \mathcal{D} \mid P(F') \text{ is naturally isomorphic to } P(F)\}.
-$$
+$[F]^P_{CD} := ｛F' : \mathcal{C} \to \mathcal{D} \mid P(F') \text{ is naturally isomorphic to } P(F)｝.$
 
-In this case, for any two functors $F, F' : \mathcal{C} \to \mathcal{D}$, the family $\alpha_i = Hom(F(i), F'(i))$ shows that $P(F)$ and $P(F')$ are always naturally isomorphic. Thus $[F]^P_{CD}$ is simply the set of **all** functors from $\mathcal{C}$ to $\mathcal{D}$. Therefore, $\mathbf{Cat}/P$ coincides with the packed arrows category $P(\mathbf{Cat})$.
+In this case, for any two functors $F, F' : \mathcal{C} \to \mathcal{D}$, the family $\alpha_i = Hom(F(i), F'(i))$ shows that $P(F)$ and $P(F')$ are always naturally isomorphic. Thus $[F]^P_{CD}$ is simply the set of **all** functors from $\mathcal{C}$ to $\mathcal{D}$. Therefore, $\mathbf{Cat}/P$ coincides with the packed arrows category $P(Cat)=C(Cat,Fct(C,D))(C,D\in Cat)$.
 
 **Proposition 4-7**  
 $\mathbf{Cat}/\sim$ is a subcategory of $\mathbf{Cat}/P$.
