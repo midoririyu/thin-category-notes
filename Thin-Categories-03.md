@@ -114,7 +114,7 @@ for any morphism $v' = g_{T(i)T(x)} \in G'(T(x))$, the morphism $f'$ satisfying 
 and by the thinness of $T(\mathcal{C})$, this is unique.  
 
 From the above, $T(i)$ is a (left) universal object in $T(\mathcal{C})$.  
-Furthermore, if $T$ is assumed to be essentially surjective, any $b \in B$ is isomorphic to some $T(x)$, so $g_{T(x)b}$ exists. By the functoriality of $T$, $g_{T(i)T(x)}$ can be obtained, and since $g_{T(i)b} = g_{T(x)b} \circ g_{T(i)T(x)}$ exists, $T(i)$ becomes a (left) universal object in the entire $\mathcal{C}(B, g)$.
+Furthermore, if $T$ is assumed to be essentially surjective, any $b \in B$ is isomorphic to some $T(x)$, so $g_{T(x)b}$ exists. By the functoriality of $T$, $g_{T(i)T(x)}$ can be obtained, and since $g_{T(i)b} = g_{T(x)b} \circ g_{T(i)T(x)}$ exists, $T(i)$ becomes a (left) universal object in the entire $C(B, g)$.
 (End of Proof of Proposition 3-5)
 
 **Note**  
@@ -122,6 +122,29 @@ Examples of left universal objects: initial objects, coproducts, coequalizers, e
 
 **Proposition 3-6** (Right Universal Objects)  
 If $T$ is essentially surjective, then (right) universal objects are also preserved.
+
+**Proof**
+The definition of a (right) universal object $i$ in a category $\mathcal{C}$ is given as: "there exists a functor $G: \mathcal{C} \to \mathbf{Set}$ that is naturally isomorphic to the $Hom$ functor $h^i = Hom(-, i)$ represented by $i$, and for each object $x$ and any $v \in G(x)$, there uniquely exists a morphism $f \in Hom(x, i)$ such that $G(f)(u) = v$ holds." (Here, $u$ is the universal element in $G(i)$ corresponding to the identity morphism $id_i$ of $h^i$.)  
+
+We show the proposition based on this definition.  
+
+First, assume that $T$ is an essentially surjective functor. At this time, any object $b$ in $C(B, g)$ can be made isomorphic to $T(x)$ by taking some object $x$ in $\mathcal{C}$. That is, $g_{bT(x)}$ exists. Since $g_{T(x)T(i)}$ exists by the functoriality of $T$, $g_{bT(i)} = g_{T(x)T(i)} \circ g_{bT(x)}$ exists.  
+That is, $Hom(b, T(i))$ is not empty. Here, due to the thinness of $T(\mathcal{C})$, this morphism set is a singleton set consisting of a unique element. Therefore, by setting this singleton set as $G'(b)$, we define a functor $G': C(B, g) \to \mathbf{Set}$. At this time, $G'$ is naturally isomorphic to the $Hom$ functor $h^{T(i)} = Hom(-, T(i))$ represented by $T(i)$.  
+
+(Proof) Let $\alpha_b': Hom(b, T(i)) \to G'(b)$.  
+(In fact, from the definition of $G'$, $\alpha_b'$ is the identity morphism.)  
+For any $b_1, b_2 \in B$,  
+$G'(g_{b_1b_2}): G'(b_1) \to G'(b_2)$ is the same morphism as $h^{T(i)}(g_{b_1b_2}): Hom(b_1, T(i)) \to Hom(b_2, T(i))$, and  
+$\alpha_{b_2}' \circ h^{T(i)}(g_{b_1b_2}) = G'(g_{b_1b_2}) \circ \alpha_{b_1}'$ holds.  
+In addition, for any $\alpha_b'$, the inverse morphism $G'(b) \to Hom(b, T(i))$ also exists (as the identity morphism). Thus, $G'$ is naturally isomorphic to $h^{T(i)}$. (End of Proof)  
+
+Let $u'$ be the universal element of $G'(T(i))$ corresponding to the identity morphism $id_{T(i)}$ of $h^{T(i)}$. That is, $u'$ is $id_{T(i)}$ itself. At this time,  
+in $G'(g_{b_1b_2}): Hom(b_1, T(i)) \to Hom(b_2, T(i))$, since $G'(f')(u') = f'$○ $id_{T(i)} = f'$,  
+for any morphism $v' = g_{bT(i)} \in G'(g_{bT(i)})$, the morphism $f'$ satisfying $G'(f')(u') = v'$ is $v'=g_{bT(i)}$ itself,  
+and by the thinness of $C(B, g)$, this is unique.  
+
+From the above, $T(i)$ is a (right) universal object in $C(B, g)$. 
+(End of Proof)
 
 **Note**  
 Examples of right universal objects: terminal objects, products, equalizers, etc.
