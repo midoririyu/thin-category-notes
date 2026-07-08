@@ -7,14 +7,14 @@ Fix an arbitrary locally small category $\mathcal{C}$.
 
 ## Equivalence Relation Defining Connected Components
 
-For any $i,j \in \operatorname{Ob}(\mathcal{C})$, define the (generalized) relation $iSj$ by  
+For any $i,j \in Ob(\mathcal{C})$, define the (generalized) relation $iSj$ by  
 "there exists a finite sequence of objects $i=x_0, x_1, \dots, x_n=j$ such that for each $t=1,\dots,n$, there is a morphism from $x_{t-1}$ to $x_t$ or from $x_t$ to $x_{t-1}$."
 
 This relation satisfies the conditions of an equivalence relation:
 
-1. If $\mathcal{C}$ is non-empty, then $iSi$ holds for every $i \in \operatorname{Ob}(\mathcal{C})$.
-2. For any $i,j \in \operatorname{Ob}(\mathcal{C})$, $iSj$ implies $jSi$.
-3. For any $i,j,k \in \operatorname{Ob}(\mathcal{C})$, if $iSj$ and $jSk$, then $iSk$.
+1. If $\mathcal{C}$ is non-empty, then $iSi$ holds for every $i \in Ob(\mathcal{C})$.
+2. For any $i,j \in Ob(\mathcal{C})$, $iSj$ implies $jSi$.
+3. For any $i,j,k \in Ob(\mathcal{C})$, if $iSj$ and $jSk$, then $iSk$.
 
 **Proof**  
 1. Follows from the existence of the identity morphism (the sequence $i \to i$).  
@@ -22,26 +22,20 @@ This relation satisfies the conditions of an equivalence relation:
 3. Concatenate the two sequences. (Proof complete)
 
 The equivalence class
-$$
-[i] := \{j \in \operatorname{Ob}(\mathcal{C}) \mid iSj\}
-$$
+$[i] := \{j \in Ob(\mathcal{C}) \mid iSj\}$
 is called the **connected component containing $i$**.
 
 The basic properties of these equivalence classes are
-$$
-\operatorname{Ob}(\mathcal{C}) = \bigcup_{i \in \operatorname{Ob}(\mathcal{C})} [i], \quad [i] \cap [j] \neq \emptyset \iff [i] = [j].
-$$
+$Ob(\mathcal{C}) = \bigcup_{i \in Ob(\mathcal{C})} [i], \quad [i] \cap [j] \neq \emptyset \iff [i] = [j].$
 
-For each $i \in \operatorname{Ob}(\mathcal{C})$, we can define a subcategory $\mathcal{C}_{[i]}$ of $\mathcal{C}$ whose objects are the elements of $[i]$ and whose morphisms are all morphisms $f : i' \to j'$ with $i',j' \in [i]$.
+For each $i \in Ob(\mathcal{C})$, we can define a subcategory $\mathcal{C}_{[i]}$ of $\mathcal{C}$ whose objects are the elements of $[i]$ and whose morphisms are all morphisms $f : i' \to j'$ with $i',j' \in [i]$.
 
 ## Correspondence of Connected Components via Functors
 
 Suppose $F : \mathcal{C} \to \mathcal{D}$ is a functor between locally small categories.
 
-Define $F[i] := \{F(i') \mid i' \in [i]\}$. Then similarly,
-$$
-F(\operatorname{Ob}(\mathcal{C})) = \bigcup_{i \in \operatorname{Ob}(\mathcal{C})} F[i], \quad F[i] \cap F[j] \neq \emptyset \iff F[i] = F[j].
-$$
+Define $F[i] := ｛F(i') \mid i' \in [i]｝$. Then similarly,
+$F(Ob(\mathcal{C})) = \bigcup_{i \in Ob(\mathcal{C})} F[i], \quad F[i] \cap F[j] \neq \emptyset \iff F[i] = F[j].$
 
 Define a map $\Phi$ from the collection of connected components of $\mathcal{C}$ to that of $F(\mathcal{C})$ by $\Phi([i]) = F[i]$. This is a well-defined function.
 
