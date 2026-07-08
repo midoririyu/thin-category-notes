@@ -11,9 +11,9 @@ For any morphisms $f : i \to j$ and $f' : k \to l$ in $\mathcal{C}$, define the 
 
 This relation satisfies the conditions of an equivalence relation:
 
-1. If $\mathcal{C}$ is non-empty, then $fTf$ holds for every $f \in \operatorname{hom}(\mathcal{C})$.
-2. For any $f,f' \in \operatorname{hom}(\mathcal{C})$, $fTf'$ implies $f'Tf$.
-3. For any $f,f',f'' \in \operatorname{hom}(\mathcal{C})$, if $fTf'$ and $f'Tf''$, then $fTf''$.
+1. If $\mathcal{C}$ is non-empty, then $fTf$ holds for every $f \in Hom(\mathcal{C})$.
+2. For any $f,f' \in Hom(\mathcal{C})$, $fTf'$ implies $f'Tf$.
+3. For any $f,f',f'' \in Hom(\mathcal{C})$, if $fTf'$ and $f'Tf''$, then $fTf''$.
 
 **Proof**  
 1. Follows from $T(f) = T(f)$.  
@@ -22,21 +22,17 @@ This relation satisfies the conditions of an equivalence relation:
 
 ## Definition of the Quotient Category $\mathcal{C}/T$
 
-Based on the above equivalence relation, for a morphism $f : i \to j$ in $\operatorname{hom}(\mathcal{C})$, define the equivalence class
-$$
-[f]^T_{ij} := \{f' \in \operatorname{hom}(\mathcal{C}) \mid T(f) = T(f')\}.
-$$
+Based on the above equivalence relation, for a morphism $f : i \to j$ in $Hom(\mathcal{C})$, define the equivalence class
+$[f]^T_{ij} := ｛f' \in Hom(\mathcal{C}) \mid T(f) = T(f')｝.$
 
-For each pair $i,j \in \operatorname{Ob}(\mathcal{C})$, if a morphism $f : i \to j$ exists, then $[f]^T_{ij}$ is uniquely determined regardless of the choice of representative. Thus it can be regarded as a (generalized) binary operation on $i$ and $j$.
+For each pair $i,j \in Ob(\mathcal{C})$, if a morphism $f : i \to j$ exists, then $[f]^T_{ij}$ is uniquely determined regardless of the choice of representative. Thus it can be regarded as a (generalized) binary operation on $i$ and $j$.
 
 Moreover, if $[f_1]^T_{ij}$ and $[f_2]^T_{jk}$ exist, then $[f_2 \circ f_1]^T_{ik}$ necessarily exists, and we can define the operation
-$$
-[f_2]^T_{jk} \circ [f_1]^T_{ij} := [f_2 \circ f_1]^T_{ik}.
-$$
+$[f_2]^T_{jk} \circ [f_1]^T_{ij} := [f_2 \circ f_1]^T_{ik}.$
 
-For any object $i$ in $\mathcal{C}$, the class $[ \mathrm{id}_i ]^T := \{f \in \operatorname{hom}(\mathcal{C}) \mid T(f) = T(\mathrm{id}_i)\}$ is non-empty by the existence of the identity morphism.
+For any object $i$ in $\mathcal{C}$, the class $[ id_i ]^T := ｛f \in Hom(\mathcal{C}) \mid T(f) = T(id_i)｝$ is non-empty by the existence of the identity morphism.
 
-Applying Definition 1 from "Thin Categories (1)" to the above facts, we obtain a thin category $\mathcal{C}(\operatorname{Ob}(\mathcal{C}), [f]^T)$ from $\mathcal{C}$. We denote this category by $\mathcal{C}/T$.
+Applying Definition 1 from "Thin Categories (1)" to the above facts, we obtain a thin category $\mathcal{C}(Ob(\mathcal{C}), [f]^T)$ from $\mathcal{C}$. We denote this category by $\mathcal{C}/T$.
 
 ## Proposition 11-1
 
@@ -65,11 +61,11 @@ Suppose $T : \mathcal{C} \to \mathcal{C}(B,g)$ is a functor from a locally small
 Then we can consider the composite functor $S \circ T : \mathcal{C} \to \mathcal{D}$, which yields the thin categories $T(\mathcal{C})/S$ and $\mathcal{C}/(S \circ T)$.
 
 If both $T$ and $S$ are full functors, then $S \circ T$ is also full. By the propositions above,
-$$
-\mathcal{C}/T \cong T(\mathcal{C}), \quad T(\mathcal{C})/S \cong S(T(\mathcal{C})), \quad \mathcal{C}/(S \circ T) \cong S(T(\mathcal{C})).
-$$
+$\mathcal{C}/T \cong T(\mathcal{C}), \quad T(\mathcal{C})/S \cong S(T(\mathcal{C})), \quad \mathcal{C}/(S \circ T) \cong S(T(\mathcal{C})).$
 Furthermore,
-$$
-T(\mathcal{C})/S \cong \mathcal{C}/(S \circ T) \cong S(\mathcal{C}/T)
-$$
+$T(\mathcal{C})/S \cong \mathcal{C}/(S \circ T) \cong S(\mathcal{C}/T)$
 holds.
+
+
+
+
