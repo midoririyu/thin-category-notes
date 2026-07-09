@@ -1,4 +1,4 @@
-**[Back to Table of Contents](../README.md)**
+**[Back to Table of Contents](README.md)**
 
 # Thin Categories (9)  
 Constructing a Skeletal Thin Category from an Arbitrary Locally Small Category
@@ -36,7 +36,7 @@ Then $\mathcal{C}(Ob(\mathcal{C})/S, ｛f_{[i][j]}｝(i,j \in Ob(\mathcal{C}))$ 
 1. For any $i \in Ob(\mathcal{C})$, $Hom(i,i)$ is non-empty (by the existence of identities), so $f_{[i][i]}$ exists.  
 2. If $f_{[i][j]}$ and $f_{[j][k]}$ exist, then $Hom(i,j)$ and $Hom(j,k)$ are both non-empty, so $Hom(i,k)$ is also non-empty. Thus, by definition, there exists a unique morphism $f_{[i][k]}$. That is, the composition $f_{[j][k]} \circ f_{[i][j]} := f_{[i][k]}$ is well-defined.
 
-From 1 and 2, $f_{[i][j]}$ satisfies the conditions of Definition 1 in "Thin Categories (1)", so $\mathcal{C}(Ob(\mathcal{C})/S, ｛f_{[i][j]}｝(i,j \in Ob(\mathcal{C}))$ is a thin category. (Proof complete)
+From 1 and 2, $f_{[i][j]}$ satisfies the conditions of Definition in "Thin Categories (1)", so $\mathcal{C}(Ob(\mathcal{C})/S, ｛f_{[i][j]}｝(i,j \in Ob(\mathcal{C}))$ is a thin category. (Proof complete)
 
 Moreover, by definition, if both $f_{[i][j]}$ and $f_{[j][i]}$ exist, then $[i] = [j]$. That is, this category is **skeletal**.
 
