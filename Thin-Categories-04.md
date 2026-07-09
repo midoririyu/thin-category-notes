@@ -1,4 +1,4 @@
-**[Back to Table of Contents](../README.md)**
+**[Back to Table of Contents](README.md)**
 
 # Thin Categories (4)  
 Packed Arrows Functors, Strongly Connected Thin Categories, and Quotient Categories
@@ -6,7 +6,7 @@ Packed Arrows Functors, Strongly Connected Thin Categories, and Quotient Categor
 ## Definition of the Packed Arrows Functor
 
 **Definition**  
-Let $\mathcal{C}$ be a locally small category. There exists a functor $P$ between $\mathcal{C}$ and the strongly connected thin category $\mathcal{C}(Ob(\mathcal{C}), h)$ from Example 4 in "Thin Categories (1)", defined by $P(i) := i$ and $P(f : i \to j) := h_{ij} = Hom(i,j)$ for $i,j \in Ob(\mathcal{C})$. That $P$ is a functor follows from Proposition 3-1 in "Thin Categories (3)". Moreover, $P$ is the identity on objects (hence surjective), so it is an **essentially surjective** functor.
+Let $\mathcal{C}$ be a locally small category. There exists a functor $P$ between $\mathcal{C}$ and the strongly connected thin category $\mathcal{C}(Ob(\mathcal{C}), h)$ from Example 4 in Thin Categories (1), defined by $P(i) := i$ and $P(f : i \to j) := h_{ij} = Hom(i,j)$ for $i,j \in Ob(\mathcal{C})$. That $P$ is a functor follows from Proposition 3-1. Moreover, $P$ is the identity on objects (hence surjective), so it is an **essentially surjective** functor.
 
 Henceforth, we call this the **packed arrows functor** (in this paper only), and denote the category $\mathcal{C}(Ob(\mathcal{C}), h)$ by $P(\mathcal{C})$, calling it the **packed arrows category** of $\mathcal{C}$.
 
@@ -38,7 +38,7 @@ In general, a functor is an equivalence if and only if it is fully faithful and 
 If locally small categories $\mathcal{C}$ and $\mathcal{D}$ are equivalent, then their packed arrows categories $P(\mathcal{C})$ and $P(\mathcal{D})$ are also equivalent.
 
 **Proof**  
-Let $F : \mathcal{C} \to \mathcal{D}$ be a functor. Then there is an induced functor $P(F) : P(\mathcal{C}) \to P(\mathcal{D})$ defined by $P(F)(i) := F(i)$ and $P(F)(h_{ij}) := Hom(F(i), F(j))$ (by Proposition 3-1 in "Thin Categories (3)"). If $F$ is an equivalence, then $P(\mathcal{C})$ is strongly connected and thin, and $P(F)$ is essentially surjective, so by Lemma 3-1, $P(F)$ is an equivalence. (Proof complete)
+Let $F : \mathcal{C} \to \mathcal{D}$ be a functor. Then there is an induced functor $P(F) : P(\mathcal{C}) \to P(\mathcal{D})$ defined by $P(F)(i) := F(i)$ and $P(F)(h_{ij}) := Hom(F(i), F(j))$ by Proposition 3-1. If $F$ is an equivalence, then $P(\mathcal{C})$ is strongly connected and thin, and $P(F)$ is essentially surjective, so by Lemma 3-1, $P(F)$ is an equivalence. (Proof complete)
 
 ## Proposition 4-4
 
@@ -134,6 +134,6 @@ Both $\mathbf{Cat}/P$ and $\mathbf{Sct}/\sim$ are strongly connected thin catego
 
 Define a functor $t : \mathbf{Cat}/P \to \mathbf{Sct}/\sim$ by $t(\mathcal{C}) = P(\mathcal{C})$ and $t([F]^P_{CD}) = [F]_{P(C)P(D)}$. For any strongly connected thin category $\mathcal{C}$, we have $t(\mathcal{C}) = P(\mathcal{C}) = \mathcal{C}$, so $t$ is essentially surjective on objects.
 
-By Lemma 3-1 in "Thin Categories (3)", $t$ is an equivalence.
+By Lemma 3-1, $t$ is an equivalence.
 
 Since $\mathbf{Sct}$ is a subclass of $\mathbf{Cat}$, $\mathbf{Sct}/\sim$ is a subcategory of $\mathbf{Cat}/\sim$, and combined with Proposition 4-7, it is a subcategory of $\mathbf{Cat}/P$. (Proof complete)
