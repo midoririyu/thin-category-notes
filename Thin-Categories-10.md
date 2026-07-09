@@ -1,4 +1,4 @@
-**[Back to Table of Contents](../README.md)**
+**[Back to Table of Contents](README.md)**
 
 # Thin Categories (10)  
 Connected Components of (Thin) Categories
@@ -22,7 +22,7 @@ This relation satisfies the conditions of an equivalence relation:
 3. Concatenate the two sequences. (Proof complete)
 
 The equivalence class
-$[i] := \{j \in Ob(\mathcal{C}) \mid iSj\}$
+$[i] := ｛j \in Ob(\mathcal{C}) \mid iSj｝$
 is called the **connected component containing $i$**.
 
 The basic properties of these equivalence classes are
