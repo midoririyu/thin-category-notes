@@ -1,4 +1,4 @@
-**[Back to Table of Contents](../README.md)**
+**[Back to Table of Contents](README.md)**
 
 # Thin Categories (3)  
 Properties of Functors from Locally Small Categories to Thin Categories (Thinning Functors), Natural Transformations, and Functor Categories
@@ -104,7 +104,7 @@ Let $α_{T(x)}': Hom(T(i), T(x)) \to G'(T(x))$.
 (In fact, from the definition of $G'$, $α_{T(x)}'$ is the identity morphism.)  
 $G'(T(f)): G'(T(x)) \to G'(T(y))$ is the same morphism as $h^{T(i)}(T(f)): Hom(T(i), T(x)) \to Hom(T(i), T(y))$, and  
 for any morphism $f: x \to y$ in $\mathcal{C}$,  
-$α_{T(y)}7 \circ h^{T(i)}(T(f)) = G'(T(f)) \circ α_{T(x)}'$ holds.  
+$α_{T(y)}' \circ h^{T(i)}(T(f)) = G'(T(f)) \circ α_{T(x)}'$ holds.  
 In addition, for any $x \in \mathrm{Ob}(\mathcal{C})$, the inverse morphism of $α_{T(x)}':G'(T(x)) \to Hom(T(i), T(x))$ also exists (as the identity morphism). Thus, $G'$ is naturally isomorphic to $h^{T(i)}$. (End of Proof)  
 
 Let $u'$ be the universal element of $G'(T(i))$ corresponding to the identity morphism $id_{T(i)}$ of $h^{T(i)}$. That is, $u'$ is $id_{T(i)}$ itself. At this time,  
