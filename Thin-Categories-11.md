@@ -1,4 +1,4 @@
-**[Back to Table of Contents](../README.md)**
+**[Back to Table of Contents](README.md)**
 
 # Thin Categories (11)  
 Quotient Categories via Thinning Functors
@@ -29,6 +29,16 @@ For each pair $i,j \in Ob(\mathcal{C})$, if a morphism $f : i \to j$ exists, the
 
 Moreover, if $[f_1]^T_{ij}$ and $[f_2]^T_{jk}$ exist, then $[f_2 \circ f_1]^T_{ik}$ necessarily exists, and we can define the operation
 $[f_2]^T_{jk} \circ [f_1]^T_{ij} := [f_2 \circ f_1]^T_{ik}.$
+
+**Proof:**
+First, if $[f_1]^T_{ij}$ and $[f_2]^T_{jk}$ exist, the composition $f_2\circ f_1:i\to k$ can be defined as the composite of $f_1:i\to j$ and $f_2:j\to k$. Therefore, $[f_2\circ f_1]^T_{ik}$ always exists.
+
+**Well-definedness:**
+Let $f_1,f'_1:i\to j$ and $f_2,f'_2:j\to k$. In this case, $f_2\circ f_1,f'_2\circ f'_1:i\to k$ can be defined. Furthermore, assuming $T(f_1)=T(f'_1)$ and $T(f_2)=T(f'_2)$, the functoriality of $T$ yields:
+
+$T(f_2\circ f_1)=T(f_2)\circ T(f_1)=T(f'_2)\circ T(f'_1)=T(f'_2\circ f'_1)$
+
+Therefore, if $[f_1]^T_{ij}=[f'_1]^T_{ij}$ and $[f_2]^T_{jk}=[f'_2]^T_{jk}$, then $[f_2\circ f_1]^T_{ik}=[f'_2\circ f'_1]^T_{ik}$ holds. This proves that the operation is well-defined. (Proof complete)
 
 For any object $i$ in $\mathcal{C}$, the class $[ id_i ]^T := ｛f \in Hom(\mathcal{C}) \mid T(f) = T(id_i)｝$ is non-empty by the existence of the identity morphism.
 
