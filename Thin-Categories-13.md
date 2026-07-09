@@ -1,4 +1,4 @@
-**[Back to Table of Contents](../README.md)**
+**[Back to Table of Contents](README.md)**
 
 # Thin Categories (13)  
 Kan Extensions with Thin Categories as Targets
@@ -43,7 +43,7 @@ First, we recall the general definition of a left Kan extension in an arbitrary 
 
 $(M \circ K)(f) \circ \alpha = \bar{\alpha} \circ \eta \quad \text{(i.e., } \bar{\alpha} \circ F(f) = M(K(f)) \circ \alpha\text{)}.$
 
-Since $\mathcal{C}$ is thin (as discussed in Thin-Categories-03.md), if there exists a family of morphisms $\{T(a) \to T'(a)\}_{a \in \mathrm{Ob}(\mathcal{A})}$ between two functors $T, T': \mathcal{A} \to \mathcal{C}$, then there is **at most one** natural transformation from $T$ to $T'$, and its components are exactly these morphisms. Commutativity of the naturality squares holds automatically. Therefore, the definition of a left Kan extension when $\mathcal{C}$ is thin can be simplified as follows:
+Since $\mathcal{C}$ is thin, as discussed in Thin Categories (3), if there exists a family of morphisms $\{T(a) \to T'(a)\}_{a \in \mathrm{Ob}(\mathcal{A})}$ between two functors $T, T': \mathcal{A} \to \mathcal{C}$, then there is **at most one** natural transformation from $T$ to $T'$, and its components are exactly these morphisms. Commutativity of the naturality squares holds automatically. Therefore, the definition of a left Kan extension when $\mathcal{C}$ is thin can be simplified as follows:
 
 A functor $L = Lan_K F: \mathcal{X} \to \mathcal{C}$ is a left Kan extension of $F$ along $K$ if it satisfies the following two conditions:
 
@@ -107,8 +107,8 @@ $B_x = ｛ F(a) \mid a \in \mathcal{A} \text{ such that there exists a morphism 
 together with all morphisms between them induced by the comma category $(K \downarrow x)$, then $Lan_K F(x)$ is the colimit (universal cocone vertex) of this diagram.
 
 Consequently, for every $a \in \mathcal{A}$ and every morphism $K(a) \to x$, there exists a **universal morphism** (the colimit leg)
-
 $\iota_a: F(a) \to Lan_K F(x)　in \mathcal{C}$.
+
 (We omit the detailed explanation of the comma category characterization of Kan extensions and the proof of the existence of these universal morphisms. Please refer to standard category theory textbooks for this background. From this perspective, it is important to note that $B_x$ is not merely a collection of objects, but rather the image of a diagram — i.e., a functor — whose domain is the comma category $(K \downarrow x)$.)
 
 Even in this general setting, if $\sup B_x$ exists in $\mathcal{C}$ for each $x$, we can choose one such supremum and denote it by $Sup_K F(x)$, thereby defining a functor $Sup_K F: \mathcal{X} \to \mathcal{C}$.
