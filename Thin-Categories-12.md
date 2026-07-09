@@ -1,4 +1,4 @@
-**[Back to Table of Contents](../README.md)**
+**[Back to Table of Contents](README.md)**
 
 # Thin Categories (12)  
 Reducing the Problem of Finding Universal Objects in General Categories to Optimization Problems in (Enriched Monoidal) Thin Categories
