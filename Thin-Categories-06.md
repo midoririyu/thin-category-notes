@@ -1,4 +1,4 @@
-**[Back to Table of Contents](../README.md)**
+**[Back to Table of Contents](README.md)**
 
 # Thin Categories (6)  
 Constructing a New Thin Category by Imposing a Relation on Collections of Morphisms in a Thin Category
@@ -18,7 +18,7 @@ This (generalized) relation $\prec$ satisfies the following properties:
 
 (The proofs of 1–4 follow directly from the definition of $\prec$.)
 
-Let $H_A$ be the collection of all possible "collections of morphisms" on $A$ i.e., $H_A$ =｛f| $f=｛f_{ij}
+Let $H_A$ be the collection of all possible "collections of morphisms" on $A$ i.e., $H_A =｛f=｛f_{ij}
 ｝(i,j\in A)$｝.
 Since $\prec$ satisfies properties 1 and 2, we can apply Example 5 from "Thin Categories (1)" to obtain a thin category $\mathcal{C}(H_A, \prec)$.
 
