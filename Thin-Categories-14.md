@@ -131,3 +131,36 @@ $\inf_i \int_c F_i(c,c) \cong \int_c \inf_i F_i(c,c).$
 
 **Proposition 14-8** (Fubini’s Theorem for Ends)  
 $\int_{(x,y)} F(x,y,x,y) \cong \int_x \int_y F(x,y,x,y) \cong \int_y \int_x F(x,y,x,y).$
+
+
+### Coends and Ends Order Interchange in Thin Categories
+
+In thin categories, the following holds for interchanging the order of coends and ends:
+
+**Proposition 14-9**  
+$\int^y \int_x F(x,y,x,y) \to \int_x \int^y F(x,y,x,y).$
+
+When morphisms are represented by the order relation $\leq$, this becomes  
+$\int^y \int_x F(x,y,x,y) \leq \int_x \int^y F(x,y,x,y).$
+
+**Proof**  
+It suffices to show that  $\sup_y \inf_x F(x,y,x,y) \to \inf_x \sup_y F(x,y,x,y).$
+
+Fix arbitrary $x'$ and $y'$.
+
+By the lower bound property of the infimum,  
+$\inf_x F(x,y',x,y') \to F(x',y',x',y').$
+
+By the upper bound property of the supremum,  
+$F(x',y',x',y') \to \sup_y F(x',y,x',y).$
+
+Composing these gives  $\inf_x F(x,y',x,y') \to \sup_y F(x',y,x',y).$
+
+Since $x'$ is arbitrary, $\inf_x F(x,y',x,y')$ is one of the lower bounds of the family $｛\sup_y F(x',y,x',y)|x'｝$.  
+Therefore, by the greatest lower bound property of the infimum,  
+$\inf_x F(x,y',x,y') \to \inf_{x'} \sup_y F(x',y,x',y).$
+
+Furthermore, $\inf_{x'} \sup_y F(x',y,x',y)$ is one of the upper bounds of the family $｛\inf_x F(x,y',x,y')|y'｝$.  
+Thus, by the least upper bound property of the supremum,  
+$\sup_{y'} \inf_x F(x,y',x,y') \to \inf_{x'} \sup_y F(x',y,x',y).$
+(Proof complete)
