@@ -137,7 +137,8 @@ $\int_{(x,y)} F(x,y,x,y) \cong \int_x \int_y F(x,y,x,y) \cong \int_y \int_x F(x,
 
 In thin categories, the following holds for interchanging the order of coends and ends:
 
-**Proposition 14-9**  
+**Proposition 14-9**(Weak Duality in Thin Categories)
+
 $\int^y \int_x F(x,y,x,y) \to \int_x \int^y F(x,y,x,y).$
 
 When morphisms are represented by the order relation $\leq$, this becomes  
@@ -145,7 +146,6 @@ $\int^y \int_x F(x,y,x,y) \leq \int_x \int^y F(x,y,x,y).$
 
 **Proof**  
 It suffices to show that  $\sup_y \inf_x F(x,y,x,y) \to \inf_x \sup_y F(x,y,x,y).$
-
 Fix arbitrary $x'$ and $y'$.
 
 By the lower bound property of the infimum,  
@@ -157,10 +157,50 @@ $F(x',y',x',y') \to \sup_y F(x',y,x',y).$
 Composing these gives  $\inf_x F(x,y',x,y') \to \sup_y F(x',y,x',y).$
 
 Since $x'$ is arbitrary, $\inf_x F(x,y',x,y')$ is one of the lower bounds of the family $｛\sup_y F(x',y,x',y)|x'｝$.  
+
 Therefore, by the greatest lower bound property of the infimum,  
 $\inf_x F(x,y',x,y') \to \inf_{x'} \sup_y F(x',y,x',y).$
 
 Furthermore, $\inf_{x'} \sup_y F(x',y,x',y)$ is one of the upper bounds of the family $｛\inf_x F(x,y',x,y')|y'｝$.  
+
 Thus, by the least upper bound property of the supremum,  
 $\sup_{y'} \inf_x F(x,y',x,y') \to \inf_{x'} \sup_y F(x',y,x',y).$
 (Proof complete)
+
+**Proposition 14-10.** (An Example of Strong Duality in Thin Categories)
+
+Suppose that the end and the coend coincide, i.e.,
+
+$\int_x F(x,y,x,y) \ \cong\ \int^x F(x,y,x,y)$ holds.
+
+Then $\int^y \int_x F(x,y,x,y) \ \cong\ \int_x \int^y F(x,y,x,y).$
+
+**Proof**
+
+It suffices to show the existence of a morphism
+$\int_x \int^y F(x,y,x,y) \ \to\ \int^y \int_x F(x,y,x,y),$
+that is,
+$\inf_x \sup_y F(x,y,x,y) \ \to\ \sup_y \inf_x F(x,y,x,y).$
+
+By the universal property of the infimum,
+$\inf_x \sup_y F(x,y,x,y) \ \to\ \sup_x \sup_y F(x,y,x,y).$
+
+By the basic lemma on the interchange of suprema (suprema commute),
+$\sup_x \sup_y F(x,y,x,y) \ \cong\ \sup_y \sup_x F(x,y,x,y).$
+
+Moreover, by the assumption, for each fixed $y$ we have $\sup_x F(x,y,x,y) \cong \inf_x F(x,y,x,y)$. 
+
+Therefore, $\sup_y \sup_x F(x,y,x,y) \ \cong\ \sup_y \inf_x F(x,y,x,y).$
+
+Composing these morphisms yields $\inf_x \sup_y F(x,y,x,y) \ \to\ \sup_y \inf_x F(x,y,x,y).$
+
+The morphism in the opposite direction follows from the proposition 14-9.
+Thus, morphisms exist in both directions, and we obtain the desired isomorphism.(Proof complete)
+
+**Note**  
+
+The interchange of ends and coends in thin categories, as seen in Propositions 14-9 and 14-10, has interesting connections to duality in optimization theory and von Neumann’s minimax theorem in game theory.
+
+The existence of the morphism $\sup_y \inf_x F \to \inf_x \sup_y F$ shown in Proposition 14-9 is a general fact that holds for any function (or poset-valued function), since $\sup_y \inf_x F \leq \inf_x \sup_y F$ is always true.
+
+On the other hand, the equality shown in Proposition 14-10 does not hold in general. In ordinary analysis, additional structures—such as convexity, continuity, or complete distributivity—are typically required for the equality to hold.
