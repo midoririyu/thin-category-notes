@@ -32,6 +32,7 @@ In particular, the proposition that "if a Kan extension is possible in a general
 - [(12) Universal Objects as Optimization ](./Thin-Categories-12.md)
 - [(13) Kan Extensions Targeting Thin Categories ](./Thin-Categories-13.md)
 - [(14) Coends and Ends in Thin Categories ](./Thin-Categories-14.md)
+- [(15) Analyzing the Jacobian Conjecture Through the Lens of Universal Objects as Optimization ](./JacobianConjecture.md)
 
 ---
 (Based on articles originally published on Mathlog in Japanese. Article (8) is not included on github as it is for reference only. It is published on Mathlog.
