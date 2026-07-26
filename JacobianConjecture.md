@@ -31,6 +31,14 @@ We define the thinning functor $T$' as an operation that strips away topological
 
 Specifically, we fix the condition that $\det J_f$ is a non-zero constant across the entire space ($c \in \mathbb{C}^\times$), known as the **Keller condition**, as our target condition in the thin category.
 
+> **Note: Correspondence with the Concept of "Distance (Metric)" in Section (12)**
+> 
+> In **[Thin-Categories-12](Thin-Categories-12.md
+)**, a thinning functor was introduced as an operation that projects the structure of an original category onto an ordered evaluation structure, such as a "distance (metric)."
+> 
+> At first glance, the Jacobian determinant $\det J_f$ (the Keller condition) in this article might not resemble a conventional distance metric. However, it functions as an evaluation value (quantification) that measures the "degree of local invertibility (injectivity)."
+> 
+> Specifically, it serves as an index to evaluate whether $\det J_f$ is a non-zero constant across the entire space ($c \in \mathbb{C}^\times$). The evaluation space here can be interpreted as a discrete, thinned evaluation structure—a quasi-metric of "local invertibility"—where a non-zero constant corresponds to "invertible" (evaluation/distance = 0) and any other value corresponds to "non-invertible" (evaluation/distance = $\infty$).
 ---
 
 ## 3. Categorical Reformulation of the Jacobian Conjecture
