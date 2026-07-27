@@ -75,7 +75,7 @@ This phenomenon shares the exact same logical structure as the **method of Lagra
 
 When setting $L = f - \lambda g$ in Lagrange multipliers, the first-order condition $\nabla L = 0$ (zero gradient) is merely a **necessary condition** for $f$ to have an extremum under the constraint $g = 0$. It cannot determine whether the identified candidate point is a genuine extremum (local maximum/minimum) or a false candidate such as a saddle point.
 
-Similarly, my remark on the discovery by Alpöge and AI is that the Keller condition— "$\det J_f$ is a non-zero constant, i.e., $\nabla T(f) = 0$"—was merely a first-order necessary condition indicating local flatness, rather than something that guarantees global invertibility (belonging to $W$).
+Similarly, my remark on the discovery by Alpöge and AI is that the Keller condition— "$\det J_f$ is a non-zero constant, i.e., $\nabla T(f) = 0$" —was merely a first-order necessary condition indicating local flatness, rather than something that guarantees global invertibility (belonging to $W$).
 
 Ultimately, this discovery serves as a concrete demonstration that **a thinning functor is, in general, not omnipotent.**
 
