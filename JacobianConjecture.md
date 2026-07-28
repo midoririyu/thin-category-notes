@@ -21,20 +21,20 @@ In short, $\mathcal{C}[W^{-1}]$ represents the universal object that completely 
 
 Following the context of [(12) Universal Objects as Optimization ](./Thin-Categories-12.md), we construct a **thinning functor $T'$** that projects the complex algebraic and geometric structure of the category $\mathcal{C}$ into the realm of evaluation values (metric and order).
 
-For the Jacobian determinant $\det J_f$ of a polynomial map $f: \mathbb{C}^n \to \mathbb{C}^n$, the multiplicative functoriality of composition ($\det J_{f \circ g} = \det J_f \cdot \det J_g$) must align with an additive distance structure. To achieve this, we define the evaluation value $T(f)$ as the **logarithmic Jacobian**:
+For the Jacobian determinant $\det J_f$ of a polynomial map $f: \mathbb{C}^n \to \mathbb{C}^n$, the multiplicative functoriality of composition ($\det J_{f \circ g} = \det J_f \cdot \det J_g$) must align with an additive distance structure. To achieve this, we define the indicator $T(f)$ as the **logarithmic Jacobian**:
 
 $$ T(f) = \log |\det J_f| $$
 
 This preserves an additive monoidal metric structure under composition, yielding $T(f \circ g) = T(f) + T(g)$.
 
 ### Reinterpreting the Keller Condition as a First-Order Extremum Condition
-The **Keller condition** in the Jacobian Conjecture (stating that $\det J_f$ is a non-zero constant $c \in \mathbb{C}^\times$ over the entire space) can be rephrased via the spatial gradient of the evaluation value:
+The **Keller condition** in the Jacobian Conjecture (stating that $\det J_f$ is a non-zero constant $c \in \mathbb{C}^\times$ over the entire space) can be rephrased via the spatial gradient of the indicator:
 
 $$ \nabla T(f) = \nabla (\log |\det J_f|) = 0 \quad (\text{zero gradient across the entire space}) $$
 
 In variational calculus and optimization theory, this is precisely the first-order extremum condition signifying that the local variation energy is in a completely flat/stationary state.
 
-Accordingly, we assign the metric distance (variational quantity) $d_{T(f_1)T(f_2)}$ between evaluation values based on whether they satisfy this extremum condition:
+Accordingly, we assign the metric distance (variational quantity) $d_{T(f_1)T(f_2)}$ between indicators based on whether they satisfy this extremum condition:
 
 $$
 d_{T(f_1)T(f_2)} = 
@@ -55,9 +55,9 @@ $$ T': \mathcal{C} \to \mathcal{C}\left(\mathrm{Ob}(\mathcal{C}), \{\ge_{T(i)T(j
 Under this framework, the Jacobian Conjecture can be rephrased as follows:
 
 > **Question (Agreement of Criteria / Pullback)**  
-> When morphisms satisfying the extremum condition in the target category (non-zero constant functions) under the thinning functor $T'$ are pulled back to the original category $\mathcal{C}$, does this set coincide with the class of genuine isomorphisms $W$?  
+> When morphisms satisfying the extremum condition in the target category (polynomial having non-zero Jacobian) under the thinning functor $T'$ are pulled back to the original category $\mathcal{C}$, does this set coincide with the class of genuine isomorphisms $W$?  
 > 
-> In other words, through the localization functor $Q: \mathcal{C} \to \mathcal{C}[W^{-1}]$, does the criterion for being an isomorphism in $\mathcal{C}[W^{-1}]$ completely coincide with the criterion for candidate extrema in the target category under $T': \mathcal{C} \to \mathcal{C}\left(\mathrm{Ob}(\mathcal{C}), \{\ge_{T(i)T(j)}\}\right)$ where the distance between candidates is $0$?
+> In other words, through the localization functor $Q: \mathcal{C} \to \mathcal{C}[W^{-1}]$, does the criterion for being an isomorphism in $\mathcal{C}[W^{-1}]$ completely coincide with the criterion for candidate extrema in the target category under $T': \mathcal{C} \to \mathcal{C}\left(\mathrm{Ob}(\mathcal{C}), \{\ge_{T(i)T(j)}\}\right)$ where the distance between indicators is $0$?
 
 If this were always true, the local extremum evaluation via the thinning functor $T'$ would function as a "noise-free universal filter" capable of flawlessly extracting the true global structure $W$ of the original category.
 
