@@ -48,3 +48,15 @@ The method above only provides **candidates** for universal objects, since even 
 Whether it is Lagrange multipliers or the computation of homology, these are historical achievements of human ingenuity in constructing a suitable $T'$.
 
 Humans — and AI as well — generally cannot handle thick categories directly. Ultimately, we must map them to manageable thin categories before performing computations.
+
+### Supplementary Note: Universal Object Search and Adjunctions
+
+The universal object search problem mentioned above corresponds to investigating the pullback (or lifting) operation of a functor $T'$ from a locally small category $\mathcal{C}$ to a thin category $\mathcal{D}$.
+
+Here, we briefly remark on the case where there exists a right adjoint $G$ to the functor $T'$ acting as a left adjoint.
+
+When the thinning functor $T': \mathcal{C} \to \mathcal{D}$ is a left adjoint, its right adjoint $G: \mathcal{D} \to \mathcal{C}$ assigns to each object $d$ in the thin category $\mathcal{D}$ the "most universal object in the original category $\mathcal{C}$ whose thinned result is bounded above by $d$" (serving as a supremum-like pullback).
+
+> (As a basic fact in general category theory, it is worth noting that "the existence of a right adjoint $G$ to a functor $F$ is equivalent to the existence of the right Kan extension along $F$," and the right adjoint $G$ (if it exists) can be constructed as $\mathrm{Ran}_F(d)$.)
+
+In this sense, the right adjoint $G$ can be viewed as an operation that pulls back optimal values (extremal values) in $\mathcal{D}$ into the original "thick" category $\mathcal{C}$ in the "most consistent (limit-wise) way," or as a **"reconstruction operator"** that restores the "thickness" lost through thinning while preserving global consistency.
