@@ -1,3 +1,5 @@
+**[Back to Table of Contents](README.md)**
+
 # Analyzing Mathematical Conjectures Through the Lens of Thinning Functors 
 
 In the previous article, [Analyzing the Jacobian Conjecture Through the Lens of Universal Objects as Optimization](./JacobianConjecture.md)".", we attempted to frame the Jacobian Conjecture as an optimization problem within a thin category using the thinning functor $T'$. 
