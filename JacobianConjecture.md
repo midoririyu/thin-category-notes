@@ -1,3 +1,5 @@
+**[Back to Table of Contents](README.md)**
+
 # Analyzing the Jacobian Conjecture Through the Lens of Universal Objects as Optimization.
 
 In July 2026, a counterexample to the Jacobian Conjecture was discovered by Levent Alpöge and Claude Fable 5. In this article, we analyze this topic within the framework developed in [(12) Universal Objects as Optimization ](./Thin-Categories-12.md)—namely, the thinning (metric/order evaluation) of thick categories into thin categories, as well as the search for optimal solutions and universal objects.
