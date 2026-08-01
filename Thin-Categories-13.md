@@ -163,7 +163,7 @@ Combining these, we obtain the desired chain of morphisms in $\mathcal{D}$ for e
 This proposition shows that, when the order on the thin functor category $[\mathcal{X}, \mathcal{D}]$ is denoted by $\leq$, we have
 $Lan_K (T \circ F) \leq T \circ Sup_K F \leq T \circ Lan_K F.$
 
-Moreover, if we take the packed arrows functor as the thinning functor $T$, and if $Lan_K F$ exists, then $Lan_K (T \circ F) \cong Sup_K (T \circ F)$ is also defined since $T\circ\text{Lan}_KF=\text{Lan}_K (T\circ F)=\text{Lan}_KF$ as a mapping from objects to objects.
+Moreover, if we take the standard thinning functor in  [(5) Standard Thinning Construction ](./Thin-Categories-05.md) as $T$, and if $Lan_K F$ exists, then $Lan_K (T \circ F) \cong Sup_K (T \circ F)$ is also defined since $T\circ\text{Lan}_KF=\text{Lan}_K (T\circ F)=\text{Lan}_KF$ as a mapping from objects to objects.
 
 As a contrapositive, if $Lan_K (T \circ F)$ does not exist, then $Lan_K F$ does not exist either. This can sometimes serve as a simple criterion for the non-existence of Kan extensions.
 
