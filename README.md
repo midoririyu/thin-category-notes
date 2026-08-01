@@ -15,7 +15,7 @@ Treating thin categories as a "generalization of preordered sets" within the fra
 -Attempts to reduce universality problems in general categories to optimization problems in thin categories.
 
 The hallmark of this study is its focus on the unique property of thin categories where natural transformations and universality can be handled solely by the "existence of morphisms."
-In particular, the proposition that "if a Kan extension is possible in a general category, its image under the packed arrows functor in a thin category is also Kan-extendable" (Article 13) is presented as a potentially beneficial tool for mathematicians and system architects as a simplified Kan extensibility check.
+In particular, the proposition that "if a Kan extension is possible in a general category, its image under the standard thinning functor in a thin category is also Kan-extendable" (Article 13) is presented as a potentially beneficial tool for mathematicians and system architects as a simplified Kan extensibility check.
 
 ## Article List
 
