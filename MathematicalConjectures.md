@@ -60,11 +60,18 @@ Just as the difficulty of determining extremum points in the method of Lagrange 
 
 ---
 
-## 5. Conclusion: A Companion for Mathematical Appreciation
+## 5. Counterexample Search as Lower Bound Non-Existence Algorithms
+
 
 Through the concept of the "thinning functor", this article has attempted to capture the inherent limits of reductionist approaches in mathematical history. 
 
 Of course, this perspective cannot be used to instantly determine the validity or falsity of any formal mathematical proof. However, observing solved and unsolved conjectures through this lens provides a intuitive heuristic—a helpful guide, if you will—for appreciating the underlying mechanics behind the fate of mathematical conjectures.
+
+For example, if mathematical conjectures such as those discussed above can be framed—as seen in the Supplementary Note of  [(12) Universal Objects as Optimization ](./Thin-Categories-12.md)—as "conjectures on whether a right adjoint to a thinning functor exists," then searching for a counterexample to such a conjecture reduces to searching for an object $d$ for which the right Kan extension $\mathrm{Ran}_T(d)$ along the thinning functor $T$ fails to exist, as explored in  [(13) Kan Extensions Targeting Thin Categories ](./Thin-Categories-13.md).
+
+Reformulating this task into an **algorithm problem for verifying the non-existence of lower bounds (infima)** in a thin category (via standard thinning) carries substantial mathematical and computational significance. 
+
+It would be an intriguing endeavor to investigate unproven cases from this perspective—such as the two-variable **Jacobian Conjecture** or **Hadwiger's Conjecture** in graph minor theory, where the underlying structures naturally align with preordered systems.
 
 
 
