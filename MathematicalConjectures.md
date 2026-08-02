@@ -63,13 +63,10 @@ Just as the difficulty of determining extremum points in the method of Lagrange 
 ## 5. Counterexample Search as Lower Bound Non-Existence Algorithms
 
 
-Through the concept of the "thinning functor", this article has attempted to capture the inherent limits of reductionist approaches in mathematical history. 
-
-Of course, this perspective cannot be used to instantly determine the validity or falsity of any formal mathematical proof. However, observing solved and unsolved conjectures through this lens provides a intuitive heuristic—a helpful guide, if you will—for appreciating the underlying mechanics behind the fate of mathematical conjectures.
-
-For example, if mathematical conjectures such as those discussed above can be framed—as seen in the Supplementary Note of  [(12) Universal Objects as Optimization ](./Thin-Categories-12.md)—as "conjectures on whether a right adjoint to a thinning functor exists," then searching for a counterexample to such a conjecture reduces to searching for an object $d$ for which the right Kan extension $\mathrm{Ran}_T(d)$ along the thinning functor $T$ fails to exist, as explored in  [(13) Kan Extensions Targeting Thin Categories ](./Thin-Categories-13.md).
-
-Reformulating this task into an **algorithm problem for verifying the non-existence of lower bounds (infima)** in a thin category (via standard thinning) carries substantial mathematical and computational significance. 
+The mathematical conjectures mentioned above are close to the viewpoint of the success or failure of a thinning functor $T$ and its corresponding pullback operation. In other words, the existence of a counterexample to such a conjecture corresponds to a situation in which the pullback from an optimal value (extremum) in the thin category fails to work properly.
+If the success or failure of the pullback operation can be interpreted as the success or failure of a right adjoint of the thinning functor, then, as noted in  the  supplementary note of  [(12) Universal Objects as Optimization ](./Thin-Categories-12.md) , this becomes a question of whether the right Kan extension $\mathrm{Ran}_T(d)$ can be defined for every $d$. Likewise, as discussed in  [(13) Kan Extensions Targeting Thin Categories ](./Thin-Categories-13.md), the possibility of a right Kan extension can be screened in a relatively simple way by checking the existence of an infimum ($mathrm{Inf}
+$) in the thin category obtained by the standard thinning. 
+Applying this method to the search for counterexamples to mathematical conjectures may be meaningful as one possible approach, even in cases where the pullback operation cannot be regarded as a right adjoint. It cannot be ruled out that searching for a $d$ for which the right Kan extension $\mathrm{Ran}_T(d)$ cannot be defined may lead to the discovery of new counterexamples.
 
 It would be an intriguing endeavor to investigate unproven cases from this perspective—such as the two-variable **Jacobian Conjecture** or **Hadwiger's Conjecture** in graph minor theory, where the underlying structures naturally align with preordered systems.
 
