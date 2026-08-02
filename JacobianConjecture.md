@@ -56,8 +56,8 @@ $$ T': \mathcal{C} \to \mathcal{C}\left(\mathrm{Ob}(\mathcal{C}), \{\ge_{T(i)T(j
 
 Under this framework, the Jacobian Conjecture can be rephrased as follows:
 
-> **Question (Agreement of Criteria / Pullback)**  
-> When morphisms satisfying the extremum condition in the target category (polynomial having non-zero Jacobian) under the thinning functor $T'$ are pulled back to the original category $\mathcal{C}$, does this set coincide with the class of genuine isomorphisms $W$?  
+> **Question (Agreement of Criteria)**  
+> When a morphism satisfying the extremum condition in the target category (polynomial having non-zero Jacobian) under the thinning functor $T'$, does it belongs to the class of genuine isomorphisms $W$?  
 > 
 > In other words, through the localization functor $Q: \mathcal{C} \to \mathcal{C}[W^{-1}]$, does the criterion for being an isomorphism in $\mathcal{C}[W^{-1}]$ completely coincide with the criterion for candidate extrema in the target category under $T': \mathcal{C} \to \mathcal{C}\left(\mathrm{Ob}(\mathcal{C}), \{\ge_{T(i)T(j)}\}\right)$ where the distance between indicators is $0$?
 
