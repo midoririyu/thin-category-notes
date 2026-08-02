@@ -51,7 +51,7 @@ Humans — and AI as well — generally cannot handle thick categories directly.
 
 ### Supplementary Note: Universal Object Search and Adjunctions
 
-The universal object search problem mentioned above corresponds to investigating the pullback (or lifting) operation of a functor $T'$ from a locally small category $\mathcal{C}$ to a thin category $\mathcal{D}$.
+The universal object search problem mentioned above share a similar point of view to investigating the pullback (or lifting) operation of a functor $T'$ from a locally small category $\mathcal{C}$ to a thin category $\mathcal{D}$.
 
 Here, we briefly remark on the case where there exists a right adjoint $G$ to the functor $T'$ acting as a left adjoint.
 
