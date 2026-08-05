@@ -73,3 +73,42 @@ It would be an intriguing endeavor to investigate unproven cases from this persp
 
 
 
+### Addendum 1: Application to Differential Equations (Navier–Stokes Equations)
+
+Applying the above framework to open problems in differential equations—most notably the Navier–Stokes existence and smoothness problem—reveals that these issues are, at their core, problems of **"pulling back thick objects from thin conditions."**
+
+* **The Thin Side:** The differential equation itself (local, differential relationships). Conditions specifying point-wise or infinitesimal behavior.
+* **The Thick Side:** The function that serves as the actual solution (or the function space itself). Objects endowed with rich global structures, such as global existence, regularity, uniqueness, and long-time behavior.
+
+The fundamental question—*"Does a smooth solution satisfying the equation exist globally?"*—can be reframed as whether the pullback from a thin category (local data connected by differential relations) to a thick category (an appropriate function space) can succeed without breakdown.
+
+In this light, we may define **"solving a differential equation"** as:
+
+> **The operation of pulling back a structure from a world described by local constraints (an accumulation of "thin relationships" such as limits and gradients) into a "function space (thick category)" without encountering collapse (singularities or blow-ups), thereby reconstructing it as a global entity.**
+
+---
+
+### Addendum 2: Application to Computer Science ($\mathbf{P} \neq \mathbf{NP}$ Conjecture)
+
+Similarly, applying this perspective to one of the most prominent open problems in computer science, the $\mathbf{P} \neq \mathbf{NP}$ conjecture, suggests that many past attempts to prove $\mathbf{P} \neq \mathbf{NP}$ failed because they followed a pattern of:
+
+$$\text{Thinning} \longrightarrow \text{Reduction to Local / Numerical Conditions} \longrightarrow \text{Claiming Global Separation}$$
+
+Specifically, the major known barriers can be reinterpreted through the lens of thinning:
+
+1. **Relativization Barrier (Baker–Gill–Solovay, 1975)**
+   - *Overview:* There exist oracle worlds where $\mathbf{P} = \mathbf{NP}$ and others where $\mathbf{P} \neq \mathbf{NP}$.
+   - *Thinning Interpretation:* A thinning operation that ignores the "internal structure" of objects and observes only input-output behavior via external morphisms (black-box functors) cannot separate $\mathbf{P}$ from $\mathbf{NP}$.
+
+2. **Natural Proofs Barrier (Razborov–Rudich, 1994)**
+   - *Overview:* Proving lower bounds on circuit complexity using combinatorial, "constructive/useful" properties contradicts the existence of pseudorandom generators in cryptography.
+   - *Thinning Interpretation:* Performing "excessive thinning" to reduce information into manageable properties strips away the essential texture (geometric and algebraic thickness) inherent to $\mathbf{NP}$.
+
+3. **Algebrization Barrier (Aaronson–Wigderson, 2008)**
+   - *Overview:* Algebraic extensions such as polynomial candidate evaluations (a form of algebraic thinning) remain insufficient to achieve separation.
+
+Viewing these obstacles through the principle that *"dropping information via a thinning functor prevents a successful pullback,"* we see that proving $\mathbf{P} \neq \mathbf{NP}$ requires demonstrating that **no clever polynomial-time algorithm (thinning) can entirely collapse the thickness of an $\mathbf{NP}$-complete problem**. 
+
+In other words, it suggests that **no thinning functor can fully replicate the essential thickness of $\mathbf{NP}$ within a purely thin category; there must exist structural obstructions that inevitably leak out.**
+
+This offers a novel meta-viewpoint that frames the difficulty of the conjecture as an inherent limitation of thinning. While this remains a conjecture on the author's part, and a rigorous formulation lies beyond the scope of this paper, it appears to present a highly intriguing avenue for future research.
