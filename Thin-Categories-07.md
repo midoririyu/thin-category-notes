@@ -79,6 +79,16 @@ Then, for any $i,j \in Ob(\mathcal{C})$,
 $g_{T_2(F(i))T_2(F(j))} = T_2(F(p)) = (T_2 \circ F)(p) = (T(F) \circ T_1)(p) = T(F)(T_1(p)).$
 Thus $T(F)$ is full, and hence an equivalence. (Proof complete)
 
+**Example. (A thin-categorical interpretation of topological invariants)**
+Let $\mathcal{C}$ and $\mathcal{D}$ be categories of topological spaces (objects are topological spaces, morphisms are continuous maps), and let
+$F ⁣:\mathcal{C} \to \mathcal{D}$ be a continuous map (or the functor induced by continuous maps).  Let $C_A = C(A,f)$ be the thin category of topological invariants of objects of $\mathcal{C}$ (homology groups, cohomology rings, homotopy groups, etc.), and let $C_B = C(B,g)$ be the corresponding thin category of topological invariants of objects of $\mathcal{D}$. Via the thinning functors
+$T_1 ⁣:\mathcal{C} \to C_A, T_2:\mathcal{D} \to C_B$, we regard the induced functor
+$T(F) ⁣: T_1(\mathcal{C}) \to T_2(\mathcal{D})$ as the morphism that a continuous map induces between topological invariants.  In this setting, the fundamental fact that a homeomorphism induces an isomorphism of topological invariants holds. This corresponds structurally to the proposition  “If $F$ is an equivalence of categories, then $T(F)$ is also an equivalence of categories.”  
+Indeed, topological invariants such as homology are typical examples of thinning: they project the “thick” structure of a topological space onto numerical or algebraic “thin” data. A strong equivalence relation such as homeomorphism is preserved as an isomorphism after this thinning.  This property may be viewed as a categorical interpretation of the classical technique that detects essential differences between continuous maps of topological spaces by first passing them through a thin filter (topological invariants).  One might even define the notion of a “topological invariant” as a pair of thin categories $C_A$ and $C_B$ for which thinning functors $T(F)$ can be defined with respect to the categories $\mathcal{C}$ and $\mathcal{D}$ of topological spaces.
+
+
+
+
 **Proposition 7-2**  
 If $F$ is a (left) adjoint functor, then so is $T(F)$.
 
@@ -103,6 +113,15 @@ Let $T' = (T_2, T_1)$. We show that $T(F) : T_1(\mathcal{C}) \to T_2(\mathcal{D}
 3. **Uniqueness**: The uniqueness of $\bar{q}$ follows immediately from the fact that $T_2(\mathcal{D})$ is a thin category.
 
 Thus, the pair of functors $(T(F), T'(G))$ satisfies the adjunction $T(F) \dashv T'(G)$. (Proof complete)
+
+**Example. (A thin-categorical interpretation of weak solutions in distribution theory)**
+Let $\mathcal{C}$ be a suitable category of function spaces (for instance, the category of smooth functions) and let $\mathcal{D}$ be the category of the corresponding differential equations. Let the functor $F:\mathcal{C} \to \mathcal{D}$ be the operation that assigns to each function its differential equation (i.e., the application of a differential operator).  Let $C_A = C(A,f)$ be the thin category of distributions (or hyperfunctions) and let $C_B = C(B,g)$ be the thin category of differential equations for distributions. Via the thinning functors $T_1:\mathcal{C} \to C_A, T_2:\mathcal{D} \to C_B$, we regard the induced functor $T(F)⁣:T_1(\mathcal{C}) \to T_2(\mathcal{D})$ as the “distributional version” of the differential operator.  Recall the fundamental property of distribution theory:  “If a classical solution exists, then a weak solution also exists.”  
+Its contrapositive reads  “If no weak solution (i.e., no solution in the sense of distributions) exists, then no solution exists in the original function space either.”  
+This implication corresponds structurally to the contrapositive of the proposition  “If $F$ is a left adjoint, then $T(F)$ is also a left adjoint.”  
+
+Indeed, the very definition of the weak derivative is the extension of the formal adjoint of a classical differential operator to the distributional setting via the distributional pairing. Consequently, if adjointness fails in the thin world (non-existence of a weak solution), adjointness also fails in the original thick world (non-existence of a classical solution).  This may be viewed as a categorical interpretation of the analytic technique that, for nonlinear or otherwise complicated differential equations, first passes through a “thin filter” (the weak formulation) in order to detect non-existence of solutions.
+
+
 
 **Proposition 7-3**  
 If $F$ and $F'$ are naturally isomorphic functors, then so are $T(F)$ and $T(F')$.
