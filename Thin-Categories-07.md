@@ -80,10 +80,11 @@ $g_{T_2(F(i))T_2(F(j))} = T_2(F(p)) = (T_2 \circ F)(p) = (T(F) \circ T_1)(p) = T
 Thus $T(F)$ is full, and hence an equivalence. (Proof complete)
 
 **Example. (A thin-categorical interpretation of topological invariants)**
+
 Let $\mathcal{C}$ and $\mathcal{D}$ be categories of topological spaces (objects are topological spaces, morphisms are continuous maps), and let
-$F ⁣:\mathcal{C} \to \mathcal{D}$ be a continuous map (or the functor induced by continuous maps).  Let $C_A = C(A,f)$ be the thin category of topological invariants of objects of $\mathcal{C}$ (homology groups, cohomology rings, homotopy groups, etc.), and let $C_B = C(B,g)$ be the corresponding thin category of topological invariants of objects of $\mathcal{D}$. Via the thinning functors
-$T_1 ⁣:\mathcal{C} \to C_A, T_2:\mathcal{D} \to C_B$, we regard the induced functor
-$T(F) ⁣: T_1(\mathcal{C}) \to T_2(\mathcal{D})$ as the morphism that a continuous map induces between topological invariants.  In this setting, the fundamental fact that a homeomorphism induces an isomorphism of topological invariants holds. This corresponds structurally to the proposition  “If $F$ is an equivalence of categories, then $T(F)$ is also an equivalence of categories.”  
+$F ⁣:\mathcal{C} \to \mathcal{D}$ be the functor induced by continuous maps.  Let $C_A = C(A,f)$ be the thin category of topological invariants of objects of $\mathcal{C}$ (homology groups, cohomology rings, homotopy groups, etc.), and let $C_B = C(B,g)$ be the corresponding thin category of topological invariants of objects of $\mathcal{D}$. Via the thinning functors
+$T_1 ⁣:\mathcal{C} \to C_A, T_2:\mathcal{D} \to C_B$, we regard
+$T(F) ⁣: T_1(\mathcal{C}) \to T_2(\mathcal{D})$ as the functor that a continuous map induces between topological invariants.  In this setting, the fundamental fact that a homeomorphism induces an isomorphism of topological invariants holds. This corresponds structurally to the proposition  “If $F$ is an equivalence of categories, then $T(F)$ is also an equivalence of categories.”  
 Indeed, topological invariants such as homology are typical examples of thinning: they project the “thick” structure of a topological space onto numerical or algebraic “thin” data. A strong equivalence relation such as homeomorphism is preserved as an isomorphism after this thinning.  This property may be viewed as a categorical interpretation of the classical technique that detects essential differences between continuous maps of topological spaces by first passing them through a thin filter (topological invariants).  One might even define the notion of a “topological invariant” as a pair of thin categories $C_A$ and $C_B$ for which thinning functors $T(F)$ can be defined with respect to the categories $\mathcal{C}$ and $\mathcal{D}$ of topological spaces.
 
 
