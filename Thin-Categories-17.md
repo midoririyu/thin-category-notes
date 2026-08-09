@@ -71,6 +71,14 @@ Humans, on the other hand, possess a modest capacity to perceive thick categorie
 
 The human endeavor to logically formalize thought is, in itself, an act of thinning—and thus carries inherent boundaries.
 
+For example, as we saw in Addendum 2 of [(16) Analyzing Mathematical Conjectures Through the Lens of Thinning Functors ](./MathematicalConjectures.md), any attempt to prove the P ≠ NP conjecture confronts an essential twist: one must fully describe and prove the existence of a ‘structure that cannot withstand thinning (i.e., that possesses thickness)’ using only the internal resources of a ‘thinned logical system’.
+
+In quantum computing, quantum measurement can also be regarded as a thinning functor from quantum states (a thick category) to observation outcomes (a thin category)—that is, the projection of the state and the determination of classical numerical values. Without including this final step, humans (and AIs) cannot process the data.
+
+
+
+
+
 In this sense, both human mathematical intelligence and artificial intelligence share a common condition: **it is exceptionally difficult to completely escape from thin categories.**
 
 Perhaps the history—and future—of mathematical intelligence is best understood as a continuous journey: grounding ourselves in thin categories while forever seeking ways to reach into thick structures.
