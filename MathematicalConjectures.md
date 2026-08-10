@@ -112,3 +112,6 @@ Viewing these obstacles through the principle that *"dropping information via a 
 In other words, it suggests that **no thinning functor can fully replicate the essential thickness of $\mathbf{NP}$ within a purely thin category; there must exist structural obstructions that inevitably leak out.**
 
 This offers a novel meta-viewpoint that frames the difficulty of the conjecture as an inherent limitation of thinning. While this remains a conjecture on the author's part, and a rigorous formulation lies beyond the scope of this paper, it appears to present a highly intriguing avenue for future research.
+
+
+In every field of mathematics, it seems that mathematicians are driven by a curiosity about how much of the world's underlying structure (principle) can be extracted (pulled back) through this thinning functor.
