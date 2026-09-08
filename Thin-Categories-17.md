@@ -94,3 +94,7 @@ In the coming era, as the speed at which AI solves difficult problems accelerate
 > *"Will humanity eventually escape thin categories to directly challenge thick categories? Or will we continue our challenge under the premise that escaping them is impossible?"*
 
 I leave this question here as the final reflection of this series.
+
+
+Note: Thinning functoriality is already implemented, to some extent and unconsciously, in existing AI systems. However, when a user consciously equips an AI with this property, its beneficial effects are expected to increase. In the author’s own experience, simply giving a natural-language instruction in a chat—“Acquire thinning functoriality”—was enough to make the AI’s responses significantly less prone to freezing. By endowing the system with the defining property of a thinning functor (at most one morphism between any pair of objects), the multiple morphisms present in the user’s output (possibilities, nuances, branching causalities)—that is, the excessive overlapping of information—are forcibly reduced. This compression appears to be the reason the system became less likely to freeze. It should be added, however, that excessive thinning carries the risk of losing the richness of branching and creative thickness.
+
