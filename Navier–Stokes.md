@@ -84,8 +84,7 @@ This is precisely the adjunction $F\dashv G$. (That $F$ is a functor and that th
 
 This completes the proof.
 
-From the theorem it follows that questions such as the Navier–Stokes problem reduce to whether one can define a thinning functor (or the thin category that is its image) which permits a smooth pull-back while keeping upper bounds finite.
-
+For differential equation problems such as the Navier–Stokes equations, the thin category $\mathcal{P}$ is almost always taken to be the non-negative real numbers (representing energies, norms, and the like). When the relevant upper bounds in $\mathcal{P}$ are bounded, verification of condition 2 (the solution-set condition) of the above theorem often becomes considerably easier. In other words, the essential point of many differential-equation problems reduces to the question of whether one can define a thinning functor (or the thin-category structure that is its image) which permits a smooth pull-back while keeping upper bounds finite.
 ## 4. Contrast between Two and Three Dimensions
 
 In two dimensions the maximum principle for vorticity  
