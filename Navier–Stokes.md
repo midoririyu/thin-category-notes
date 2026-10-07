@@ -121,7 +121,9 @@ Since $\mathcal{P}$ is a poset (a thin category), any two morphisms with the sam
 ---
 
 
-For differential equation problems such as the Navier-Stokes equations, the thin category $\mathcal{P}$ is almost always assumed to be the non-negative real numbers (representing quantities like energy or norms). If the supremum of the values taken there is bounded, the conditions of the above theorem are satisfied, which means an adjunction is obtained (as is often the case). 
+For differential equation problems such as the Navier-Stokes equations, the thin category $\mathcal{P}$ is almost always assumed to be the non-negative real numbers (representing quantities like energy or norms). If the supremum finite is taken and a bounded level set is generated or approximated by small set, the conditions of the above theorem are satisfied, which means an adjunction is obtained (as is often the case). 
+
+The author believes that the core of differential equation theory often boils down to the question: "Can we define a thinning functor (or the structure of the thin category as its image) that can be pulled back (smoothly) to the category of differential equations while keeping the supremum finite?" The background to this perspective heavily relies on the existence (and properties) of such adjoint thinning functors.
 
 ## 4. Contrast between Two and Three Dimensions
 
