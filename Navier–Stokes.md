@@ -43,48 +43,86 @@ admits a left adjoint.
 
 Category theory possesses a well-known criterion for the existence of adjoints: Freyd’s General Adjoint Functor Theorem. We state and prove the version in which the target is a thin category.
 
-**Theorem.**  
-Let $\mathcal{D}$ be a complete category and $\mathcal{P}$ a thin category (poset). Let $G:\mathcal{D}\to\mathcal{P}$ be a functor satisfying the following two conditions:
+## Adjoint Functor Theorem for Thin Categories
 
-1. $G$ preserves all limits.
-2. For every $p\in\mathcal{P}$ there exists a set $\{D_i\}_{i\in I}$ such that, whenever $p\leq G(D)$ for an object $D$, there exist an index $i$ and a morphism $D_i\to D$ with $p\leq G(D_i)$.
+**Theorem.** Let $\mathcal{D}$ be a complete category and $\mathcal{P}$ be a thin category (a poset). Suppose a functor $G: \mathcal{D} \to \mathcal{P}$ satisfies the following two conditions:
 
-Then $G$ admits a left adjoint.
+1. $G$ preserves all small limits; that is, it preserves limits where the indexing category is a small category.
+2. (Solution Set Condition) For any $p \in \mathcal{P}$, there exists a set $\{d_i\}_{i\in I}$ such that for any object $d$ satisfying $p \leq G(d)$, there exists some $i$ and a morphism $d_i \to d$ such that $p \leq G(d_i)$.
 
-**Proof.**  
-Fix an arbitrary $p\in\mathcal{P}$. By condition 2 there exists a family $\{D_i\}_{i\in I}$ with $p\leq G(D_i)$ for each $i$. Since $\mathcal{D}$ is complete, the product  
+Then, $G$ has a left adjoint.
+
+---
+
+## Proof
+
+### Part 1: Existence of the Left Adjoint Object
+Fix an arbitrary $p \in \mathcal{P}$. From Condition 2, there exists a family of objects $\{d_i\}_{i\in I}$ satisfying $p \leq G(d_i)$. Since $\mathcal{D}$ is complete, the product (limit) of this family exists in $\mathcal{D}$:
+
+$$ d_p := \prod_{i\in I} d_i $$
+
+Because $G$ preserves limits, we have:
+
+$$ G(d_p) = \prod_{i\in I} G(d_i) $$
+
+(which corresponds to the supremum in $\mathcal{P}$). Since $p \leq G(d_i)$ for each $i$, the universal property of the supremum implies:
+
+$$ p \leq G(d_p) $$
+
+Next, we show the minimality of $d_p$; that is, for any object $d$ satisfying $p \leq G(d)$, there exists a morphism $d_p \to d$. By Condition 2, there exists some $i$ and a morphism $d_i \to d$. Composing this with the projection of the product $d_p \to d_i$ yields the desired morphism $d_p \to d$.
+
+Note that for any $d$, the following equivalence holds (the $\Longleftarrow$ direction is trivial):
+
+$$ p \leq G(d) \iff \text{a morphism } d_p \to d \text{ exists} $$
+
+### Part 2: Functoriality
+We now show that assigning this $d_p$ to $p$ defines a functor $F: \mathcal{P} \to \mathcal{D}$ which is left adjoint to $G$. 
+
+First, we prove functoriality. By definition, $F(p) = \prod_{i \in I} d_i$ defines the mapping on objects. We must verify the mapping on morphisms: if $p \leq p'$, we need to show that a morphism $F(p) \to F(p')$ exists in $\mathcal{D}$.
+
+Assume $p \leq p'$. By definition, $F(p') = d_{p'}$ satisfies $p' \leq G(d_{p'})$. Since $p \leq p'$, it follows that $p \leq G(d_{p'})$.
+
+By the definition of $d_p$ (its universal property as a product) and the minimality from Condition 2, there exists a morphism from $F(p)$ to any object satisfying $p \leq G(d_{p'})$. Thus, we obtain a morphism $F(p) \to F(p')$.
+
+Because $F(p')$ is a limit, this morphism is uniquely determined by its universal property. This proves the mapping of morphisms. 
+
+Furthermore, the preservation of identity morphisms and composition is automatically satisfied since $F$ preserves the order structure. Therefore, $F$ is a functor. *(End of proof of functoriality)*
+
+### Part 3: Naturality of the Adjunction
+Next, we show the naturality of the adjoint functors. Being natural as adjoint functors means that for any $p \in \mathcal{P}$ and $d \in \mathcal{D}$, there is a hom-set isomorphism (bijection):
+
+$$ hom_\mathcal{D}(F(p), d) =: \mathcal{D}(F(p), d) \cong \mathcal{P}(p, G(d)) := hom_\mathcal{P}(p, G(d)) $$
+
+Let this isomorphism be denoted by $\alpha_{p,d}: \mathcal{D}(F(p), d) \to \mathcal{P}(p, G(d))$. For any morphism $f: p' \to p$ (i.e., $p' \leq p$) in $\mathcal{P}$ and any morphism $g: d \to d'$ in $\mathcal{D}$, the following diagram must commute:
 
 $$
-D_p:=\prod_{i\in I}D_i
+\begin{array}{ccc}
+\mathcal{D}(F(p), d) & \xrightarrow{\quad \alpha_{p,d} \quad} & \mathcal{P}(p, G(d)) \\
+\Big\downarrow\small{(F f)^* \circ g_*} & & \Big\downarrow\small{f^* \circ (G g)_*} \\
+\mathcal{D}(F(p'), d') & \xrightarrow{\quad \alpha_{p',d'} \quad} & \mathcal{P}(p', G(d'))
+\end{array}
 $$
+The equivalence $\mathcal{D}(F(p), d) \cong \mathcal{P}(p, G(d))$ is strictly synonymous with:
 
-exists. Because $G$ preserves limits we have  
+$$ p \leq G(d) \iff \text{a morphism } F(p) \to d \text{ exists} $$
 
-$$
-G(D_p)=\prod_{i\in I}G(D_i)
-$$
+which we have already established. 
 
-(the join in $\mathcal{P}$). The inequalities $p\leq G(D_i)$ therefore imply $p\leq G(D_p)$ by the universal property of the join.
+Looking at the commutative diagram at the level of elements, if we denote the image of a morphism $h: F(p) \to d$ under $\alpha_{p,d}$ as $\overline{h}: p \to G(d)$, the following equation must hold:
 
-We next verify the minimality of $D_p$: whenever $p\leq G(D)$, there exists a morphism $D_p\to D$. Indeed, condition 2 supplies an index $i$ and a morphism $D_i\to D$; composing with the product projection $D_p\to D_i$ yields the required morphism $D_p\to D$.
+$$ \overline{g \circ h \circ F(f)} = G(g) \circ \overline{h} \circ f $$
 
-Consequently, for every object $D$,  
+When we explicitly calculate both $\overline{g \circ h \circ F(f)}$ and $G(g) \circ \overline{h} \circ f$ for any arbitrary morphism $f: p' \to p$ ($p' \leq p$) in $\mathcal{P}$ and $g: d \to d'$ in $\mathcal{D}$, both result in a morphism $p' \to G(d')$ in $\mathcal{P}$. 
 
-$$
-p\leq G(D)\quad\Longleftrightarrow\quad\text{there exists a morphism }D_p\to D.
-$$
+Since $\mathcal{P}$ is a poset (a thin category), any two morphisms with the same domain and codomain are identical. Therefore, the equation holds, the diagram commutes, and the adjunction $F \dashv G$ is natural. 
 
-Sending each $p$ to this $D_p$ defines a functor $F:\mathcal{P}\to\mathcal{D}$ satisfying  
+*(End of proof of natural adjunction) (End of proof of theorem)*
 
-$$
-p\leq G(D)\quad\Longleftrightarrow\quad F(p)\to D.
-$$
+---
 
-This is precisely the adjunction $F\dashv G$. (That $F$ is a functor and that the correspondence is natural follow automatically, since in a thin category there is at most one morphism between any pair of objects and the correspondence is order-preserving.)
 
-This completes the proof.
+For differential equation problems such as the Navier-Stokes equations, the thin category $\mathcal{P}$ is almost always assumed to be the non-negative real numbers (representing quantities like energy or norms). If the supremum of the values taken there is bounded, the conditions of the above theorem are satisfied, which means an adjunction is obtained (as is often the case). 
 
-For differential equation problems such as the Navier–Stokes equations, the thin category $\mathcal{P}$ is almost always taken to be the non-negative real numbers (representing energies, norms, and the like). When the relevant upper bounds in $\mathcal{P}$ are bounded, verification of condition 2 (the solution-set condition) of the above theorem often becomes considerably easier. In other words, the essential point of many differential-equation problems reduces to the question of whether one can define a thinning functor (or the thin-category structure that is its image) which permits a smooth pull-back while keeping upper bounds finite.
 ## 4. Contrast between Two and Three Dimensions
 
 In two dimensions the maximum principle for vorticity  
