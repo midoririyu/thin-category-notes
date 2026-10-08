@@ -166,7 +166,8 @@ Even if a sequence of approximate solutions (e.g., a Galerkin sequence $u_n$) ca
 
 * **In the context of GAFT:**  
   The functor $G$ must preserve small limits (products, equalizers, etc.). However, when restricting the state space to $\mathcal{D}_{\text{smooth}}$, taking the limit in the sense of weak topologies or distributions (pulling back evaluations via $G$) risks sending the limit object $d_\infty = \varprojlim d_n$ outside $\mathcal{D}_{\text{smooth}}$, falling back into the weaker space $\mathcal{D}_{\text{weak}}$ (**loss of regularity**).  
-  In other words, $\mathcal{D}_{\text{smooth}}$ is not closed under the relevant limit operations (lack of completeness), leading to a situation where the functor $G$ fails to preserve limits on $\mathcal{D}_{\text{smooth}}$.
+  In other words, the objects (=solves of differential equations)
+   in $\mathcal{D}_{\text{smooth}}$ is not closed under the relevant limit operations (lack of completeness), leading to a situation where the functor $G$ fails to preserve limits on $\mathcal{D}_{\text{smooth}}$.
 
 ---
 
