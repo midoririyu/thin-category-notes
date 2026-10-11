@@ -177,6 +177,4 @@ The Navier–Stokes equations can be globally solved for smooth solutions in 2D,
 
 Looking at the structural arguments above—even from a non-expert's perspective—demonstrating the existence of smooth solutions for the 3D Navier–Stokes equations appears to be an extraordinarily formidable challenge.
 
----
-
-
+In addition to the GAFT mentioned above, several other theorems provide sufficient conditions for the existence of an adjoint functor, such as the Special Adjoint Functor Theorem (SAFT) and the adjoint functor theorem for accessible categories (Adámek–Rosický theorem). By applying these theorems, one can interpret the conditions for the existence of solutions to differential equations from various perspectives.
