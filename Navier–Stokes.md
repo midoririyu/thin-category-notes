@@ -106,32 +106,71 @@ Since $\mathcal{P}$ is a poset (a thin category), any two morphisms with the sam
 
 (End of proof of natural adjunction) (End of proof of theorem).
 
-As seen in *[Thin-Categories-03](Thin-Categories-03.md)*, if the thinning functor $G$ restricts its target category to the image $G(\mathcal{D})$, it preserves limits. In this case, determining the existence of an adjunction via GAFT boils down to checking the Solution Set Condition alone.
-
 ## 4. Interpretation via the General Adjoint Functor Theorem (GAFT)
 
-When applying GAFT to differential equation problems, the preservation of limits (Condition 1) is automatically satisfied by the construction of the functor. Therefore, the core issue we face narrows down to a single question: **"Is the Solution Set Condition satisfied or not?"**
+When viewed through the framework of the General Adjoint Functor Theorem (GAFT), the difficulty of establishing the existence and smoothness of solutions for the 3D Navier–Stokes equations can be explained by two major structural barriers:
 
-Based on this premise, let us organize the problem of the existence of smooth solutions to the 3D Navier-Stokes equations (and its inherent difficulty) within the context of GAFT.
+1. **The Unresolved Solution Set Condition**
+2. **The Failure of Limit Preservation (Loss of Closure) in Regular Spaces**
 
-### 1. In the Framework of Leray-Hopf Weak Solutions (Solutions Whose Existence is Proven Even in 3D)
-The Solution Set Condition in GAFT is satisfied.
-
-*   **The True Nature of the Solution Set Condition (Guarantee of Boundedness):**
-    Due to the energy equality (or inequality), dissipation effects from viscosity work to uniformly bound the total energy by the magnitude of the initial data.
-*   **Expression in the Context of GAFT:**
-    For an evaluation value $p$ (such as initial energy) in a thin category (poset $\mathcal{P}$), the family of candidate solutions satisfying it (such as balls in a Banach space) can be uniformly captured and covered within the category as a "small set (Solution Set)." This satisfies the Solution Set Condition, allowing the left adjoint (the correspondence returning solutions) to function via GAFT, thereby guaranteeing the existence of weak solutions.
+Below, we examine how the three core conditions for GAFT—**(1) Completeness of the category $\mathcal{D}$**, **(2) Preservation of limits by the functor $G$**, and **(3) The Solution Set Condition**—relate to the construction of smooth solutions to the Navier–Stokes equations.
 
 ---
 
-### 2. Attempting to Extend This to the Category of "Smooth Solutions (Strong Solutions)" $\mathcal{D}_{\text{smooth}}$ Leads to a Breakdown in Verifying the Solution Set Condition
-**The Barrier of Self-Amplification and Criticality:**
-To maintain smoothness, higher-order norms (such as $H^1, H^2$, or the vorticity norm $\omega$) must be controlled by the evaluation values on the thin category side. However, the non-linear convection term $(u \cdot \nabla)u$ of the 3D Navier-Stokes equations generates self-amplifying terms (e.g., $\|\nabla u\|_{L^2}^3$) against the derivatives of higher-order norms. In 3D spatial scaling, the possibility that this amplification cannot be completely suppressed by viscous dissipation (finite-time blow-up) cannot be ruled out.
+### 1. Weak Solutions (Leray–Hopf Weak Solutions) Easily Satisfy GAFT Conditions
 
-*   **Expression in the Context of GAFT:**
-    Given an evaluation value $p \in \mathcal{P}$, such as initial data or an energy upper bound, we cannot capture the family of candidate solutions satisfying that evaluation inside the space of smooth solutions $\mathcal{D}_{\text{smooth}}$ as a "uniformly bounded small solution set." In other words, due to the possibility that candidate solutions diverge to infinity, the "Solution Set Condition" required by the thin category side fails to hold.
+In the framework of **Leray–Hopf weak solutions**, whose global existence is proven even in 3D, all conditions of GAFT align smoothly:
 
-The author interprets the reason why Navier-Stokes equations are solvable in 2D while it remains unknown whether they are globally solvable in 3D as follows: in 2D, the maximum principle for vorticity and energy suppression work so that the viscous term completely overcomes the non-linear term, making the Solution Set Condition hold; whereas in 3D, that scaling relationship collapses.
+* **Category $\mathcal{D}_{\text{weak}}$:** An energy space equipped with a weak topology, such as $L^\infty(0, T; L^2(\mathbb{R}^3)) \cap L^2(0, T; H^1(\mathbb{R}^3))$ (which possesses properties close to completeness due to weak compactness).
+* **Thin Category $\mathcal{P}$ and Functor $G$:** A "thinning functor" $G$ mapping objects to the poset of non-negative real numbers $([0, \infty], \le)$, assigning evaluation values such as the initial energy.
+
+#### Fulfillment of Conditions
+
+1. **Solution Set Condition (Boundedness):**  
+   By the energy equality (or inequality), viscous dissipation uniformly bounds the total energy by the initial energy:
+   $$E(t) + 2\nu \int_0^t \|\nabla u\|_{L^2}^2 d\tau \le E(0)$$
+   This uniformly restricts the family of solution candidates (a ball in a Banach space) via the evaluation value $p$, thereby satisfying the Solution Set Condition.
+
+2. **Preservation of Limits (Weak Closure):**  
+   Under the weak topology, weak compactness guarantees that any bounded sequence obtained from energy estimates has a weakly convergent subsequence whose limit remains a weak solution to the equation.
+
+As a result, a left adjoint (a universal element / morphism that yields the solution) exists in the weak solution setting, guaranteeing the existence of global weak solutions.
+
+---
+
+### 2. Smooth Solutions Struggle to Satisfy GAFT Conditions
+
+The breakdown occurs when attempting to extend this framework to the category $\mathcal{D}_{\text{smooth}}$ of **smooth (or strong) solutions** (e.g., $H^k(\mathbb{R}^3)$ for $k > 5/2$, or $C^\infty(\mathbb{R}^3)$).
+
+#### Barrier A: Breakdown of the Solution Set Condition via the Convective Term $(u \cdot \nabla)u$
+
+To guarantee smoothness, higher-order norms (e.g., $H^1$ or $H^2$ norms, or the $L^2$ norm of vorticity $\omega = \nabla \times u$, i.e., enstrophy) must be evaluated and controlled within the thin category $\mathcal{P}$.
+
+However, the 3D nonlinear convective term $(u \cdot \nabla)u$ generates a self-amplifying quadratic (or higher) term in the time derivative of higher-order norms:
+$$\frac{d}{dt} \|\nabla u\|_{L^2}^2 \le C \|\nabla u\|_{L^2}^3 - \nu \|\nabla^2 u\|_{L^2}^2$$
+
+Even with the viscous dissipation term $-\nu \|\nabla^2 u\|_{L^2}^2$, the dimensional mismatch of the 3D Sobolev embedding (**criticality**) prevents the viscous dissipation from fully controlling the cubic growth of $\|\nabla u\|_{L^2}^3$. Solving this differential inequality cannot rule out the possibility of a finite-time blow-up where the norm becomes infinite.
+
+* **In the context of GAFT:**  
+  Even when given an evaluation value $p \in \mathcal{P}$ (e.g., initial data or energy upper bound), one cannot uniformly capture a small set of candidate objects (a Solution Set) satisfying $p \le G(d)$ in $\mathcal{D}_{\text{smooth}}$ across all $t \in [0, T]$. Thus, the validity of the **Solution Set Condition** in smooth spaces remains completely unresolved.
+
+---
+
+#### Barrier B: Loss of Limit Preservation in Regular Spaces
+
+Even if a sequence of approximate solutions (e.g., a Galerkin sequence $u_n$) can be constructed, there is no guarantee that its limit as $n \to \infty$ will remain inside the smooth category $\mathcal{D}_{\text{smooth}}$.
+
+* **In the context of GAFT:**  
+  The functor $G$ must preserve small limits (products, equalizers, etc.). However, when restricting the state space to $\mathcal{D}_{\text{smooth}}$, taking the limit in the sense of weak topologies or distributions (pulling back evaluations via $G$) risks sending the limit object $d_\infty = \varprojlim d_n$ outside $\mathcal{D}_{\text{smooth}}$, falling back into the weaker space $\mathcal{D}_{\text{weak}}$ (**loss of regularity**).  
+  In other words, $\mathcal{D}_{\text{smooth}}$ is not closed under the relevant limit operations (lack of completeness), leading to a situation where the functor $G$ fails to preserve limits on $\mathcal{D}_{\text{smooth}}$.
+
+---
+
+### Author's Interpretation & Concluding Remarks
+
+The Navier–Stokes equations can be globally solved for smooth solutions in 2D, whereas the 3D case remains open. In the author's view, this difference stems from a breakdown of **GAFT applicability**: in 2D, the viscous term completely dominates the nonlinear term, allowing the Solution Set Condition to hold; in 3D, this scaling relationship collapses—a phenomenon we might call the **"Criticality of the Solution Set Condition"**.
+
 Looking at the structural arguments above—even from a non-expert's perspective—demonstrating the existence of smooth solutions for the 3D Navier–Stokes equations appears to be an extraordinarily formidable challenge.
+The author interprets the reason why Navier-Stokes equations are solvable in 2D while it remains unknown whether they are globally solvable in 3D as follows: in 2D, the maximum principle for vorticity and energy suppression work so that the viscous term completely overcomes the non-linear term, making the Solution Set Condition hold; whereas in 3D, that scaling relationship collapses.
 
 In addition to the GAFT mentioned above, several other theorems provide sufficient conditions for the existence of an adjoint functor, such as the Special Adjoint Functor Theorem (SAFT) and the adjoint functor theorem for accessible categories (Adámek–Rosický theorem). By applying these theorems, one can interpret the conditions for the existence of solutions to differential equations from various perspectives.
