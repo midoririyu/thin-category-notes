@@ -35,7 +35,7 @@ Category theory possesses a well-known criterion for the existence of adjoints: 
 
 **Theorem.** Let $\mathcal{D}$ be a complete category and $\mathcal{P}$ be a thin category (a poset). Suppose a functor $G: \mathcal{D} \to \mathcal{P}$ satisfies the following two conditions:
 
-1. $G$ preserves all small limits; that is, it preserves limits where the indexing category is a small category.
+1. $G$ preserves all limits.
 2. (Solution Set Condition) For any $p \in \mathcal{P}$, there exists a set $\{d_i\}_{i\in I}$ such that for any object $d$ satisfying $p \leq G(d)$, there exists some $i$ and a morphism $d_i \to d$ such that $p \leq G(d_i)$.
 
 Then, $G$ has a left adjoint.
