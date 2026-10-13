@@ -35,8 +35,9 @@ Category theory possesses a well-known criterion for the existence of adjoints: 
 
 **Theorem.** Let $\mathcal{D}$ be a complete category and $\mathcal{P}$ be a thin category (a poset). Suppose a functor $G: \mathcal{D} \to \mathcal{P}$ satisfies the following two conditions:
 
-1. $G$ preserves all limits.
-2. (Solution Set Condition) For any $p \in \mathcal{P}$, there exists a set $\{d_i\}_{i\in I}$ such that for any object $d$ satisfying $p \leq G(d)$, there exists some $i$ and a morphism $d_i \to d$ such that $p \leq G(d_i)$.
+1. (Solution Set Condition) For any $p \in \mathcal{P}$, there exists a set $\{d_i\}_{i\in I}$ such that for any object $d$ satisfying $p \leq G(d)$, there exists some $i$ and a morphism $d_i \to d$ such that $p \leq G(d_i)$.
+
+2.$G$ preserves $ \prod_{i\in I} G(d_i) $.
 
 Then, $G$ has a left adjoint.
 
@@ -45,11 +46,11 @@ Then, $G$ has a left adjoint.
 ## Proof
 
 ### Part 1: Existence of the Left Adjoint Object
-Fix an arbitrary $p \in \mathcal{P}$. From Condition 2, there exists a family of objects $\{d_i\}_{i\in I}$ satisfying $p \leq G(d_i)$. Since $\mathcal{D}$ is complete, the product (limit) of this family exists in $\mathcal{D}$:
+Fix an arbitrary $p \in \mathcal{P}$. From Condition 1, there exists a family of objects $\{d_i\}_{i\in I}$ satisfying $p \leq G(d_i)$. Since $\mathcal{D}$ is complete, the product (limit) of this family exists in $\mathcal{D}$:
 
 $$ d_p := \prod_{i\in I} d_i $$
 
-Because $G$ preserves limits, we have:
+By condition 2, we have:
 
 $$ G(d_p) = \prod_{i\in I} G(d_i) $$
 
@@ -57,7 +58,7 @@ $$ G(d_p) = \prod_{i\in I} G(d_i) $$
 
 $$ p \leq G(d_p) $$
 
-Next, we show the minimality of $d_p$; that is, for any object $d$ satisfying $p \leq G(d)$, there exists a morphism $d_p \to d$. By Condition 2, there exists some $i$ and a morphism $d_i \to d$. Composing this with the projection of the product $d_p \to d_i$ yields the desired morphism $d_p \to d$.
+Next, we show the minimality of $d_p$; that is, for any object $d$ satisfying $p \leq G(d)$, there exists a morphism $d_p \to d$. By Condition 1, there exists some $i$ and a morphism $d_i \to d$. Composing this with the projection of the product $d_p \to d_i$ yields the desired morphism $d_p \to d$.
 
 Note that for any $d$, the following equivalence holds (the $\Longleftarrow$ direction is trivial):
 
@@ -70,7 +71,7 @@ First, we prove functoriality. By definition, $F(p) = \prod_{i \in I} d_i$ defin
 
 Assume $p \leq p'$. By definition, $F(p') = d_{p'}$ satisfies $p' \leq G(d_{p'})$. Since $p \leq p'$, it follows that $p \leq G(d_{p'})$.
 
-By the definition of $d_p$ (its universal property as a product) and the minimality from Condition 2, there exists a morphism from $F(p)$ to any object satisfying $p \leq G(d_{p'})$. Thus, we obtain a morphism $F(p) \to F(p')$.
+By the definition of $d_p$ (its universal property as a product) and the minimality from Condition 1, there exists a morphism from $F(p)$ to any object satisfying $p \leq G(d_{p'})$. Thus, we obtain a morphism $F(p) \to F(p')$.
 
 Because $F(p')$ is a limit, this morphism is uniquely determined by its universal property. This proves the mapping of morphisms. 
 
@@ -113,7 +114,7 @@ When viewed through the framework of the General Adjoint Functor Theorem (GAFT),
 1. **The Unresolved Solution Set Condition**
 2. **The Failure of Limit Preservation (Loss of Closure) in Regular Spaces**
 
-Below, we examine how the three core conditions for GAFT—**(1) Completeness of the category $\mathcal{D}$**, **(2) Preservation of limits by the functor $G$**, and **(3) The Solution Set Condition**—relate to the construction of smooth solutions to the Navier–Stokes equations.
+Below, we examine how the three core conditions for GAFT—**(1) Completeness of the category $\mathcal{D}$**, **(2) The Solution Set Condition**, and **(3) Preservation of limits by the functor $G$**—relate to the construction of smooth solutions to the Navier–Stokes equations.
 
 ---
 
@@ -161,16 +162,15 @@ Even with the viscous dissipation term $-\nu \|\nabla^2 u\|_{L^2}^2$, the dimens
 Even if a sequence of approximate solutions (e.g., a Galerkin sequence $u_n$) can be constructed, there is no guarantee that its limit as $n \to \infty$ will remain inside the sets of solutions in smooth category $\mathcal{D}_{\text{smooth}}$.
 
 * **In the context of GAFT:**  
-  The functor $G$ must preserve small limits (products, equalizers, etc.). However, when restricting the state space to $\mathcal{D}_{\text{smooth}}$, taking the limit in the sense of weak topologies or distributions (pulling back evaluations via $G$) risks sending the limit object $d_\infty = \varprojlim d_n$ outside the sets of solutions in $\mathcal{D}_{\text{smooth}}$, falling back into the weaker space $\mathcal{D}_{\text{weak}}$ (**loss of regularity**).  
+  The functor $G$ must preserve limit of the sequence. However, when restricting the state space to $\mathcal{D}_{\text{smooth}}$, taking the limit in the sense of weak topologies or distributions (pulling back evaluations via $G$) risks sending the limit object $d_\infty = \varprojlim d_n$ outside the sets of solutions in $\mathcal{D}_{\text{smooth}}$, falling back into the weaker space $\mathcal{D}_{\text{weak}}$ (**loss of regularity**).  
   In other words, the sets of solutions in $\mathcal{D}_{\text{smooth}}$ is not closed under the relevant limit operations (lack of completeness), leading to a situation where the functor $G$ fails to preserve limits on $\mathcal{D}_{\text{smooth}}$.
 
 ---
 
 ### Author's Interpretation & Concluding Remarks
 
-The Navier–Stokes equations can be globally solved for smooth solutions in 2D, whereas the 3D case remains open. In the author's view, this difference stems from a breakdown of **GAFT applicability**: in 2D, the viscous term completely dominates the nonlinear term, allowing the Solution Set Condition to hold; in 3D, this scaling relationship collapses—a phenomenon we might call the **"Criticality of the Solution Set Condition"**.
+The Navier–Stokes equations can be globally solved for smooth solutions in 2D, whereas the 3D case remains open. In the author's view, this difference stems from a breakdown of **GAFT applicability**: in 2D, the viscous term completely dominates the nonlinear term, allowing the Solution Set Condition to hold; in 3D, this scaling relationship collapses—a phenomenon we might call the **"Criticality of the Solution Set Condition"**, and unlike in a 2D plane, the limit might escape in the vertical direction in 3D.
 
 Looking at the structural arguments above—even from a non-expert's perspective—demonstrating the existence of smooth solutions for the 3D Navier–Stokes equations appears to be an extraordinarily formidable challenge.
-The author interprets the reason why Navier-Stokes equations are solvable in 2D while it remains unknown whether they are globally solvable in 3D as follows: in 2D, the maximum principle for vorticity and energy suppression work so that the viscous term completely overcomes the non-linear term, making the Solution Set Condition hold; whereas in 3D, that scaling relationship collapses.
 
 In addition to the GAFT mentioned above, several other theorems provide sufficient conditions for the existence of an adjoint functor, such as the Special Adjoint Functor Theorem (SAFT) and the adjoint functor theorem for accessible categories (Adámek–Rosický theorem). By applying these theorems, one can interpret the conditions for the existence of solutions to differential equations from various perspectives.
