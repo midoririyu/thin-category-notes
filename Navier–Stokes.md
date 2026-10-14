@@ -39,13 +39,13 @@ Category theory possesses a well-known criterion for the existence of adjoints: 
 
 2.$G$ preserves $ \prod_{i\in I} G(d_i) $.
 
-Then, $G$ has a left adjoint.
+The above is equivalent to saying that $G$ has a left adjoint.
 
 ---
 
-## Proof
+### Proof of sufficiency
 
-### Part 1: Existence of the Left Adjoint Object
+#### Part 1: Existence of the Left Adjoint Object
 Fix an arbitrary $p \in \mathcal{P}$. From Condition 1, there exists a family of objects $\{d_i\}_{i\in I}$ satisfying $p \leq G(d_i)$. Since $\mathcal{D}$ is complete, the product (limit) of this family exists in $\mathcal{D}$:
 
 $$ d_p := \prod_{i\in I} d_i $$
@@ -64,7 +64,7 @@ Note that for any $d$, the following equivalence holds (the $\Longleftarrow$ dir
 
 $$ p \leq G(d) \iff \text{a morphism } d_p \to d \text{ exists} $$
 
-### Part 2: Functoriality
+#### Part 2: Functoriality
 We now show that assigning this $d_p$ to $p$ defines a functor $F: \mathcal{P} \to \mathcal{D}$ which is left adjoint to $G$. 
 
 First, we prove functoriality. By definition, $F(p) = \prod_{i \in I} d_i$ defines the mapping on objects. We must verify the mapping on morphisms: if $p \leq p'$, we need to show that a morphism $F(p) \to F(p')$ exists in $\mathcal{D}$.
@@ -77,7 +77,7 @@ Because $F(p')$ is a limit, this morphism is uniquely determined by its universa
 
 Furthermore, the preservation of identity morphisms and composition is automatically satisfied since $F$ preserves the order structure. Therefore, $F$ is a functor. *(End of proof of functoriality)*
 
-### Part 3: Naturality of the Adjunction
+#### Part 3: Naturality of the Adjunction
 Next, we show the naturality of the adjoint functors. Being natural as adjoint functors means that for any $p \in \mathcal{P}$ and $d \in \mathcal{D}$, there is a hom-set isomorphism (bijection):
 
 $$ hom_\mathcal{D}(F(p), d) =: \mathcal{D}(F(p), d) \cong \mathcal{P}(p, G(d)) := hom_\mathcal{P}(p, G(d)) $$
@@ -105,7 +105,25 @@ When we explicitly calculate both $\overline{g \circ h \circ F(f)}$ and $G(g) \c
 
 Since $\mathcal{P}$ is a poset (a thin category), any two morphisms with the same domain and codomain are identical. Therefore, the equation holds, the diagram commutes, and the adjunction $F \dashv G$ is natural. 
 
-(End of proof of natural adjunction) (End of proof of theorem).
+(End of proof of natural adjunction) (End of proof of sufficiency).
+### Proof of necessity
+
+Let $F: \mathcal{P} \to \mathcal{D}$ be the left adjoint. By the definition of an adjunction, for any $p \in \mathcal{P}$ and any $d \in \mathcal{D}$, there is a natural isomorphism:
+
+$$\mathcal{D}(F(p), d) \cong \mathcal{P}(p, G(d))$$
+
+As we have already seen, this is equivalent to the condition that:
+
+ A morphism $F(p) \to d$ exists if and only if $p \leq G(d)$.
+
+Now, fixing an arbitrary $p \in \mathcal{P}$, let $\{d_0\}$ be a set consisting of a family of a single object $d_0 := F(p)$, and let the index set $I$ also be a singleton set representing $\{d_0\}$. Furthermore, if we take any object $d$ such that $p \leq G(d)$, the above equivalence implies that there exists a morphism $F(p) \to d$. That is, a morphism $d_0 \to d$ exists, and $p \leq G(d_0)$ also holds. 
+
+Therefore, this singleton family $\{F(p)\}$ satisfies the solution set condition. Since $\prod_{0\in I} d_0 = d_0$ and $G\Bigl(\prod_{0\in I} d_0\Bigr) = G(d_0)$, it is indeed preserved by $G$.
+
+(End of proof of necessity) (End of proof of Theorem).
+
+
+
 
 ## 4. Interpretation via the General Adjoint Functor Theorem (GAFT)
 
@@ -172,6 +190,8 @@ Even if a sequence of approximate solutions (e.g., a Galerkin sequence $u_n$) ca
 The Navier–Stokes equations can be globally solved for smooth solutions in 2D, whereas the 3D case remains open. In the author's view, this difference stems from a breakdown of **GAFT applicability**: in 2D, the viscous term completely dominates the nonlinear term, allowing the Solution Set Condition to hold; in 3D, this scaling relationship collapses—a phenomenon we might call the **"Criticality of the Solution Set Condition"**, and unlike in a 2D plane, the limit might escape in the vertical direction in 3D.
 
 Looking at the structural arguments above—even from a non-expert's perspective—demonstrating the existence of smooth solutions for the 3D Navier–Stokes equations appears to be an extraordinarily formidable challenge.
+
+In the framework of GAFT, if one could present a set $\{d_i\}_{i\in I}$ that "satisfies the solution set condition but does not preserve the limit $\prod_{i\in I} d_i$", it would serve as a counterexample to the Navier-Stokes problem.
 
 
 
