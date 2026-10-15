@@ -28,170 +28,74 @@ Categorically, this becomes the question whether a composite functor
 (the category of three-dimensional functions) → (the category of Navier–Stokes equations) → (some thin category)  
 admits a left adjoint.
 
+## 3. The Adjoint Functor Theorem for Thin Functors
 
-## 3. General Adjoint Functor Theorem for Thin Categories
+In category theory, there are several theorems used to verify adjoint relations, such as Freyd's General Adjoint Functor Theorem (GAFT). Below, we state the necessary and sufficient conditions for a "thin functor" (a functor targeting a thin category) to have a left adjoint.
 
-Category theory possesses a well-known criterion for the existence of adjoints: Freyd’s General Adjoint Functor Theorem. We state and prove the version in which the target is a thin category.
+**Theorem.** Let $\mathcal{D}$ be a locally small category, and let $\mathcal{P}$ be a thin category (where arrows in $\mathcal{P}$ are denoted by $\leq$). A functor $G: \mathcal{D} \to \mathcal{P}$ has a left adjoint if and only if the following **Solution Set Condition (SSC)** holds:
+> "For any $p \in \mathcal{P}$, there exists an object $d_p \in \mathcal{D}$ such that $G(d_p)$ is canonically isomorphic (equivalent) to $\inf \{G(d) \mid p \leq G(d)\} $."
 
-**Theorem.** Let $\mathcal{D}$ be a complete category and $\mathcal{P}$ be a thin category (a poset). Suppose a functor $G: \mathcal{D} \to \mathcal{P}$ satisfies the following two conditions:
-
-1. (Solution Set Condition) For any $p \in \mathcal{P}$, there exists a set $\{d_i\}_{i\in I}$ such that for any object $d$ satisfying $p \leq G(d)$, there exists some $i$ and a morphism $d_i \to d$ such that $p \leq G(d_i)$.
-
-2.$G$ preserves $ \prod_{i\in I} G(d_i) $.
-
-The above is equivalent to saying that $G$ has a left adjoint.
-
----
-
-### Proof of sufficiency
-
-#### Part 1: Existence of the Left Adjoint Object
-Fix an arbitrary $p \in \mathcal{P}$. From Condition 1, there exists a family of objects $\{d_i\}_{i\in I}$ satisfying $p \leq G(d_i)$. Since $\mathcal{D}$ is complete, the product (limit) of this family exists in $\mathcal{D}$:
-
-$$ d_p := \prod_{i\in I} d_i $$
-
-By condition 2, we have:
-
-$$ G(d_p) = \prod_{i\in I} G(d_i) $$
-
-(which corresponds to the supremum in $\mathcal{P}$). Since $p \leq G(d_i)$ for each $i$, the universal property of the supremum implies:
-
-$$ p \leq G(d_p) $$
-
-Next, we show the minimality of $d_p$; that is, for any object $d$ satisfying $p \leq G(d)$, there exists a morphism $d_p \to d$. By Condition 1, there exists some $i$ and a morphism $d_i \to d$. Composing this with the projection of the product $d_p \to d_i$ yields the desired morphism $d_p \to d$.
-
-Note that for any $d$, the following equivalence holds (the $\Longleftarrow$ direction is trivial):
-
-$$ p \leq G(d) \iff \text{a morphism } d_p \to d \text{ exists} $$
-
-#### Part 2: Functoriality
-We now show that assigning this $d_p$ to $p$ defines a functor $F: \mathcal{P} \to \mathcal{D}$ which is left adjoint to $G$. 
-
-First, we prove functoriality. By definition, $F(p) = \prod_{i \in I} d_i$ defines the mapping on objects. We must verify the mapping on morphisms: if $p \leq p'$, we need to show that a morphism $F(p) \to F(p')$ exists in $\mathcal{D}$.
-
-Assume $p \leq p'$. By definition, $F(p') = d_{p'}$ satisfies $p' \leq G(d_{p'})$. Since $p \leq p'$, it follows that $p \leq G(d_{p'})$.
-
-By the definition of $d_p$ (its universal property as a product) and the minimality from Condition 1, there exists a morphism from $F(p)$ to any object satisfying $p \leq G(d_{p'})$. Thus, we obtain a morphism $F(p) \to F(p')$.
-
-Because $F(p')$ is a limit, this morphism is uniquely determined by its universal property. This proves the mapping of morphisms. 
-
-Furthermore, the preservation of identity morphisms and composition is automatically satisfied since $F$ preserves the order structure. Therefore, $F$ is a functor. *(End of proof of functoriality)*
-
-#### Part 3: Naturality of the Adjunction
-Next, we show the naturality of the adjoint functors. Being natural as adjoint functors means that for any $p \in \mathcal{P}$ and $d \in \mathcal{D}$, there is a hom-set isomorphism (bijection):
-
-$$ hom_\mathcal{D}(F(p), d) =: \mathcal{D}(F(p), d) \cong \mathcal{P}(p, G(d)) := hom_\mathcal{P}(p, G(d)) $$
-
-Let this isomorphism be denoted by $\alpha_{p,d}: \mathcal{D}(F(p), d) \to \mathcal{P}(p, G(d))$. For any morphism $f: p' \to p$ (i.e., $p' \leq p$) in $\mathcal{P}$ and any morphism $g: d \to d'$ in $\mathcal{D}$, the following diagram must commute:
+*(Proof Sketch)*
+First, let us recall the definition of a natural bijection for adjoint functors. For any $p \in \mathcal{P}$ and $d \in \mathcal{D}$, we have a hom-set isomorphism (bijection):
+$$ \mathcal{D}(F(p), d) \cong \mathcal{P}(p, G(d)) $$
+Letting this isomorphism be $\alpha_{p,d}: \mathcal{D}(F(p), d) \to \mathcal{P}(p, G(d))$, for any arrow $f: p' \to p$ in $\mathcal{P}$ (with $p' \leq p$) and any arrow $g: d \to d'$ in $\mathcal{D}$, the following diagram commutes:
 
 $$
-\begin{array}{ccc}
-\mathcal{D}(F(p), d) & \xrightarrow{\quad \alpha_{p,d} \quad} & \mathcal{P}(p, G(d)) \\
-\Big\downarrow\small{(F f)^* \circ g_*} & & \Big\downarrow\small{f^* \circ (G g)_*} \\
-\mathcal{D}(F(p'), d') & \xrightarrow{\quad \alpha_{p',d'} \quad} & \mathcal{P}(p', G(d'))
-\end{array}
+\begin{CD}
+\mathcal{D}(F(p), d) @>{\alpha_{p,d}}>> \mathcal{P}(p, G(d)) \\
+@V{(F f)^* \circ g_*}VV @VV{f^* \circ (G g)_*}V \\
+\mathcal{D}(F(p'), d') @>>{\alpha_{p',d'}}> \mathcal{P}(p', G(d'))
+\end{CD}
 $$
-The equivalence $\mathcal{D}(F(p), d) \cong \mathcal{P}(p, G(d))$ is strictly synonymous with:
 
-$$ p \leq G(d) \iff \text{a morphism } F(p) \to d \text{ exists} $$
+Note that since $\mathcal{P}$ is a thin category, the isomorphism $\mathcal{D}(F(p), d) \cong \mathcal{P}(p, G(d))$ translates to the equivalence:
+$$ p \leq G(d) \iff \text{there exists an arrow } F(p) \to d $$
 
-which we have already established. 
+Rewriting the commutativity of the diagram at the element level: if we denote the image of an arrow $h: F(p) \to d$ under $\alpha_{p,d}$ as $\overline{h}: p \to G(d)$, the following equality holds:
+$$ \overline{g \circ h \circ Ff} = Gg \circ \overline{h} \circ f $$
+Evaluating both $\overline{g \circ h \circ Ff}$ and $Gg \circ \overline{h} \circ f$ for arbitrary arrows $f: p' \to p$ ($p' \leq p$) and $g: d \to d'$ yields arrows from $p'$ to $G(d')$ in $\mathcal{P}$. Because $\mathcal{P}$ is thin, any two parallel arrows sharing the same source and target are equal; thus, the equality (and hence the commutativity of the diagram) holds automatically. With this in mind, we proceed to the proof of the theorem.
 
-Looking at the commutative diagram at the level of elements, if we denote the image of a morphism $h: F(p) \to d$ under $\alpha_{p,d}$ as $\overline{h}: p \to G(d)$, the following equation must hold:
+* ($\implies$ **"Left adjoint $\implies$ Solution Set Condition"**)
+  Assume $F \dashv G$. For any $p \in \mathcal{P}$, let $d_p := F(p)$. By the definition of adjunction and the thinness of $\mathcal{P}$, we have:
+  $$ \text{there exists an arrow } F(p) \to d \iff p \leq G(d) $$
+  Setting $d = F(p)$ yields $p \leq G(F(p))$, i.e., $p \leq G(d_p)$. Furthermore, for any $d$ satisfying $p \leq G(d)$, the equivalence above guarantees an arrow $d_p = F(p) \to d$. This fulfills the Solution Set Condition.
 
-$$ \overline{g \circ h \circ F(f)} = G(g) \circ \overline{h} \circ f $$
+* ($\impliedby$ **"Solution Set Condition $\implies$ Left adjoint"**)
+  Assume that for every $p \in \mathcal{P}$, there exists an object $d_p$ satisfying the Solution Set Condition. We define a mapping $F: \mathcal{P} \to \mathcal{D}$ by $p \mapsto d_p$.
+  
+  * **Step 1:** Show that $F$ is a functor. Let $p \leq p'$. By assumption, $p' \leq G(d_{p'})$ holds, and since $p \leq p'$, we have $p \leq G(d_{p'})$. Applying the condition again, there exists an arrow $d_p \to d_{p'}$. Because $\mathcal{P}$ is thin, this arrow is unique, making $F$ order-preserving (i.e., a functor).
+  * **Step 2:** Show the adjunction. The Solution Set Condition directly implies:
+    $$ p \leq G(d) \iff \text{there exists an arrow } F(p) = d_p \to d $$
+    for all $p \in \mathcal{P}$ and $d \in \mathcal{D}$. This directly exhibits the adjunction relation $F \dashv G$ in the context of thin categories. $\blacksquare$
 
-When we explicitly calculate both $\overline{g \circ h \circ F(f)}$ and $G(g) \circ \overline{h} \circ f$ for any arbitrary morphism $f: p' \to p$ ($p' \leq p$) in $\mathcal{P}$ and $g: d \to d'$ in $\mathcal{D}$, both result in a morphism $p' \to G(d')$ in $\mathcal{P}$. 
-
-Since $\mathcal{P}$ is a poset (a thin category), any two morphisms with the same domain and codomain are identical. Therefore, the equation holds, the diagram commutes, and the adjunction $F \dashv G$ is natural. 
-
-(End of proof of natural adjunction) (End of proof of sufficiency).
-### Proof of necessity
-
-Let $F: \mathcal{P} \to \mathcal{D}$ be the left adjoint. By the definition of an adjunction, for any $p \in \mathcal{P}$ and any $d \in \mathcal{D}$, there is a natural isomorphism:
-
-$$\mathcal{D}(F(p), d) \cong \mathcal{P}(p, G(d))$$
-
-As we have already seen, this is equivalent to the condition that:
-
- A morphism $F(p) \to d$ exists if and only if $p \leq G(d)$.
-
-Now, fixing an arbitrary $p \in \mathcal{P}$, let $\{d_0\}$ be a set consisting of a family of a single object $d_0 := F(p)$, and let the index set $I$ also be a singleton set representing $\{d_0\}$. Furthermore, if we take any object $d$ such that $p \leq G(d)$, the above equivalence implies that there exists a morphism $F(p) \to d$. That is, a morphism $d_0 \to d$ exists, and $p \leq G(d_0)$ also holds. 
-
-Therefore, this singleton family $\{F(p)\}$ satisfies the solution set condition. Since $\prod_{0\in I} d_0 = d_0$ and $G\Bigl(\prod_{0\in I} d_0\Bigr) = G(d_0)$, it is indeed preserved by $G$.
-
-(End of proof of necessity) (End of proof of Theorem).
-
-
-
-
-## 4. Interpretation via the General Adjoint Functor Theorem (GAFT)
-
-When viewed through the framework of the General Adjoint Functor Theorem (GAFT), the difficulty of establishing the existence and smoothness of solutions for the 3D Navier–Stokes equations can be explained by two major structural barriers:
-
-1. **The Unresolved Solution Set Condition**
-2. **The Failure of Limit Preservation (Loss of Closure) in Regular Spaces**
-
-Below, we examine how the three core conditions for GAFT—**(1) Completeness of the category $\mathcal{D}$**, **(2) The Solution Set Condition**, and **(3) Preservation of limits by the functor $G$**—relate to the construction of smooth solutions to the Navier–Stokes equations.
+*Note:* When $\mathcal{P}$ is a skeletal small category (i.e., a poset), the Solution Set Condition simplifies to: *"For any $p \in \mathcal{P}$, there exists an object $d_p \in \mathcal{D}$ such that $\inf \{G(d) \mid p \leq G(d)\} = G(d_p)$."*
 
 ---
 
-### 1. Weak Solutions (Leray–Hopf Weak Solutions) Easily Satisfy GAFT Conditions
+## 4. Interpreting the Navier-Stokes Equations via the Adjoint Functor Theorem
 
-In the framework of **Leray–Hopf weak solutions**, whose global existence is proven even in 3D, all conditions of GAFT align smoothly:
+Viewed through the lens of the adjoint functor theorem for thin categories, the core difficulty of the existence and smoothness problem for the 3D Navier-Stokes equations can be neatly condensed into the **"Solution Set Condition."**
 
-* **Category $\mathcal{D}_{\text{weak}}$:** An energy space equipped with a weak topology, such as $L^\infty(0, T; L^2(\mathbb{R}^3)) \cap L^2(0, T; H^1(\mathbb{R}^3))$ (which possesses properties close to completeness due to weak compactness).
-* **Thin Category $\mathcal{P}$ and Functor $G$:** A "thinning functor" $G$ mapping objects to the poset of non-negative real numbers $([0, \infty], \le)$, assigning evaluation values such as the initial energy.
+If we take the thin category $\mathcal{P}$ to represent non-negative real numbers (quantifying energy or norms), satisfying this condition requires navigating the following steps:
 
-#### Fulfillment of Conditions
+* **Step 0:** If the set $S_p = \{ G(d) \mid p \leq G(d) \}$ is non-empty, the completeness of real numbers guarantees the existence of an infimum ($\inf$).
+* **Step 1:** However, for this infimum to be *achieved* as a minimum (i.e., the infimum itself belongs to $S_p$), properties such as the compactness or closedness of $S_p$ are typically required.
+* **Step 2:** Furthermore, even if the minimum is achieved, we must show that there exists an object $d_p$ within our function space (the category $\mathcal{D}$) that actually realizes this value as $G(d_p)$.
 
-1. **Solution Set Condition (Boundedness):**  
-   By the energy equality (or inequality), viscous dissipation uniformly bounds the total energy by the initial energy:
-   $$E(t) + 2\nu \int_0^t \|\nabla u\|_{L^2}^2 d\tau \le E(0)$$
-   This uniformly restricts the family of solution candidates (a ball in a Banach space) via the evaluation value $p$, thereby satisfying the Solution Set Condition.
+Crucially, **Step 2** appears to be the most formidable hurdle in proving the existence of smooth solutions. Below, we organize the problems of weak and strong (smooth) solutions for the Navier-Stokes equations through this perspective.
 
-2. **Preservation of Limits (Weak Closure):**  
-   Under the weak topology, weak compactness guarantees that any bounded sequence obtained from energy estimates has a weakly convergent subsequence whose limit remains a weak solution to the equation.
+### 1. Construction of Weak Solutions (Leray–Hopf Weak Solutions) Satisfies the Solution Set Condition
+In the framework of weak solutions (where the category $\mathcal{D}_{\mathrm{weak}}$ consists of spaces like the energy space $L^\infty(0,T;L^2) \cap L^2(0,T;H^1)$ endowed with a weak topology), if we define a thin functor $G$ mapping candidates to evaluation values such as initial energy, the energy inequality
+$$ E(t) + 2\nu \int_0^t \|\nabla u\|_{L^2}^2 \, d\tau \le E(0) $$
+ensures that evaluation values are uniformly bounded by the initial data. Weak compactness then allows $S_p$ to be closed, making it easier to achieve a minimum, and guarantees the existence of a weak solution $d_p$ realizing that minimum. As a result, the Solution Set Condition is satisfied, a left adjoint exists, and global weak solutions are obtained.
 
-As a result, a left adjoint (a universal element / morphism that yields the solution) exists in the weak solution setting, guaranteeing the existence of global weak solutions.
+### 2. Smooth Solutions Struggle to Satisfy the Solution Set Condition
+Conversely, when shifting to the space of smooth solutions $\mathcal{D}_{\mathrm{smooth}}$ (e.g., Sobolev spaces with high regularity or $C^\infty$), the situation changes drastically.
 
----
+When higher-order norms (such as enstrophy) are chosen as evaluation values, the convective term $(u \cdot \nabla)u$ in 3 dimensions generates a self-amplifying term with respect to high-order norms, yielding inequalities of the type:
+$$ \frac{d}{dt} \|\nabla u\|_{L^2}^2 \le C \|\nabla u\|_{L^2}^3 - \nu \|\nabla^2 u\|_{L^2}^2 $$
+Even if the infimum of $S_p$ is finite, there is no guarantee that it is achieved as a minimum *within* the class of smooth solutions. Moreover, even if the infimum is attained, it remains unknown whether a smooth object $d_p$ realizing that value exists globally across all time intervals.
 
-### 2. Smooth Solutions Struggle to Satisfy GAFT Conditions
+While in 2 dimensions the viscosity term sufficiently controls the nonlinearity—making it relatively straightforward to show the closedness of $S_p$ and the existence of a smooth minimizing solution—the 3D case suffers from a fundamental difference in criticality.
 
-The breakdown occurs when attempting to extend this framework to the category $\mathcal{D}_{\text{smooth}}$ of **smooth (or strong) solutions** (e.g., $H^k(\mathbb{R}^3)$ for $k > 5/2$, or $C^\infty(\mathbb{R}^3)$).
-
-#### Barrier A: Breakdown of the Solution Set Condition via the Convective Term $(u \cdot \nabla)u$
-
-To guarantee smoothness, higher-order norms (e.g., $H^1$ or $H^2$ norms, or the $L^2$ norm of vorticity $\omega = \nabla \times u$, i.e., enstrophy) must be evaluated and controlled within the thin category $\mathcal{P}$.
-
-However, the 3D nonlinear convective term $(u \cdot \nabla)u$ generates a self-amplifying quadratic (or higher) term in the time derivative of higher-order norms:
-$$\frac{d}{dt} \|\nabla u\|_{L^2}^2 \le C \|\nabla u\|_{L^2}^3 - \nu \|\nabla^2 u\|_{L^2}^2$$
-
-Even with the viscous dissipation term $-\nu \|\nabla^2 u\|_{L^2}^2$, the dimensional mismatch of the 3D Sobolev embedding (**criticality**) prevents the viscous dissipation from fully controlling the cubic growth of $\|\nabla u\|_{L^2}^3$. Solving this differential inequality cannot rule out the possibility of a finite-time blow-up where the norm becomes infinite.
-
-* **In the context of GAFT:**  
-  Even when given an evaluation value $p \in \mathcal{P}$ (e.g., initial data or energy upper bound), one cannot uniformly capture a small set of candidate objects (a Solution Set) satisfying $p \le G(d)$ in $\mathcal{D}_{\text{smooth}}$ across all $t \in [0, T]$. Thus, the validity of the **Solution Set Condition** in smooth spaces remains completely unresolved.
-
----
-
-#### Barrier B: Loss of Limit Preservation in Regular Spaces
-
-Even if a sequence of approximate solutions (e.g., a Galerkin sequence $u_n$) can be constructed, there is no guarantee that its limit as $n \to \infty$ will remain inside the sets of solutions in smooth category $\mathcal{D}_{\text{smooth}}$.
-
-* **In the context of GAFT:**  
-  The functor $G$ must preserve limit of the sequence. However, when restricting the state space to $\mathcal{D}_{\text{smooth}}$, taking the limit in the sense of weak topologies or distributions (pulling back evaluations via $G$) risks sending the limit object $d_\infty = \varprojlim d_n$ outside the sets of solutions in $\mathcal{D}_{\text{smooth}}$, falling back into the weaker space $\mathcal{D}_{\text{weak}}$ (**loss of regularity**).  
-  In other words, the sets of solutions in $\mathcal{D}_{\text{smooth}}$ is not closed under the relevant limit operations (lack of completeness), leading to a situation where the functor $G$ fails to preserve limits on $\mathcal{D}_{\text{smooth}}$.
-
----
-
-### Author's Interpretation & Concluding Remarks
-
-The Navier–Stokes equations can be globally solved for smooth solutions in 2D, whereas the 3D case remains open. In the author's view, this difference stems from a breakdown of **GAFT applicability**: in 2D, the viscous term completely dominates the nonlinear term, allowing the Solution Set Condition to hold; in 3D, this scaling relationship collapses—a phenomenon we might call the **"Criticality of the Solution Set Condition"**, and unlike in a 2D plane, the limit might escape in the vertical direction in 3D.
-
-Looking at the structural arguments above—even from a non-expert's perspective—demonstrating the existence of smooth solutions for the 3D Navier–Stokes equations appears to be an extraordinarily formidable challenge.
-
-In the framework of GAFT, if one could present a set $\{d_i\}_{i\in I}$ that "satisfies the solution set condition but does not preserve the limit $\prod_{i\in I} d_i$", it would serve as a counterexample to the Navier-Stokes problem.
-
-
-
+In summary, this is how the challenges of the Navier-Stokes equations can be interpreted through the framework of adjoint functors. From an amateur standpoint, demonstrating the global existence of smooth solutions for the 3D Navier-Stokes equations appears to be exceedingly difficult.
