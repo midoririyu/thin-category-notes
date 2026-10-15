@@ -53,10 +53,23 @@ Humans — and AI as well — generally cannot handle thick categories directly.
 
 The universal object search problem mentioned above share a similar point of view to investigating the pullback (or lifting) operation of a functor $T'$ from a locally small category $\mathcal{C}$ to a thin category $\mathcal{D}$.
 
-Here, we briefly remark on the case where there exists a right adjoint $G$ to the functor $T'$ acting as a left adjoint.
+~~Here, we briefly remark on the case where there exists a right adjoint $G$ to the functor $T'$ acting as a left adjoint.~~
 
-When the thinning functor $T': \mathcal{C} \to \mathcal{D}$ is a left adjoint, its right adjoint $G: \mathcal{D} \to \mathcal{C}$ assigns to each object $d$ in the thin category $\mathcal{D}$ the "most universal object in the original category $\mathcal{C}$ whose thinned result is bounded above by $d$" (serving as a supremum-like pullback).
+~~When the thinning functor $T': \mathcal{C} \to \mathcal{D}$ is a left adjoint, its right adjoint $G: \mathcal{D} \to \mathcal{C}$ assigns to each object $d$ in the thin category $\mathcal{D}$ the "most universal object in the original category $\mathcal{C}$ whose thinned result is bounded above by $d$" (serving as a supremum-like pullback).~~
 
-> (As a basic fact in general category theory, it is worth noting that "the existence of a right adjoint $G$ to a functor $F$ is equivalent to the existence of the right Kan extension along $F$," and the right adjoint $G$ (if it exists) can be constructed as $\mathrm{Ran}_F(d)$.)
+~~> (As a basic fact in general category theory, it is worth noting that "the existence of a right adjoint $G$ to a functor $F$ is equivalent to the existence of the right Kan extension along $F$," and the right adjoint $G$ (if it exists) can be constructed as $\mathrm{Ran}_F(d)$.)~~
 
-In this sense, the right adjoint $G$ can be viewed as an operation that pulls back optimal values (extremal values) in $\mathcal{D}$ into the original "thick" category $\mathcal{C}$ in the "most consistent (limit-wise) way," or as a **"reconstruction operator"** that restores the "thickness" lost through thinning while preserving global consistency.
+~~In this sense, the right adjoint $G$ can be viewed as an operation that pulls back optimal values (extremal values) in $\mathcal{D}$ into the original "thick" category $\mathcal{C}$ in the "most consistent (limit-wise) way," or as a **"reconstruction operator"** that restores the "thickness" lost through thinning while preserving global consistency.~~
+
+In [A Thinning-Functor Perspective on the Navier–Stokes Millennium Problem](Navier–Stokes.md), the author stated and proved the following proposition regarding the conditions for a thinning functor to have a left adjoint:
+
+> One of the necessary and sufficient conditions for a thinning functor $T'$ to have a left adjoint is the so-called solution set condition: "For any $d \in \mathcal{D}$, there exists an object $c_p \in \mathcal{C}$ such that $\inf \{ T'(c) \mid d \leq T'(c) \}$ and $T'(c_p)$ are isomorphic as objects." (Here, morphisms in $\mathcal{D}$ are denoted by $\leq$.)
+
+From this proposition, taking the (left) adjoint of a thinning functor can be interpreted as constructing a functor that:
+* Associates an evaluation value in the thin category with the most universal (initial) object in the thick category that realizes it, or
+* Selects a universal solution in the original category that satisfies the remaining constraints even after thinning.
+
+
+
+
+
