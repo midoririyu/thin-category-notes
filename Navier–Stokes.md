@@ -79,23 +79,23 @@ Viewed through the lens of the adjoint functor theorem for thin categories, the 
 If we take the thin category $\mathcal{P}$ to represent non-negative real numbers (quantifying energy or norms), satisfying this condition requires navigating the following steps:
 
 * **Step 0:** If the set $S_p = \{ G(d) \mid p \leq G(d) \}$ is non-empty, the completeness of real numbers guarantees the existence of an infimum ($\inf$).
-* **Step 1:** However, for this infimum to be *achieved* as a minimum (i.e., the infimum itself belongs to $S_p$), properties such as the compactness or closedness of $S_p$ are typically required.
-* **Step 2:** Furthermore, even if the minimum is achieved, we must show that there exists an object $d_p$ within our function space (the category $\mathcal{D}$) that actually realizes this value as $G(d_p)$.
+* **Step 1:** The infimum must be obtained as a minimum (i.e., the infimum itself belongs to $S_p$).
+* **Step 2:** Furthermore, even if the minimum is obtained, we must show that there exists an object $d_p$ within our function space (the category $\mathcal{D}$) that actually realizes this value as $G(d_p)$.
 
 Crucially, **Step 2** appears to be the most formidable hurdle in proving the existence of smooth solutions. Below, we organize the problems of weak and strong (smooth) solutions for the Navier-Stokes equations through this perspective.
 
 ### 1. Construction of Weak Solutions (Leray–Hopf Weak Solutions) Satisfies the Solution Set Condition
 In the framework of weak solutions (where the category $\mathcal{D}_{\mathrm{weak}}$ consists of spaces like the energy space $L^\infty(0,T;L^2) \cap L^2(0,T;H^1)$ endowed with a weak topology), if we define a thin functor $G$ mapping candidates to evaluation values such as initial energy, the energy inequality
 $$ E(t) + 2\nu \int_0^t \|\nabla u\|_{L^2}^2 \, d\tau \le E(0) $$
-ensures that evaluation values are uniformly bounded by the initial data. Weak compactness then allows $S_p$ to be closed, making it easier to achieve a minimum, and guarantees the existence of a weak solution $d_p$ realizing that minimum. As a result, the Solution Set Condition is satisfied, a left adjoint exists, and global weak solutions are obtained.
+ensures that evaluation values are uniformly bounded by the initial data. Weak compactness then allows $S_p$ to be closed, making it easier to obtain a minimum, and guarantees the existence of a weak solution $d_p$ realizing that minimum. As a result, the Solution Set Condition is satisfied, a left adjoint exists, and global weak solutions are obtained.
 
 ### 2. Smooth Solutions Struggle to Satisfy the Solution Set Condition
 Conversely, when shifting to the space of smooth solutions $\mathcal{D}_{\mathrm{smooth}}$ (e.g., Sobolev spaces with high regularity or $C^\infty$), the situation changes drastically.
 
 When higher-order norms (such as enstrophy) are chosen as evaluation values, the convective term $(u \cdot \nabla)u$ in 3 dimensions generates a self-amplifying term with respect to high-order norms, yielding inequalities of the type:
 $$ \frac{d}{dt} \|\nabla u\|_{L^2}^2 \le C \|\nabla u\|_{L^2}^3 - \nu \|\nabla^2 u\|_{L^2}^2 $$
-Even if the infimum of $S_p$ is finite, there is no guarantee that it is achieved as a minimum *within* the class of smooth solutions. Moreover, even if the infimum is attained, it remains unknown whether a smooth object $d_p$ realizing that value exists globally across all time intervals.
+Even if the infimum of $S_p$ is finite, there is no guarantee that it is obtained as a minimum *within* the class of smooth solutions. Moreover, even if the infimum is attained, it remains unknown whether a smooth object $d_p$ realizing that value exists globally across all time intervals.
 
 While in 2 dimensions the viscosity term sufficiently controls the nonlinearity—making it relatively straightforward to show the closedness of $S_p$ and the existence of a smooth minimizing solution—the 3D case suffers from a fundamental difference in criticality.
 
-In summary, this is how the challenges of the Navier-Stokes equations can be interpreted through the framework of adjoint functors. From an amateur standpoint, demonstrating the global existence of smooth solutions for the 3D Navier-Stokes equations appears to be exceedingly difficult.
+In summary, this is how the challenges of the Navier-Stokes equations can be interpreted through the framework of thinning functors. From an amateur standpoint, demonstrating the global existence of smooth solutions for the 3D Navier-Stokes equations appears to be exceedingly difficult.
