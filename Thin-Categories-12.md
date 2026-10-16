@@ -51,7 +51,7 @@ Humans — and AI as well — generally cannot handle thick categories directly.
 
 ### Supplementary Note: Universal Object Search and Adjunctions
 
-The universal object search problem mentioned above share a similar point of view to investigating the pullback (or lifting) operation of a functor $T'$ from a locally small category $\mathcal{C}$ to a thin category $\mathcal{D}$.
+The universal object search problem mentioned above share a similar point of view to investigating the pullback (or adjunctive) operation of a functor $T'$ from a locally small category $\mathcal{C}$ to a thin category $\mathcal{D}$.
 
 ~~Here, we briefly remark on the case where there exists a right adjoint $G$ to the functor $T'$ acting as a left adjoint.~~
 
@@ -66,8 +66,7 @@ In [A Thinning-Functor Perspective on the Navier–Stokes Millennium Problem](Na
 > One of the necessary and sufficient conditions for a thinning functor $T'$ to have a left adjoint is the so-called solution set condition: "For any $d \in \mathcal{D}$, there exists an object $c_p \in \mathcal{C}$ such that $\inf \{ T'(c) \mid d \leq T'(c) \}$ and $T'(c_p)$ are isomorphic as objects." (Here, morphisms in $\mathcal{D}$ are denoted by $\leq$.)
 
 From this proposition, taking the (left) adjoint of a thinning functor can be interpreted as constructing a functor that:
-* Associates an evaluation value in the thin category with the most universal (initial) object in the thick category that realizes it, or
-* Selects a universal solution in the original category that satisfies the remaining constraints even after thinning.
+* Associates an evaluation value in the thin category with the most universal (initial) object in the thick category.
 
 
 
