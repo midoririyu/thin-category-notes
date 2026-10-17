@@ -65,9 +65,7 @@ In [A Thinning-Functor Perspective on the Navier–Stokes Millennium Problem](Na
 
 > One of the necessary and sufficient conditions for a thinning functor $T'$ to have a left adjoint is the so-called solution set condition: "For any $d \in \mathcal{D}$, there exists an object $c_p \in \mathcal{C}$ such that $\inf \{ T'(c) \mid d \leq T'(c) \}$ and $T'(c_p)$ are isomorphic as objects." (Here, morphisms in $\mathcal{D}$ are denoted by $\leq$.)
 
-From this proposition, taking the (left) adjoint of a thinning functor can be interpreted as constructing a functor that:
-* Associates an evaluation value in the thin category with the most universal (initial) object in the thick category.
-
+We can think of an adjoint functor as a category-theoretic formulation of the requirement to perform pullbacks in a way that is as universal, natural, and minimal as possible."
 
 
 
