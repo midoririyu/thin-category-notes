@@ -51,7 +51,9 @@ Humans — and AI as well — generally cannot handle thick categories directly.
 
 ### Supplementary Note: Universal Object Search and Adjunctions
 
-The universal object search problem mentioned above share a similar point of view to investigating the pullback (or adjunctive) operation of a functor $T'$ from a locally small category $\mathcal{C}$ to a thin category $\mathcal{D}$.
+The universal object search problem mentioned above share a similar point of view to investigating the pullback (or adjunctive) operation of a functor $T'$ from a locally small category $\mathcal{C}$ to a thin category $\mathcal{D}$.　
+
+This is described in detail in [(16) Analyzing Mathematical Conjectures Through the Lens of Thinning Functors](MathematicalConjectures.md) and [(16-2) A Thinning-Functor Perspective on the Navier–Stokes Millennium Problem](Navier–Stokes.md).
 
 ~~Here, we briefly remark on the case where there exists a right adjoint $G$ to the functor $T'$ acting as a left adjoint.~~
 
@@ -60,13 +62,6 @@ The universal object search problem mentioned above share a similar point of vie
 ~~> (As a basic fact in general category theory, it is worth noting that "the existence of a right adjoint $G$ to a functor $F$ is equivalent to the existence of the right Kan extension along $F$," and the right adjoint $G$ (if it exists) can be constructed as $\mathrm{Ran}_F(d)$.)~~
 
 ~~In this sense, the right adjoint $G$ can be viewed as an operation that pulls back optimal values (extremal values) in $\mathcal{D}$ into the original "thick" category $\mathcal{C}$ in the "most consistent (limit-wise) way," or as a **"reconstruction operator"** that restores the "thickness" lost through thinning while preserving global consistency.~~
-
-In [A Thinning-Functor Perspective on the Navier–Stokes Millennium Problem](Navier–Stokes.md), the author stated and proved the following proposition regarding the conditions for a thinning functor to have a left adjoint:
-
-> One of the necessary and sufficient conditions for a thinning functor $T'$ to have a left adjoint is the so-called solution set condition: "For any $d \in \mathcal{D}$, there exists an object $c_p \in \mathcal{C}$ such that $\inf \{ T'(c) \mid d \leq T'(c) \}$ and $T'(c_p)$ are isomorphic as objects." (Here, morphisms in $\mathcal{D}$ are denoted by $\leq$.)
-
-We can think of an adjoint functor as a category-theoretic formulation of the requirement to perform pullbacks in a way that is as universal, natural, and minimal as possible."
-
 
 
 
