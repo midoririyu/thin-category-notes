@@ -32,8 +32,11 @@ admits a left adjoint.
 
 In category theory, there are several theorems used to verify adjoint relations, such as Freyd's General Adjoint Functor Theorem (GAFT). Below, we state the necessary and sufficient conditions for a "thin functor" (a functor targeting a thin category) to have a left adjoint.
 
-**Theorem.** Let $\mathcal{D}$ be a locally small category, and let $\mathcal{P}$ be a thin category (where arrows in $\mathcal{P}$ are denoted by $\leq$). A functor $G: \mathcal{D} \to \mathcal{P}$ has a left adjoint if and only if the following **Solution Set Condition (SSC)** holds:
-> "For any $p \in \mathcal{P}$, there exists an object $d_p \in \mathcal{D}$ such that $G(d_p)$ is canonically isomorphic (equivalent) to $\inf \{G(d) \mid p \leq G(d)\} $."
+**Theorem.** Let $\mathcal{D}$ be a locally small category, and let $\mathcal{P}$ be a thin category (where arrows in $\mathcal{P}$ are denoted by $\leq$). For a functor $G: \mathcal{D} \to \mathcal{P}$, the following hold:
+
+1. If $G$ has a left adjoint, then the **singleton solution set condition** holds: "For any $p \in \mathcal{P}$, there exists an object $d_p \in \mathcal{D}$ such that $G(d_p) = \inf\{ G(d) \mid p \leq G(d) \}$. (That is, there exists an object $d_p \in \mathcal{D}$ such that for any $d \in \mathcal{D}$ satisfying $p \leq G(d)$, there exists a morphism $d_p \to d$.)"
+
+2. If the functor $G: \mathcal{D} \to \mathcal{P}$ satisfies the **strong singleton solution set condition**: "For any $p \in \mathcal{P}$, the comma category $(p \downarrow G)$ has an initial object. (That is, there exists an object $d_p \in \mathcal{D}$ such that for any $d \in \mathcal{D}$ satisfying $p \leq G(d)$, there uniquely exists a morphism $d_p \to d$.)", then $G$ has a left adjoint.
 
 *(Proof Sketch)*
 First, let us recall the definition of a natural bijection for adjoint functors. For any $p \in \mathcal{P}$ and $d \in \mathcal{D}$, we have a hom-set isomorphism (bijection):
@@ -55,26 +58,30 @@ Rewriting the commutativity of the diagram at the element level: if we denote th
 $$ \overline{g \circ h \circ Ff} = Gg \circ \overline{h} \circ f $$
 Evaluating both $\overline{g \circ h \circ Ff}$ and $Gg \circ \overline{h} \circ f$ for arbitrary arrows $f: p' \to p$ ($p' \leq p$) and $g: d \to d'$ yields arrows from $p'$ to $G(d')$ in $\mathcal{P}$. Because $\mathcal{P}$ is thin, any two parallel arrows sharing the same source and target are equal; thus, the equality (and hence the commutativity of the diagram) holds automatically. With this in mind, we proceed to the proof of the theorem.
 
-* ($\implies$ **"Left adjoint $\implies$ Solution Set Condition"**)
+* (proof of 1**)
   Assume $F \dashv G$. For any $p \in \mathcal{P}$, let $d_p := F(p)$. By the definition of adjunction and the thinness of $\mathcal{P}$, we have:
   $$ \text{there exists an arrow } F(p) \to d \iff p \leq G(d) $$
-  Setting $d = F(p)$ yields $p \leq G(F(p))$, i.e., $p \leq G(d_p)$. Furthermore, for any $d$ satisfying $p \leq G(d)$, the equivalence above guarantees an arrow $d_p = F(p) \to d$. This fulfills the Solution Set Condition.
+  Setting $d = F(p)$ yields $p \leq G(F(p))$, i.e., $p \leq G(d_p)$. Furthermore, for any $d$ satisfying $p \leq G(d)$, the equivalence above guarantees an arrow $d_p = F(p) \to d$. This fulfills the Solution Set Condition.　(proof of 1 is completed.)
 
-* ($\impliedby$ **"Solution Set Condition $\implies$ Left adjoint"**)
+
+* ((proof of　2**)
   Assume that for every $p \in \mathcal{P}$, there exists an object $d_p$ satisfying the Solution Set Condition. We define a mapping $F: \mathcal{P} \to \mathcal{D}$ by $p \mapsto d_p$.
   
-  * **Step 1:** Show that $F$ is a functor. Let $p \leq p'$. By assumption, $p' \leq G(d_{p'})$ holds, and since $p \leq p'$, we have $p \leq G(d_{p'})$. Applying the condition again, there exists an arrow $d_p \to d_{p'}$. Because $\mathcal{P}$ is thin, this arrow is unique, making $F$ order-preserving (i.e., a functor).
+  * **Step 1:** Show that $F$ is a functor. Let $p \leq p'$. By assumption, $p' \leq G(d_{p'})$ holds, and since $p \leq p'$, we have $p \leq G(d_{p'})$. Applying the condition again, there exists an  arrow $d_p \to d_{p'}$. By the condition, this arrow is unique and  $F$ preserves order accoding to $p \leq G(d_{p'})$, i.e. $F$ becomes a functor.
   * **Step 2:** Show the adjunction. The Solution Set Condition directly implies:
     $$ p \leq G(d) \iff \text{there exists an arrow } F(p) = d_p \to d $$
-    for all $p \in \mathcal{P}$ and $d \in \mathcal{D}$. This directly exhibits the adjunction relation $F \dashv G$ in the context of thin categories. $\blacksquare$
+    for all $p \in \mathcal{P}$ and $d \in \mathcal{D}$. This directly exhibits the adjunction relation $F \dashv G$ in the context of thin categories.
+  
+(proof of 2 and the Theorem is completed.)
 
-*Note:* When $\mathcal{P}$ is a skeletal small category (i.e., a poset), the Solution Set Condition simplifies to: *"For any $p \in \mathcal{P}$, there exists an object $d_p \in \mathcal{D}$ such that $\inf \{G(d) \mid p \leq G(d)\} = G(d_p)$."*
-
+    
 ---
+
+
 
 ## 4. Interpreting the Navier-Stokes Equations via the Adjoint Functor Theorem
 
-Viewed through the lens of the adjoint functor theorem for thin categories, the core difficulty of the existence and smoothness problem for the 3D Navier-Stokes equations can be neatly condensed into the **"Solution Set Condition."**
+Viewed through the lens of the adjoint functor theorem for thin categories, the core difficulty of the existence and smoothness problem for the 3D Navier-Stokes equations can be neatly condensed into the **"Singleton solution Set Condition."**
 
 If we take the thin category $\mathcal{P}$ to represent non-negative real numbers (quantifying energy or norms), satisfying this condition requires navigating the following steps:
 
