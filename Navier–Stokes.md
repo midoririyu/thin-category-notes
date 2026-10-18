@@ -32,9 +32,9 @@ admits a left adjoint.
 
 In category theory, there are several theorems used to verify adjoint relations, such as Freyd's General Adjoint Functor Theorem (GAFT). Below, we state the necessary and sufficient conditions for a "thin functor" (a functor targeting a thin category) to have a left adjoint.
 
-**Theorem.** Let $\mathcal{D}$ be a locally small category, and let $\mathcal{P}$ be a partially ordered set(poset) where arrows in $\mathcal{P}$ are denoted by $\leq$. For a functor $G: \mathcal{D} \to \mathcal{P}$, the following hold:
+**Theorem.** Let $\mathcal{D}$ be a locally small category, and let $\mathcal{P}$ be a thin category where arrows  are denoted by $\leq$. For a functor $G: \mathcal{D} \to \mathcal{P}$, the following hold:
 
-1. If $G$ has a left adjoint, then the **singleton solution set condition** holds: "For any $p \in \mathcal{P}$, there exists an object $d_p \in \mathcal{D}$ such that $G(d_p)= inf{ G(d) \mid p \leq G(d) \}$. (That is, there exists an object $d_p \in \mathcal{D}$ such that for any $d \in \mathcal{D}$ satisfying $p \leq G(d)$, there exists a morphism $d_p \to d$.)"
+1. If $G$ has a left adjoint, then the **singleton solution set condition** holds: "For any $p \in \mathcal{P}$, there exists an object $d_p \in \mathcal{D}$ such that for any $d \in \mathcal{D}$ satisfying $p \leq G(d)$, there exists a morphism $d_p \to d$.)"
 
 2. If the functor $G: \mathcal{D} \to \mathcal{P}$ satisfies the **strong singleton solution set condition**: "For any $p \in \mathcal{P}$, the comma category $(p \downarrow G)$ has an initial object. (That is, there exists an object $d_p \in \mathcal{D}$ such that for any $d \in \mathcal{D}$ satisfying $p \leq G(d)$, there uniquely exists a morphism $d_p \to d$.)", then $G$ has a left adjoint.
 
@@ -62,7 +62,6 @@ Evaluating both $\overline{g \circ h \circ Ff}$ and $Gg \circ \overline{h} \circ
   Assume $F \dashv G$. For any $p \in \mathcal{P}$, let $d_p := F(p)$. By the definition of adjunction and the thinness of $\mathcal{P}$, we have:
   $$ \text{there exists an arrow } F(p) \to d \iff p \leq G(d) $$
   Setting $d = F(p)$ yields $p \leq G(F(p))$, i.e., $p \leq G(d_p)$. Furthermore, for any $d$ satisfying $p \leq G(d)$, the equivalence above guarantees an arrow $d_p = F(p) \to d$. This fulfills the Solution Set Condition.
-  Furthermore, since $d_p$ is a lower bound of $\{ G(d) \mid p \leq G(d) \} $ and is itself an element of that set, it serves as the minimum of that. In a partially ordered set (poset), if a minimum element exists, it coincides with the infimum (inf).
 (proof of 1 is completed.)
 
 
@@ -76,6 +75,8 @@ Evaluating both $\overline{g \circ h \circ Ff}$ and $Gg \circ \overline{h} \circ
   
 (proof of 2 and the Theorem is completed.)
 
+
+  Furthermore in the claim 1 of the above theorem, if $\mathcal{D}$ is a partially ordered set (poset), then $G(d_p)= inf{ G(d) \mid p \leq G(d) \}$. That is because $d_p$ is a lower bound of $\{ G(d) \mid p \leq G(d) \} $ and is itself an element of that set, it serves as the minimum of that. In a partially ordered set (poset), if a minimum element exists, it coincides with the infimum (inf). 
     
 ---
 
