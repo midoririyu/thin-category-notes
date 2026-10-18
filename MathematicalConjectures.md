@@ -68,16 +68,13 @@ The mathematical conjectures mentioned above are close to the viewpoint of the s
 ~~Applying this method to the search for counterexamples to mathematical conjectures may be meaningful as one possible approach, even in cases where the pullback operation cannot be regarded as a right adjoint. It cannot be ruled out that searching for a $d$ for which the right Kan extension $\mathrm{Ran}_T(d)$ cannot be defined may lead to the discovery of new counterexamples.~~
 
 In the article [A Thinning-Functor Perspective on the Navier–Stokes Millennium Problem](Navier–Stokes.md)
-, the author stated and proved the necessary and sufficient condition for a thinning functor to have a left adjoint as follows. Please find it below for your reference.
+, the author stated and proved the necessary and sufficient conditions for a thinning functor to have a left adjoint as follows. Please find it below for your reference.
 
-### Theorem
+**Theorem.** Let $\mathcal{D}$ be a locally small category, and let $\mathcal{P}$ be a thin category (where arrows in $\mathcal{P}$ are denoted by $\leq$). For a functor $G: \mathcal{D} \to \mathcal{P}$, the following hold:
 
-Let $\mathcal{D}$ be a locally small category and $\mathcal{P}$ be a thin category (where morphisms in $\mathcal{P}$ are denoted by $\leq$). 
+1. If $G$ has a left adjoint, then the **singleton solution set condition** holds: "For any $p \in \mathcal{P}$, there exists an object $d_p \in \mathcal{D}$ such that $G(d_p) = \inf\{ G(d) \mid p \leq G(d) \}$. (That is, there exists an object $d_p \in \mathcal{D}$ such that for any $d \in \mathcal{D}$ satisfying $p \leq G(d)$, there exists a morphism $d_p \to d$.)"
 
-For a functor $G: \mathcal{D} \to \mathcal{P}$, the following conditions are equivalent:
-
-1. $G$ has a left adjoint.
-2. **(Solution Set Condition)** For any $p \in \mathcal{P}$, there exists an object $d_p \in \mathcal{D}$ such that $\inf\{G(d) \mid p \leq G(d)\}$ is isomorphic to $G(d_p)$ as objects.
+2. If the functor $G: \mathcal{D} \to \mathcal{P}$ satisfies the **strong singleton solution set condition**: "For any $p \in \mathcal{P}$, the comma category $(p \downarrow G)$ has an initial object. (That is, there exists an object $d_p \in \mathcal{D}$ such that for any $d \in \mathcal{D}$ satisfying $p \leq G(d)$, there uniquely exists a morphism $d_p \to d$.)", then $G$ has a left adjoint.
 
 We can think of an adjoint functor as a category-theoretic formulation of the requirement to perform pullbacks in a way that is as universal, natural, and minimal as possible."
 
