@@ -72,7 +72,7 @@ In the article [A Thinning-Functor Perspective on the Navier–Stokes Millennium
 
 **Theorem.** Let $\mathcal{D}$ be a locally small category, and let $\mathcal{P}$ be a thin category (where arrows in $\mathcal{P}$ are denoted by $\leq$). For a functor $G: \mathcal{D} \to \mathcal{P}$, the following hold:
 
-1. If $G$ has a left adjoint, then the **singleton solution set condition** holds: "For any $p \in \mathcal{P}$, there exists an object $d_p \in \mathcal{D}$ such that $G(d_p) = \inf\{ G(d) \mid p \leq G(d) \}$. (That is, there exists an object $d_p \in \mathcal{D}$ such that for any $d \in \mathcal{D}$ satisfying $p \leq G(d)$, there exists a morphism $d_p \to d$.)"
+1. If $G$ has a left adjoint, then the **singleton solution set condition** holds: "For any $p \in \mathcal{P}$, there exists an object $d_p \in \mathcal{D}$ such that $G(d_p) becomes an infimum of $\{ G(d) \mid p \leq G(d) \}$. (That is, there exists an object $d_p \in \mathcal{D}$ such that for any $d \in \mathcal{D}$ satisfying $p \leq G(d)$, there exists a morphism $d_p \to d$.)"
 
 2. If the functor $G: \mathcal{D} \to \mathcal{P}$ satisfies the **strong singleton solution set condition**: "For any $p \in \mathcal{P}$, the comma category $(p \downarrow G)$ has an initial object. (That is, there exists an object $d_p \in \mathcal{D}$ such that for any $d \in \mathcal{D}$ satisfying $p \leq G(d)$, there uniquely exists a morphism $d_p \to d$.)", then $G$ has a left adjoint.
 
