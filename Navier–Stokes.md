@@ -76,7 +76,7 @@ Evaluating both $\overline{g \circ h \circ Ff}$ and $Gg \circ \overline{h} \circ
 (proof of 2 and the Theorem is completed.)
 
 
-  Furthermore in the claim 1 of the above theorem, if $\mathcal{D}$ is a partially ordered set (poset), then $G(d_p)= inf{ G(d) \mid p \leq G(d) \}$. That is because $d_p$ is a lower bound of $\{ G(d) \mid p \leq G(d) \} $ and is itself an element of that set, it serves as the minimum of that. In a partially ordered set (poset), if a minimum element exists, it coincides with the infimum (inf). 
+  Furthermore in the claim 1 of the above theorem, if $\mathcal{P}$ is a partially ordered set (poset), then $G(d_p)= inf{ G(d) \mid p \leq G(d) \}$. That is because $d_p$ is a lower bound of $\{ G(d) \mid p \leq G(d) \} $ and is itself an element of that set, it serves as the minimum of that. In a partially ordered set (poset), if a minimum element exists, it coincides with the infimum (inf). 
     
 ---
 
