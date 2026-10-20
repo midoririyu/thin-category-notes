@@ -32,11 +32,10 @@ admits a left adjoint.
 
 In category theory, there are several theorems used to verify adjoint relations, such as Freyd's General Adjoint Functor Theorem (GAFT). Below, we state the necessary and sufficient conditions for a "thin functor" (a functor targeting a thin category) to have a left adjoint.
 
-**Theorem.** Let $\mathcal{D}$ be a locally small category, and let $\mathcal{P}$ be a thin category where arrows  are denoted by $\leq$. For a functor $G: \mathcal{D} \to \mathcal{P}$, the following hold:
+**Theorem.** Let $\mathcal{D}$ be a locally small category, and let $\mathcal{P}$ be a thin category where arrows  are denoted by $\leq$. For a functor $G: \mathcal{D} \to \mathcal{P}$, the followings are equivalent.
 
-1. If $G$ has a left adjoint, then the **singleton solution set condition** holds: "For any $p \in \mathcal{P}$, there exists an object $d_p \in \mathcal{D}$ such that for any $d \in \mathcal{D}$ satisfying $p \leq G(d)$, there exists a morphism $d_p \to d$.)"
-
-2. If the functor $G: \mathcal{D} \to \mathcal{P}$ satisfies the **strong singleton solution set condition**: "For any $p \in \mathcal{P}$, the comma category $(p \downarrow G)$ has an initial object. (That is, there exists an object $d_p \in \mathcal{D}$ such that for any $d \in \mathcal{D}$ satisfying $p \leq G(d)$, there uniquely exists a morphism $d_p \to d$.)", then $G$ has a left adjoint.
+1. G has a left adjoint.
+2.  **strong singleton solution set condition**: For any $p \in \mathcal{P}$, there exists an object $d_p \in \mathcal{D}$ such that for any $d \in \mathcal{D}$ satisfying $p \leq G(d)$, there uniquely exists a morphism $d_p \to d$.
 
 *(Proof Sketch)*
 First, let us recall the definition of a natural bijection for adjoint functors. For any $p \in \mathcal{P}$ and $d \in \mathcal{D}$, we have a hom-set isomorphism (bijection):
@@ -58,14 +57,16 @@ Rewriting the commutativity of the diagram at the element level: if we denote th
 $$ \overline{g \circ h \circ Ff} = Gg \circ \overline{h} \circ f $$
 Evaluating both $\overline{g \circ h \circ Ff}$ and $Gg \circ \overline{h} \circ f$ for arbitrary arrows $f: p' \to p$ ($p' \leq p$) and $g: d \to d'$ yields arrows from $p'$ to $G(d')$ in $\mathcal{P}$. Because $\mathcal{P}$ is thin, any two parallel arrows sharing the same source and target are equal; thus, the equality (and hence the commutativity of the diagram) holds automatically. With this in mind, we proceed to the proof of the theorem.
 
-* (proof of 1**)
+* (proof of 1 ⇒ 2) 
   Assume $F \dashv G$. For any $p \in \mathcal{P}$, let $d_p := F(p)$. By the definition of adjunction and the thinness of $\mathcal{P}$, we have:
   $$ \text{there exists an arrow } F(p) \to d \iff p \leq G(d) $$
   Setting $d = F(p)$ yields $p \leq G(F(p))$, i.e., $p \leq G(d_p)$. Furthermore, for any $d$ satisfying $p \leq G(d)$, the equivalence above guarantees an arrow $d_p = F(p) \to d$. This fulfills the Solution Set Condition.
-(proof of 1 is completed.)
+  Furthermore, due to the isomorphism $\mathcal{D}(F(p),d) \cong \mathcal{P}(p,G(d))$ and the uniqueness of the relation $p \leq G(d)$, the morphism $d_p \to d$ is unique if it exists.
+
+(proof 1⇒2 is completed.)
 
 
-* ((proof of　2**)
+  ((proof of　2 ⇒ 1)
   Assume that for every $p \in \mathcal{P}$, there exists an object $d_p$ satisfying the Solution Set Condition. We define a mapping $F: \mathcal{P} \to \mathcal{D}$ by $p \mapsto d_p$.
   
   * **Step 1:** Show that $F$ is a functor. Let $p \leq p'$. By assumption, $p' \leq G(d_{p'})$ holds, and since $p \leq p'$, we have $p \leq G(d_{p'})$. Applying the condition again, there exists an  arrow $d_p \to d_{p'}$. By the condition, this arrow is unique and  $F$ preserves order accoding to $p \leq G(d_{p'})$, i.e. $F$ becomes a functor.
@@ -73,37 +74,45 @@ Evaluating both $\overline{g \circ h \circ Ff}$ and $Gg \circ \overline{h} \circ
     $$ p \leq G(d) \iff \text{there exists an arrow } F(p) = d_p \to d $$
     for all $p \in \mathcal{P}$ and $d \in \mathcal{D}$. This directly exhibits the adjunction relation $F \dashv G$ in the context of thin categories.
   
-(proof of 2 and the Theorem is completed.)
+(proof of 2⇒1 and the Theorem is completed.)
+
+Originally, the author intended to formulate a version of the General Adjoint Functor Theorem (GAFT) for thin functors. However, through trial and error, it eventually settled into the simpler form presented above. Upon closer inspection, this is nothing more than a special case where $G$ is a thin functor in the fundamental property of adjoint functors: "For a general functor $G: \mathcal{D} \to \mathcal{P}$, $G$ has a left adjoint if and only if the comma category ($p \downarrow G$) has an initial object for every $p \in \mathcal{P}$."
+
+**Corollary.** Let $\mathcal{D}$ be a locally small category, and let $\mathcal{P}$ be a partially ordered set (poset), where morphisms in $\mathcal{P}$ are denoted by $\leq$. If a functor $G: \mathcal{D} \to \mathcal{P}$ has a left adjoint, then for any $p \in \mathcal{P}$, there exists an object $d_p \in \mathcal{D}$ such that:
+$$G(d_p) = \inf\{G(d) \mid p \leq G(d)\}$$
+
+*(Proof)* 
+In the proof 1⇒2　of the theorem above, $G(d_p)$ serves as a lower bound for $\{ G(d) \mid p \leq G(d) \}$ and is itself an element of this set. Thus, it constitutes the minimum element of $\{ G(d) \mid p \leq G(d) \}$. Since the minimum element in a poset coincides with its infimum (inf) whenever it exists, the proof is complete. $\blacksquare$
 
 
-  Furthermore in the claim 1 of the above theorem, if $\mathcal{P}$ is a partially ordered set (poset), then $G(d_p)= inf{ G(d) \mid p \leq G(d) \}$. That is because $d_p$ is a lower bound of $\{ G(d) \mid p \leq G(d) \} $ and is itself an element of that set, it serves as the minimum of that. In a partially ordered set (poset), if a minimum element exists, it coincides with the infimum (inf). 
-    
 ---
 
 
 
 ## 4. Interpreting the Navier-Stokes Equations via the Adjoint Functor Theorem
 
-Viewed through the lens of the adjoint functor theorem for thin categories, the core difficulty of the existence and smoothness problem for the 3D Navier-Stokes equations can be neatly condensed into the **"Singleton solution Set Condition."**
+Based on the framework of the theorem shown above, we will (roughly) analyze the Navier-Stokes equations.
 
-If we take the thin category $\mathcal{P}$ to represent non-negative real numbers (quantifying energy or norms), satisfying this condition requires navigating the following steps:
+Let $G$ be a functor from the category $\mathcal{D}$ of strong or weak solutions to the category (poset) of non-negative real numbers representing energies or norms. 
 
-* **Step 0:** If the set $S_p = \{ G(d) \mid p \leq G(d) \}$ is non-empty, the completeness of real numbers guarantees the existence of an infimum ($\inf$).
-* **Step 1:** The infimum must be obtained as a minimum (i.e., the infimum itself belongs to $S_p$).
-* **Step 2:** Furthermore, even if the minimum is obtained, we must show that there exists an object $d_p$ within our function space (the category $\mathcal{D}$) that actually realizes this value as $G(d_p)$.
-
-Crucially, **Step 2** appears to be the most formidable hurdle in proving the existence of smooth solutions. Below, we organize the problems of weak and strong (smooth) solutions for the Navier-Stokes equations through this perspective.
+Since non-negative real numbers are bounded below, it is worth noting that by the completeness of the real numbers, the infimum $ \inf \{ G(d) \mid p \leq G(d) \} $　exists as a finite value for any $p \geq 0$.
 
 ### 1. Construction of Weak Solutions (Leray–Hopf Weak Solutions) Satisfies the Solution Set Condition
+
 In the framework of weak solutions (where the category $\mathcal{D}_{\mathrm{weak}}$ consists of spaces like the energy space $L^\infty(0,T;L^2) \cap L^2(0,T;H^1)$ endowed with a weak topology), if we define a thin functor $G$ mapping candidates to evaluation values such as initial energy, the energy inequality
-$$ E(t) + 2\nu \int_0^t \|\nabla u\|_{L^2}^2 \, d\tau \le E(0) $$
-ensures that evaluation values are uniformly bounded by the initial data. Weak compactness then allows $S_p$ to be closed, making it easier to obtain a minimum, and guarantees the existence of a weak solution $d_p$ realizing that minimum. As a result, the Solution Set Condition is satisfied, a left adjoint exists, and global weak solutions are obtained.
+
+$ E(t) + 2\nu \int_0^t \|\nabla u\|_{L^2}^2 \, d\tau \le E(0) $
+ensures that evaluation values are uniformly bounded by the initial data.
+
+Weak compactness then allows $S_p:= \{G(d) \mid p \leq G(d)\} $ to be closed, making it easier to obtain a minimum, and guarantees the existence of a weak solution $d_p$ realizing that minimum. As a result, the Solution Set Condition is satisfied, a left adjoint exists, and global weak solutions are obtained.
 
 ### 2. Smooth Solutions Struggle to Satisfy the Solution Set Condition
 Conversely, when shifting to the space of smooth solutions $\mathcal{D}_{\mathrm{smooth}}$ (e.g., Sobolev spaces with high regularity or $C^\infty$), the situation changes drastically.
 
 When higher-order norms (such as enstrophy) are chosen as evaluation values, the convective term $(u \cdot \nabla)u$ in 3 dimensions generates a self-amplifying term with respect to high-order norms, yielding inequalities of the type:
-$$ \frac{d}{dt} \|\nabla u\|_{L^2}^2 \le C \|\nabla u\|_{L^2}^3 - \nu \|\nabla^2 u\|_{L^2}^2 $$
+
+$ \frac{d}{dt} \|\nabla u\|_{L^2}^2 \le C \|\nabla u\|_{L^2}^3 - \nu \|\nabla^2 u\|_{L^2}^2 $
+
 Even if the infimum of $S_p$ is finite, there is no guarantee that it is obtained as a minimum *within* the class of smooth solutions. Moreover, even if the infimum is attained, it remains unknown whether a smooth object $d_p$ realizing that value exists globally across all time intervals.
 
 While in 2 dimensions the viscosity term sufficiently controls the nonlinearity—making it relatively straightforward to show the closedness of $S_p$ and the existence of a smooth minimizing solution—the 3D case suffers from a fundamental difference in criticality.
