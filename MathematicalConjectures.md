@@ -93,8 +93,10 @@ The fundamental question—*"Does a smooth solution satisfying the equation exis
 
 In this light, we may define **"solving a differential equation"** as:
 
-> **The operation of pulling back a structure from a world described by local constraints (an accumulation of "thin relationships" such as limits and gradients) into a "function space (thick category)" without encountering collapse (singularities or blow-ups), thereby reconstructing it as a global entity.**
+> The operation of pulling back a structure from a world described by local constraints (an accumulation of "thin relationships" such as limits and gradients) into a "function space (thick category)" without encountering collapse (singularities or blow-ups), thereby reconstructing it as a global entity.
 
+or more straightforwardly,
+> The operation of　searching a left adjoint functor that pulls back the thin functor from functions to differential equations." 
 ---
 
 ### Addendum 2: Application to Computer Science ($\mathbf{P} \neq \mathbf{NP}$ Conjecture)
