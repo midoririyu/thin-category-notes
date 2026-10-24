@@ -20,7 +20,7 @@ If a blow-up counter-example were confirmed for Navier–Stokes itself, it would
 We apply the categorical interpretation of “solving a differential equation” attempted in [Analyzing Mathematical Conjectures](MathematicalConjectures.md)
 . Let $\mathcal{C}$ be a category whose objects are concrete functions, and let $\mathcal{D}$ be a thin category that retains only the abstract information of existence and continuation of solutions.
 
-“Solvability” means that, for a thinning functor $T:\mathcal{C}\to\mathcal{D}$, the information “a solution exists” on the $\mathcal{D}$ side can be cleanly pulled back (or lifted) to the original category $\mathcal{C}$. In other words, the abstract correspondence returns without breakdown to the concrete function space (an adjoint restoration holds).
+“Solvability” is defined in [Analyzing Mathematical Conjectures](MathematicalConjectures.md) that, for a thinning functor $T:\mathcal{C}\to\mathcal{D}$, the information “a solution exists” on the $\mathcal{D}$ side can be cleanly pulled back (or lifted) to the original category $\mathcal{C}$. In other words, there exists a left adjoint functor of $T$.
 
 What is suspected for the Navier–Stokes equations is precisely that this pull-back may fail to be globally defined. If finite-time blow-up occurs, singularities prevent the structure of the smooth function space from being maintained: even if time advances correctly on the thin side, the attempt to pull back to the original category tears apart.
 
