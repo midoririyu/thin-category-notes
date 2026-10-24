@@ -91,12 +91,12 @@ Applying the above framework to open problems in differential equations—most n
 
 The fundamental question—*"Does a smooth solution satisfying the equation exist globally?"*—can be reframed as whether the pullback from a thin category (local data connected by differential relations) to a thick category (an appropriate function space) can succeed without breakdown.
 
-In this light, we may define **"solving a differential equation"** as:
+In this light, we define **"solving a differential equation"** as:
 
 > The operation of pulling back a structure from a world described by local constraints (an accumulation of "thin relationships" such as limits and gradients) into a "function space (thick category)" without encountering collapse (singularities or blow-ups), thereby reconstructing it as a global entity.
 
 or more straightforwardly,
-> The operation of　searching a left adjoint functor that pulls back the thin functor from functions to differential equations." 
+> The operation of determining a left adjoint functor that pulls back the thin functor from functions to differential equations." 
 ---
 
 ### Addendum 2: Application to Computer Science ($\mathbf{P} \neq \mathbf{NP}$ Conjecture)
