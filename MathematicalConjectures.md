@@ -95,13 +95,11 @@ In this light, we define **"solving a differential equation"** as:
 
 > The operation of pulling back a structure from a world described by local constraints (an accumulation of "thin relationships" such as limits and gradients) into a "function space (thick category)" without encountering collapse (singularities or blow-ups), thereby reconstructing it as a global entity.
 
-Equivalently, it is the operation of seeking the left adjoint of the thinning functor $T$ whose domain is an appropriate function space (or its category) and whose codomain is the thin category whose objects are $Pf$ (the result of applying a differential operator $P$ to a function $f$) and whose morphisms are given by the norms $\|Pf\|$ (or similar evaluation quantities). This codomain carries the structure of a Lawvere generalized metric space as described in [Thin Categories (12).](Thin-Categories-12.md)
+It can be defined as the operation of finding the left adjoint of a thinning functor whose domain is a thick category—with suitable functions belonging to Sobolev spaces or spaces of continuous functions and so on as objects, and natural morphisms in those function spaces such as continuous embeddings or arrows of weak convergence and so on, as morphisms—and whose codomain is a thin category having $Pf$ (obtained by applying a differential operator $P$ to a function $f$) as objects and its norm $\|Pf\|$ (or similar estimates) as morphisms.  This category carries the structure of a Lawvere generalized metric space as discussed in [Thin Categories (12).](Thin-Categories-12.md)
 
 In short:
-A differential equation is solvable if and only if there exists a left adjoint that pulls back the thinning functor $T$.
+A differential equation is solvable if and only if there exists a left adjoint that pulls back the thinning functor from functions to differential equations." 
 
-or more straightforwardly,
-> The operation of determining a left adjoint functor that pulls back the thin functor from functions to differential equations." 
 ---
 
 ### Addendum 2: Application to Computer Science ($\mathbf{P} \neq \mathbf{NP}$ Conjecture)
